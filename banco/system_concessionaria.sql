@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Abr-2024 às 15:17
+-- Tempo de geração: 17-Abr-2024 às 20:50
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -38,6 +38,7 @@ CREATE TABLE `user` (
   `endereco` varchar(255) NOT NULL,
   `telefone` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
   `cargo` int(11) NOT NULL,
   `data_ad` date NOT NULL,
   `tipo_contrato` int(11) NOT NULL,

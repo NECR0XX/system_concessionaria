@@ -1,0 +1,21 @@
+.container-header {
+    display: flex; 
+    align-items: center;
+    background-color: #3C3C3C;
+    width: 98.9vw;
+    height: 5vw;
+    margin-top: -0.5vw;
+    margin-left: -0.5vw;
+   
+}
+.container-header .logo{
+   font-family: "Zen Dots", sans-serif;
+   color: #FF1430;
+   font-size: 40px;
+   margin-left: 20px;
+}
+
+img {
+    width: 98.9vw;
+    margin-left: -0.5vw;
+}

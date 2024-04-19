@@ -7,10 +7,10 @@ class UserModel {
     }
 
     // Model para criar user
-    public function criarUser($id, $nome_c, $rg, $cpf, $data_n, $nacionalidade, $estado_c, $endereco, $telefone, $email, $senha, $cargo, $data_ad, $tipo_contrato, $salario, $tipo_u) {
-        $sql = "INSERT INTO user (nome_c, rg, cpf, data_n, nacionalidade, estado_c, endereco, telefone, email, senha, cargo, data_ad, tipo_contrato, salario, tipo_u) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public function criarUser($nome, $email, $senha, $tipo_u) {
+        $sql = "INSERT INTO user (nome, email, senha, tipo_u) VALUES (?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$id, $nome_c, $rg, $cpf, $data_n, $nacionalidade, $estado_c, $endereco, $telefone, $email, $senha, $cargo, $data_ad, $tipo_contrato, $salario, $tipo_u]);
+        $stmt->execute([$nome, $email, $senha, $tipo_u]);
     }
 
 
@@ -22,11 +22,11 @@ class UserModel {
     }
 
     // Model para atualizar user
-    public function atualizarUser($id, $nome_c, $rg, $cpf, $data_n, $nacionalidade, $estado_c, $endereco, $telefone, $email, $senha, $cargo, $data_ad, $tipo_contrato, $salario, $tipo_u){
-        $sql = "UPDATE user SET nome_c = ?, rg = ?, cpf = ?, data_n = ?, nacionalidade = ?, estado_c = ?, endereco = ?, telefone = ?, email = ?, senha = ?, cargo = ?, data_ad = ?, tipo_contrato = ?, salario = ?, tipo_u = ?
+    public function atualizarUser($id, $nome, $email, $senha, $tipo_u){
+        $sql = "UPDATE user SET nome = ?, email = ?, senha = ?, tipo_u = ?
          WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome_c, $rg, $cpf, $data_n, $nacionalidade, $estado_c, $endereco, $telefone, $email, $senha, $cargo, $data_ad, $tipo_contrato, $salario, $tipo_u, $id]);
+        $stmt->execute([$nome, $email, $senha, $tipo_u, $id]);
     }
     
     // Model para deletar User

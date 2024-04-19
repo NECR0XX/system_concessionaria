@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Abr-2024 às 20:26
+-- Tempo de geração: 19-Abr-2024 às 20:15
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -69,6 +69,51 @@ CREATE TABLE `contas` (
   `logistica` int(11) NOT NULL COMMENT 'Pagamento por transporte de matérias-primas, componentes e veículos acabados, bem como despesas relacionadas à logística de armazenamento e distribuição. ',
   `pesquisa` int(11) NOT NULL COMMENT 'Investimento em pesquisa e desenvolvimento de novas tecnologias, design de veículos, segurança, eficiência energética, entre outros.',
   `garantia` int(11) NOT NULL COMMENT 'Reservas para cobrir custos de garantia de veículos, bem como serviços de manutenção e reparo oferecidos aos clientes após a compra.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dados_usuario`
+--
+
+CREATE TABLE `dados_usuario` (
+  `id_dados_u` int(11) NOT NULL,
+  `nome_pai` varchar(255) NOT NULL,
+  `nome_mae` varchar(255) NOT NULL,
+  `naturalidade` varchar(255) NOT NULL,
+  `uf` varchar(255) NOT NULL,
+  `data_nascimento` int(11) NOT NULL,
+  `deficiente_fisico` varchar(255) NOT NULL,
+  `raca_cor` varchar(255) NOT NULL,
+  `sexo` varchar(255) NOT NULL,
+  `estado_civil` varchar(255) NOT NULL,
+  `grau_instrucao` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `dados_usuario`
+--
+
+INSERT INTO `dados_usuario` (`id_dados_u`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
+(1, 'gero', 'mãe', 'amarelo', 'BA', 2024, 'não', 'branco', 'feminino', 'Viúvo', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `endereco`
+--
+
+CREATE TABLE `endereco` (
+  `id_endereco` int(11) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `numero` int(4) NOT NULL,
+  `complemento` varchar(255) NOT NULL,
+  `cep` int(11) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `telefone` varchar(255) NOT NULL,
+  `celular` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -144,25 +189,47 @@ CREATE TABLE `frota_veiculo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Estrutura da tabela `rh`
 --
 
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
-  `nome_c` varchar(255) NOT NULL,
-  `rg` int(11) NOT NULL,
-  `cpf` int(11) NOT NULL,
-  `data_n` date NOT NULL,
-  `nacionalidade` varchar(255) NOT NULL,
-  `estado_c` varchar(255) NOT NULL,
-  `endereco` varchar(255) NOT NULL,
-  `telefone` int(11) NOT NULL,
+CREATE TABLE `rh` (
+  `id_rh` int(11) NOT NULL,
+  `numero_ctps` varchar(11) NOT NULL,
+  `serie` varchar(255) NOT NULL,
+  `uf_rh` varchar(2) NOT NULL,
+  `data_expedicao_ctps` date NOT NULL,
+  `pis` int(11) NOT NULL,
+  `data_cadastro_pis` date NOT NULL,
+  `rg_rh` int(11) NOT NULL,
+  `data_expedicao_rg` date NOT NULL,
+  `cpf_rh` int(11) NOT NULL,
+  `titulo_eleitor` int(11) NOT NULL,
+  `zona` varchar(255) NOT NULL,
+  `secao` varchar(255) NOT NULL,
+  `dependentes` varchar(255) NOT NULL,
+  `vale_transposte` varchar(255) NOT NULL,
+  `horario_trabalho` int(2) NOT NULL,
+  `entrada` time NOT NULL,
+  `intervalo` time NOT NULL,
+  `saida` time NOT NULL,
+  `cargo` varchar(255) NOT NULL,
+  `data_admissao` date NOT NULL,
+  `data_exame_medico` date NOT NULL,
+  `experiencia` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `cargo` int(11) NOT NULL,
-  `data_ad` date NOT NULL,
-  `tipo_contrato` int(11) NOT NULL,
-  `salario` decimal(10,0) NOT NULL,
-  `tipo_u` int(11) NOT NULL
+  `senha` varchar(255) NOT NULL,
+  `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -170,80 +237,68 @@ CREATE TABLE `user` (
 --
 
 --
--- Índices para tabela `comercial`
+-- Índices para tabela `dados_usuario`
 --
-ALTER TABLE `comercial`
-  ADD PRIMARY KEY (`id_comercial`);
+ALTER TABLE `dados_usuario`
+  ADD PRIMARY KEY (`id_dados_u`);
 
 --
--- Índices para tabela `contas`
+-- Índices para tabela `endereco`
 --
-ALTER TABLE `contas`
-  ADD PRIMARY KEY (`id_conta`);
+ALTER TABLE `endereco`
+  ADD PRIMARY KEY (`id_endereco`);
 
 --
--- Índices para tabela `estoque`
+-- Índices para tabela `rh`
 --
-ALTER TABLE `estoque`
-  ADD PRIMARY KEY (`id_estoque`);
+ALTER TABLE `rh`
+  ADD PRIMARY KEY (`id_rh`);
 
 --
--- Índices para tabela `fiscal`
+-- Índices para tabela `usuarios`
 --
-ALTER TABLE `fiscal`
-  ADD PRIMARY KEY (`id_fiscal`);
-
---
--- Índices para tabela `frota_veiculo`
---
-ALTER TABLE `frota_veiculo`
-  ADD PRIMARY KEY (`id_frota`);
-
---
--- Índices para tabela `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `comercial`
+-- AUTO_INCREMENT de tabela `dados_usuario`
 --
-ALTER TABLE `comercial`
-  MODIFY `id_comercial` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `dados_usuario`
+  MODIFY `id_dados_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `contas`
+-- AUTO_INCREMENT de tabela `endereco`
 --
-ALTER TABLE `contas`
-  MODIFY `id_conta` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `endereco`
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `estoque`
+-- AUTO_INCREMENT de tabela `rh`
 --
-ALTER TABLE `estoque`
-  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `rh`
+  MODIFY `id_rh` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `fiscal`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
-ALTER TABLE `fiscal`
-  MODIFY `id_fiscal` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `frota_veiculo`
+-- Restrições para despejos de tabelas
 --
-ALTER TABLE `frota_veiculo`
-  MODIFY `id_frota` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `user`
+-- Limitadores para a tabela `usuarios`
 --
-ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id`) REFERENCES `endereco` (`id_endereco`),
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`id`) REFERENCES `rh` (`id_rh`),
+  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id`) REFERENCES `dados_usuario` (`id_dados_u`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

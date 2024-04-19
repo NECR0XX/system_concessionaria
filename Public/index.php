@@ -10,18 +10,34 @@
     <title>página inicial</title>
 </head>
 <body>
-<div class="container-header">
-    <p class="logo">SCAR</p>
-    <a href="" class="link-cadastro">Cadastrar</a>
-</div>
-        <img src="../Resources/Assets/S C A R.png">
+    <div class="cont-web">
+    <header>
+        <nav>
+            <div class="logo"><p class="logo-p">SCAR</p></div>
+            <div class="cad-button"><a href="" class="link-cadastro">Cadastrar</a></div>
+        </nav>
+    </header>
+    <section>
+        <div class="imgscar">
+            <img src="../Resources/Assets/S C A R.png">
+        </div>
+
         <br><br><br><br><br>
-
-<div class="container-subinfo"> <p class="subinfo">Ao lado, disponibilizamos um tutorial de como utilizar nosso sistema. Acesse o documento e/ou assista o vídeo a seguir</p>
-
-<a href=""><img class="img" src="../Resources/Assets/documento-de-texto.png"></a>
-<a href=""><img class="vid" src="../Resources/Assets/video-player.png"></a>
-
+        
+        <div class="container-subinfo flex"> 
+            <div class="lado-e flex">
+                <p class="subinfo">Ao lado, disponibilizamos um tutorial de como utilizar nosso sistema. Acesse o documento e/ou assista o vídeo a seguir</p>
+            </div>
+            <div class="lado-d flex">
+                <a href="">
+                    <img class="img" src="../Resources/Assets/documento-de-texto.png">
+                </a>
+                <a href="">
+                    <img class="vid" src="../Resources/Assets/video-player.png">
+                </a>
+            </div>
+        </div>
+</section>
 </div>
 </body>
 </html>

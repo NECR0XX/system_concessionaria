@@ -2,91 +2,207 @@
     session_start(); // Inicie a sessão no início do arquivo
 
     require_once '../config/config.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/endereco.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/dados.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/rh.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/user.php';
-
-    $userController = new UserController($pdo);
-
-    if (isset($_POST['nome_c']) && isset($_POST['rg']) && isset($_POST['cpf']) && isset($_POST['data_n']) && isset($_POST['nacionalidade']) && isset($_POST['estado_c']) && isset($_POST['endereco']) && isset($_POST['telefone']) && isset($_POST['email']) && isset($_POST['senha'])  && isset($_POST['cargo'])  && isset($_POST['data_ad']) && isset($_POST['tipo_contrato']) && isset($_POST['salario']) && isset($_POST['tipo_u'])) {
-        $userController->criarUser($_POST['nome_c'], $_POST['rg'], $_POST['cpf'], $_POST['data_n'], $_POST['nacionalidade'], $_POST['estado_c'], $_POST['endereco'], $_POST['telefone'], $_POST['email'], $_POST['senha'], $_POST['cargo'], $_POST['data_ad'], $_POST['tipo_contrato'], $_POST['salario'], $_POST['tipo_u']);
-        header('Location: register.php'); // Redirecione para a página de cadastro
-        exit();
-    }
+    require_once 'parametros/uf.php';
+    require_once 'parametros/endereco.php';
     ?>
 
             <form method="post">
-            <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome">
+                <label>Nome Completo</label>
+                <input type="text" placeholder="Nome Completo" name="nome">
 
-                <label for="rg">RG:</label>
-                <input type="text" name="rg" id="rg">
+                <label>Email</label>
+                <input type="email" placeholder="Email" name="email">
 
-                <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf">
+                <label>Senha</label>
+                <input type="text" placeholder="Senha" name="senha">
 
-                <label for="data_n">Data de Nascimento:</label>
-                <input type="date" name="data_n" id="data_n">
+                <label>Endereço</label>
+                <input type="text" placeholder="Endereço" name="endereco">
 
-                <label for="nacionalidade">Nacionalidade:</label>
-                <input type="text" name="nacionalidade" id="nacionalidade">
+                <label>Complemento</label>
+                <input type="text" placeholder="Complemento" name="complemento">
 
-                <label for="estado_c">Estado Civil:</label>
-                <input type="radio" name="estado_c" id="Solteiro">
-                <label>Solteiro</label>
-                <input type="radio" name="estado_c" id="Casado">
-                <label>Casado</label>
-                <input type="radio" name="estado_c" id="Separado">
-                <label>Separado</label>
-                <input type="radio" name="estado_c" id="Divorciádo">
-                <label>Divorciádo</label>
-                <input type="radio" name="estado_c" id="Viúvo">
-                <label>Viúvo</label>
+                <label>CEP</label>
+                <input type="text" placeholder="CEP" name="cep">
+
+                <label>Bairro</label>
+                <input type="text" placeholder="Bairro" name="bairro">
+
+                <label>Telefone</label>
+                <input type="text" placeholder="Telefone" name="telefone">
+
+                <label>Celular</label>
+                <input type="text" placeholder="Celular" name="celular">
+
+                <label>Nome do pai</label>
+                <input type="text" placeholder="Nome do pai" name="nome_pai">
+
+                <label>Nome da Mãe</label>
+                <input type="text" placeholder="Nome da Mãe" name="nome_mae">
+
+                <label>Naturalidade</label>
+                <input type="text" placeholder="Naturalidade" name="naturalidade">
+
+                <label>UF</label>
+                <select name="uf">
+                <option value="" disabled selected hidden>Selecione um UF</option>
+                    <?php
+                        foreach ($ufs as $sigla => $nome) {
+                            echo '<option value="' . $sigla . '">' . $sigla . '</option>';
+                        }
+                    ?>
+                </select>
+
+                <label>Data de Nascimento</label>
+                <input type="date" placeholder="Data de Nascimento" name="data_nascimento">
+
+                <label>Deficiente Físico</label>
+                <label>Sim</label>
+                <input type="radio" name="deficiente_fisico" value="sim">
+                <label>Não</label>
+                <input type="radio" name="deficiente_fisico" value="não">
+
+                <label>Raça/Cor</label>
+                <select name="raca_cor">
+                <option value="" disabled selected hidden>Selecione a raça/cor</option>
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="pardo">Pardo</option>
+                    <option value="amarelo">Amarelo</option>
+                    <option value="vermelho">Vermelho</option>
+                </select>
+
+                <label>Sexo</label>
+                <select name="sexo">
+                <option value="" disabled selected hidden>Selecione o sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+
+                <label>Estado Civíl</label>
+                <select name="estado_civil">
+                <option value="" disabled selected hidden>Selecione o Estado Civíl</option>
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Separado">Separado</option>
+                    <option value="Divorciado">Divorciado</option>
+                    <option value="Viúvo">Viúvo</option>
+                </select>
+
+                <label>Grau de Instrução</label>
+                <select name="grau_instrucao">
+                <option value="" disabled selected hidden>Selecione o Grau de Instrução</option>
+                    <option value="1 completo">Primeiro grau</option>
+                    <option value="1 incompleto">Primeiro grau incompleto</option>
+                    <option value="2">Segundo grau</option>
+                    <option value="2 incompleto">Segundo grau incompleto</option>
+                    <option value="3">Terceiro grau</option>
+                    <option value="3 incompleto">Terceiro grau incompleto</option>
+                </select>
+
+                <label>Numero CTPS</label>
+                <input type="text" placeholder="Numero CTPS" name="numero_ctps">
+
+                <label>serie</label>
+                <input type="number" placeholder="serie" name="serie">
+
+                <label>UF</label>
+                <select name="uf_rh">
+                <option value="" disabled selected hidden>Selecione um UF</option>
+                    <?php
+                        foreach ($ufs as $sigla => $nome) {
+                            echo '<option value="' . $sigla . '">' . $sigla . '</option>';
+                        }
+                    ?>
+                </select>
+       
+                <label>Data de Expedição do CTPS</label>
+                <input type="date" name="data_expedicao_ctps">
+
+                <label>PIS</label>
+                <input type="text" placeholder="PIS" name="pis">
+
+                <label>Data de Cadastro do PIS</label>
+                <input type="date" name="data_cadastro_pis">
+
+                <label>RG</label>
+                <input type="text" placeholder="RG" name="rg_rh">
+
+                <label>Data de Expedição do RG</label>
+                <input type="date" name="data_expedicao_rg">
+
+                <label>CPF</label>
+                <input type="text" placeholder="CPF" name="cpf_rh">
+
+                <label>Título de Eleitor</label>
+                <input type="text" placeholder="Título de eleitor" name="titulo_eleitor">
+
+                <label>Zona</label>
+                <input type="number" placeholder="Zona" name="zona">
+
+                <label>Seção</label>
+                <input type="number" placeholder="Seção" name="secao">
+
+                <label>Possui dependentes?</label>
+                <label>Sim</label>
+                <input type="radio" name="dependentes" value="sim, ">
+                <label>Não</label>
+                <input type="radio" name="dependentes" value="nao, ">
+                <input type="text" placeholder="Qual parentesco?" name="dependentes">
+                <label> Data de Nascimento do Dependente</label>
+                <input type="date" name="dependentes">
+
+                <label>Vale Transporte</label>
+                <label>Sim</label>
+                <input type="radio" name="vale_transporte" value="sim">
+                <label>Não</label>
+                <input type="radio" name="vale_transporte" value="nao">
+
+                <label>Horario de Trabalho</label>
+                <input type="number" placeholder="Horario de Trabalho" name="horario_trabalho">
+
+                <label>Entrada</label>
+                <input type="time" name="entrada">
+
+                <label>intervalo</label>
+                <input type="time" name="intervalo">
+
+                <label>Saída</label>
+                <input type="time" name="saida">
+
+                <label>Cargo</label>
+                <input type="text" placeholder="Cargo" name="cargo">
+
+                <label>Data de admissão</label>
+                <input type="date" name="data_admissao">
+
+                <label>Data do Exame Médico Admissional</label>
+                <input type="date" name="data_exame_medico">
+
+                <label>Possui Experiência?</label>
+                <label>Sim</label>
+                <input type="radio" name="experiencia" value="sim, ">
+                <label>Não</label>
+                <input type="radio" name="experiencia" value="nao">
+                <input type="text" placeholder="Quanto tempo" name="experiencia">
                 
-
-                <label for="endereco">Endereço:</label>
-                <input type="text" name="endereco" id="endereco">
-
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone">
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email">
-
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha">
-
-                <label for="cargo">Cargo:</label>
-                <input type="text" name="cargo" id="cargo">
-
-                <label for="data_ad">Data de Admissão:</label>
-                <input type="date" name="data_ad" id="data_ad">
-
-                <label for="tipo_contrato">Tipo de Contrato:</label>
-                <input type="text" name="tipo_contrato" id="tipo_contrato">
-
-                <label for="salario">Salário:</label>
-                <input type="number" name="salario" id="salario">
-
-                <label for="tipo_u">Tipo de Usuário:</label>
-                <input type="radio" name="tipo_u" id="1">
-                <label>Adiministrador</label>
-                <input type="radio" name="tipo_u" id="2">
+                <label>Tipo de Usuário</label>
+                <label>Administrador</label>
+                <input type="radio" name="tipo_u" value="1">
                 <label>Gerente</label>
-                <input type="radio" name="tipo_u" id="3">
-                <label>Funcionário</label>
-                <input type="radio" name="tipo_u" id="4">
-                <label>Comercial</label>
-                <input type="radio" name="tipo_u" id="5">
-                <label>Funcionário Comun</label>
-                
-                
-                <button type="submit">  Criar</button>
+                <input type="radio" name="tipo_u" value="2">
+                <label>Funcionário Comercial</label>
+                <input type="radio" name="tipo_u" value="3">
+                <label>Estagiário</label>
+                <input type="radio" name="tipo_u" value="4">
+                <label>Funcionário Comum</label>
+                <input type="radio" name="tipo_u" value="5">
 
-                <?php
-                if (isset($_SESSION['mensagem'])) {
-                    echo '<div class="alert"><p>' . $_SESSION['mensagem'] . '</p></div>';
-                    unset($_SESSION['mensagem']);
-                }
-                ?>
+                <button type="submit">  Criar</button>
             </form>
 
 </body>

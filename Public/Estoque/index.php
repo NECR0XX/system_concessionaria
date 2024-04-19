@@ -1,6 +1,6 @@
 <?php
-require_once 'Config/config.php';
-require_once 'App/Controller/EstoqueController.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Config/config.php';
+require_once '../../App/Controller/EstoqueController.php';
 
 $estoqueController = new EstoqueController($pdo);
 

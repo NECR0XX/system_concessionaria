@@ -1,5 +1,5 @@
 <?php
-require_once 'Model/EstoqueModel.php';
+require_once '../../App/Model/EstoqueModel.php';
 
 class EstoqueController {
     private $estoqueModel;

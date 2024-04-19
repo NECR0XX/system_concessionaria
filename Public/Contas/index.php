@@ -19,11 +19,12 @@ if (isset($_POST['fornecedores']) &&
     isset($_POST['pesquisa']) &&
     isset($_POST['garantia'])) 
 {
-    $contasController->criarconta($_POST['fornecedores'], $_POST['salarios_benef'], $_POST['aluguel'], $_POST['contas_publicas'], $_POST['impostos'], $_POST['emprestimos'], $_POST['manutencao'], $_POST['seguros'], $_POST['marketing'], $_POST['despesas_adm'], $_POST['logistica'], $_POST['pesquisa'], $_POST['garantia']);
+    $contasController->criarConta($_POST['fornecedores'], $_POST['salarios_benef'], $_POST['aluguel'], $_POST['contas_publicas'], $_POST['impostos'], $_POST['emprestimos'], $_POST['manutencao'], $_POST['seguros'], $_POST['marketing'], $_POST['despesas_adm'], $_POST['logistica'], $_POST['pesquisa'], $_POST['garantia']);
 }
 
 // Atualiza conta
-if (isset($_POST['fornecedores_atualizar']) && 
+if (isset($_POST['id_conta']) && 
+    isset($_POST['fornecedores_atualizar']) && 
     isset($_POST['salarios_benef_atualizar']) &&
     isset($_POST['aluguel_atualizar']) &&
     isset($_POST['contas_publicas_atualizar']) &&
@@ -37,7 +38,7 @@ if (isset($_POST['fornecedores_atualizar']) &&
     isset($_POST['pesquisa_atualizar']) &&
     isset($_POST['garantia_atualizar'])) 
 {
-    $contaController->atualizarconta($_POST['id_conta'], $_POST['fornecedores_atualizar'], $_POST['salarios_benef_atualizar'], $_POST['aluguel_atualizar'], $_POST['contas_publicas_atualizar'], $_POST['impostos_atualizar'], $_POST['emprestimos_atualizar'], $_POST['manutencao_atualizar'], $_POST['seguros_atualizar'], $_POST['marketing_atualizar'], $_POST['despesas_adm_atualizar'], $_POST['logistica_atualizar'], $_POST['pesquisa_atualizar'], $_POST['garantia_atualizar']);
+    $contasController->atualizarConta($_POST['id_conta'], $_POST['fornecedores_atualizar'], $_POST['salarios_benef_atualizar'], $_POST['aluguel_atualizar'], $_POST['contas_publicas_atualizar'], $_POST['impostos_atualizar'], $_POST['emprestimos_atualizar'], $_POST['manutencao_atualizar'], $_POST['seguros_atualizar'], $_POST['marketing_atualizar'], $_POST['despesas_adm_atualizar'], $_POST['logistica_atualizar'], $_POST['pesquisa_atualizar'], $_POST['garantia_atualizar']);
 }
 
 // Excluir conta

@@ -20,9 +20,9 @@ class ContaModel {
 
     // Implementar métodos para atualizar e excluir contaes
     public function atualizarConta($id_conta, $fornecedores, $salarios_benef, $aluguel, $contas_publicas, $impostos, $emprestimos, $manutencao, $seguros, $marketing, $despesas_adm, $logistica, $pesquisa, $garantia){
-        $sql = "UPDATE contas SET nome = ?, id_conta = ?, fornecedores = ?, salarios_benef = ?, aluguel = ?, contas_publicas = ?, impostos = ?, emprestimos = ?, manutencao = ?, seguros = ?, marketing = ?, despesas_adm = ?, logistica = ?, pesquisa = ?, garantia = ? WHERE id_conta = ?";
+        $sql = "UPDATE contas SET fornecedores = ?, salarios_benef = ?, aluguel = ?, contas_publicas = ?, impostos = ?, emprestimos = ?, manutencao = ?, seguros = ?, marketing = ?, despesas_adm = ?, logistica = ?, pesquisa = ?, garantia = ? WHERE id_conta = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$id_conta, $fornecedores, $salarios_benef, $aluguel, $contas_publicas, $impostos, $emprestimos, $manutencao, $seguros, $marketing, $despesas_adm, $logistica, $pesquisa, $garantia]);
+        $stmt->execute([$fornecedores, $salarios_benef, $aluguel, $contas_publicas, $impostos, $emprestimos, $manutencao, $seguros, $marketing, $despesas_adm, $logistica, $pesquisa, $garantia, $id_conta]);
     }
     
 

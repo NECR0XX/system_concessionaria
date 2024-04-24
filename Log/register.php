@@ -27,6 +27,9 @@
                 <label>Endereço</label>
                 <input type="text" placeholder="Endereço" name="endereco">
 
+                <label>Número</label>
+                <input type="number" placeholder="Número" name="numero">
+
                 <label>Complemento</label>
                 <input type="text" placeholder="Complemento" name="complemento">
 
@@ -35,6 +38,9 @@
 
                 <label>Bairro</label>
                 <input type="text" placeholder="Bairro" name="bairro">
+
+                <label>Cidade</label>
+                <input type="text" placeholder="Cidade" name="cidade">
 
                 <label>Telefone</label>
                 <input type="text" placeholder="Telefone" name="telefone">

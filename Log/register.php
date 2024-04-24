@@ -6,8 +6,12 @@
     require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/dados.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/rh.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/user.php';
+
     require_once 'parametros/uf.php';
     require_once 'parametros/endereco.php';
+    require_once 'parametros/dados.php';
+    require_once 'parametros/rh.php';
+    require_once 'parametros/user.php';
     ?>
 
             <form method="post">
@@ -23,6 +27,9 @@
                 <label>Endereço</label>
                 <input type="text" placeholder="Endereço" name="endereco">
 
+                <label>Número</label>
+                <input type="number" placeholder="Número" name="numero">
+
                 <label>Complemento</label>
                 <input type="text" placeholder="Complemento" name="complemento">
 
@@ -31,6 +38,9 @@
 
                 <label>Bairro</label>
                 <input type="text" placeholder="Bairro" name="bairro">
+
+                <label>Cidade</label>
+                <input type="text" placeholder="Cidade" name="cidade">
 
                 <label>Telefone</label>
                 <input type="text" placeholder="Telefone" name="telefone">
@@ -192,15 +202,15 @@
                 
                 <label>Tipo de Usuário</label>
                 <label>Administrador</label>
-                <input type="radio" name="tipo_u" value="1">
+                <input type="radio" name="tipo" value="1">
                 <label>Gerente</label>
-                <input type="radio" name="tipo_u" value="2">
+                <input type="radio" name="tipo" value="2">
                 <label>Funcionário Comercial</label>
-                <input type="radio" name="tipo_u" value="3">
+                <input type="radio" name="tipo" value="3">
                 <label>Estagiário</label>
-                <input type="radio" name="tipo_u" value="4">
+                <input type="radio" name="tipo" value="4">
                 <label>Funcionário Comum</label>
-                <input type="radio" name="tipo_u" value="5">
+                <input type="radio" name="tipo" value="5">
 
                 <button type="submit">  Criar</button>
             </form>

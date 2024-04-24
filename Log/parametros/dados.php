@@ -24,8 +24,6 @@ if (isset($_POST['nome_pai']) &&
         $_POST['estado_civil'],
         $_POST['grau_instrucao']
     );
-    header('Location: register.php'); // Redirecione para a página de cadastro
-    exit();
 }
 
 ?>

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Zen+Dots&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral para o corpo do formulário */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#FFFFF9, #D7D7D7,#D6D6D6,#CFCFCF,#CECECE);
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Alinha no centro horizontalmente */
+    align-items: center; /* Alinha no centro verticalmente */
+}
+
+.container {
+    max-width: 700px;
+    border: 1px solid #FF1430;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-row {
+    flex: 1;
+    margin-right: 10px;
+}
+
+label {
+    flex-basis: 150px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button a:hover {
+    text-decoration: underline;
+}
+
+.logo  {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    position: absolute; 
+    top: 60px; /* Distância do topo do container */
+    font-size: 45px;
+    color: #FF1430;
+    font-family: "Zen Dots", sans-serif;
+
+    
+}

@@ -17,6 +17,7 @@
         isset($_POST['vale_transporte']) &&
         isset($_POST['horario_trabalho']) &&
         isset($_POST['entrada']) &&
+        isset($_POST['intervalo']) &&
         isset($_POST['saida']) &&
         isset($_POST['cargo']) &&
         isset($_POST['data_admissao']) &&
@@ -40,6 +41,7 @@
             $_POST['vale_transporte'],
             $_POST['horario_trabalho'],
             $_POST['entrada'],
+            $_POST['intervalo'],
             $_POST['saida'],
             $_POST['cargo'],
             $_POST['data_admissao'],

@@ -9,8 +9,8 @@ class EnderecoController {
         $this->enderecoModel = new EnderecoModel($pdo);
     }
 
-    public function criarEndereco($endereco, $numero, $complemento, $cep, $bairro, $cid_enderecoade, $telefone, $celular) {
-        $this->enderecoModel->criarEndereco($endereco, $numero, $complemento, $cep, $bairro, $cid_enderecoade, $telefone, $celular);
+    public function criarEndereco($endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular) {
+        $this->enderecoModel->criarEndereco($endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular);
     }
 
     public function listarEnderecos() {
@@ -22,8 +22,8 @@ class EnderecoController {
         include '';
     }
 
-    public function atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cid_enderecoade, $telefone, $celular) {
-        $this->enderecoModel->atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cid_enderecoade, $telefone, $celular);
+    public function atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular) {
+        $this->enderecoModel->atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular);
     }
     
     public function excluirEndereco ($id_endereco) {

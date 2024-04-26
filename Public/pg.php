@@ -31,7 +31,7 @@
             <li><button class="links"><a href="Fiscal/crud.php">Controle fiscal</a></button></li>
             <li><button class="links"><a href="Estoque/crud.php">Controle de estoque</a></button></li>
             <li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>
-            <li><button class="links"><a href="#">Despesas</a></button></li>
+            <li><button class="links"><a href="Contas/crud.php">Despesas</a></button></li>
             <li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>
         </ul></div>
     </nav>

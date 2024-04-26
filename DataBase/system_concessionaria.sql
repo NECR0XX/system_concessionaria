@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Abr-2024 às 04:49
+-- Tempo de geração: 26-Abr-2024 às 12:51
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -40,21 +40,13 @@ CREATE TABLE `comercial` (
   `numero_chassi` int(11) NOT NULL,
   `data_venda` date NOT NULL,
   `tipo_transacao` int(11) NOT NULL,
-  `forma_paga` varchar(255) NOT NULL,
+  `foma_paga` varchar(255) NOT NULL,
   `nota_fiscal` int(11) NOT NULL,
   `valor_total` int(11) NOT NULL,
   `canal_venda` varchar(255) NOT NULL,
   `vendedor` varchar(255) NOT NULL,
   `estado_transacao` enum('aprovado','cancelado','em andamento') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `comercial`
---
-
-INSERT INTO `comercial` (`id_comercial`, `nome_cliente`, `telefone_cliente`, `email_cliente`, `identificacao_cliente`, `marca_car`, `modelo_car`, `caracteristicas_car`, `preco_car`, `numero_chassi`, `data_venda`, `tipo_transacao`, `forma_paga`, `nota_fiscal`, `valor_total`, `canal_venda`, `vendedor`, `estado_transacao`) VALUES
-(4, 'asd', '123', 'asd@asd', 'asd', 'asd', 'asd', 'asd', 23, 0, '2024-04-11', 0, 'asd', 0, 13, 'asd', 'asd', ''),
-(5, 'asd', '23', 'asd@asd', 'df', 'fg', 'gdg', 'df', 545, 0, '2024-05-03', 0, 'asd', 0, 213, 'asd', 'sad', '');
 
 -- --------------------------------------------------------
 
@@ -98,13 +90,6 @@ CREATE TABLE `dados_usuario` (
   `estado_civil` varchar(255) NOT NULL,
   `grau_instrucao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Extraindo dados da tabela `dados_usuario`
---
-
-INSERT INTO `dados_usuario` (`id_dados_u`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
-(1, 'gero', 'mãe', 'amarelo', 'BA', 2024, 'não', 'branco', 'feminino', 'Viúvo', '3');
 
 -- --------------------------------------------------------
 
@@ -168,13 +153,6 @@ CREATE TABLE `fiscal` (
   `observacoes` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Extraindo dados da tabela `fiscal`
---
-
-INSERT INTO `fiscal` (`id_fiscal`, `data`, `descricao`, `valor`, `tipo`, `cliente_fornecedor`, `nota_fiscal`, `imposto`, `metodo_pagamento`, `codigo_fiscal`, `contas_contabeis`, `localizacao`, `responsavel`, `status`, `observacoes`) VALUES
-(2, '2024-04-18 03:00:00', 'asd', 23, 'asd', 'asd', 0, 23, 'asd', 0, 0, 'asd', 'asd', 0, 'asd');
-
 -- --------------------------------------------------------
 
 --
@@ -222,7 +200,7 @@ CREATE TABLE `rh` (
   `zona` varchar(255) NOT NULL,
   `secao` varchar(255) NOT NULL,
   `dependentes` varchar(255) NOT NULL,
-  `vale_transposte` varchar(255) NOT NULL,
+  `vale_transporte` varchar(255) NOT NULL,
   `horario_trabalho` int(2) NOT NULL,
   `entrada` time NOT NULL,
   `intervalo` time NOT NULL,
@@ -252,18 +230,6 @@ CREATE TABLE `usuarios` (
 --
 
 --
--- Índices para tabela `comercial`
---
-ALTER TABLE `comercial`
-  ADD PRIMARY KEY (`id_comercial`);
-
---
--- Índices para tabela `contas`
---
-ALTER TABLE `contas`
-  ADD PRIMARY KEY (`id_conta`);
-
---
 -- Índices para tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
@@ -274,24 +240,6 @@ ALTER TABLE `dados_usuario`
 --
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`id_endereco`);
-
---
--- Índices para tabela `estoque`
---
-ALTER TABLE `estoque`
-  ADD PRIMARY KEY (`id_estoque`);
-
---
--- Índices para tabela `fiscal`
---
-ALTER TABLE `fiscal`
-  ADD PRIMARY KEY (`id_fiscal`);
-
---
--- Índices para tabela `frota_veiculo`
---
-ALTER TABLE `frota_veiculo`
-  ADD PRIMARY KEY (`id_frota`);
 
 --
 -- Índices para tabela `rh`
@@ -310,70 +258,28 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `comercial`
---
-ALTER TABLE `comercial`
-  MODIFY `id_comercial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `contas`
---
-ALTER TABLE `contas`
-  MODIFY `id_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  MODIFY `id_dados_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_dados_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `estoque`
---
-ALTER TABLE `estoque`
-  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `fiscal`
---
-ALTER TABLE `fiscal`
-  MODIFY `id_fiscal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `frota_veiculo`
---
-ALTER TABLE `frota_veiculo`
-  MODIFY `id_frota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `rh`
 --
 ALTER TABLE `rh`
-  MODIFY `id_rh` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id`) REFERENCES `endereco` (`id_endereco`),
-  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`id`) REFERENCES `rh` (`id_rh`),
-  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id`) REFERENCES `dados_usuario` (`id_dados_u`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

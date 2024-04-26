@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/model/rh.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/rh.php';
 
 class RhController {
     private $rhModel;

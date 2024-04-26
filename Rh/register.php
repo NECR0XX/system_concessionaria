@@ -2,16 +2,21 @@
     session_start(); // Inicie a sessão no início do arquivo
 
     require_once '../config/config.php';
-    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/endereco.php';
-    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/dados.php';
-    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/rh.php';
-    require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/controller/user.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/controller/endereco.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/controller/dados.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/controller/rh.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/controller/user.php';
 
     require_once 'parametros/uf.php';
     require_once 'parametros/endereco.php';
     require_once 'parametros/dados.php';
     require_once 'parametros/rh.php';
     require_once 'parametros/user.php';
+
+    include_once '../App/login-configs/config.php';
+    include_once '../App/login-configs/filtro.php';
+    include_once '../App/login-configs/logout.php';
+    include_once '../App/login-configs/verificacao.php';
     ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/model/user.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/user.php';
 
 class UserController {
     private $userModel;
@@ -29,5 +29,4 @@ class UserController {
     public function excluirUser ($id) {
         $this->userModel->excluirUser($id);
     }
-
 }

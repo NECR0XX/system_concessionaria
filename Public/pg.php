@@ -28,11 +28,11 @@
         <div>
         <ul>
             <li><button class="links"><a href="#">Controle de pessoas</a></button></li>
-            <li><button class="links"><a href="Fiscal/crud.php">Controle fiscal</a></button></li>
-            <li><button class="links"><a href="Estoque/crud.php">Controle de estoque</a></button></li>
-            <li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>
-            <li><button class="links"><a href="Contas/crud.php">Despesas</a></button></li>
-            <li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>
+            <li><button class="links"><a href="Fiscal/index.php">Controle fiscal</a></button></li>
+            <li><button class="links"><a href="Estoque/index.php">Controle de estoque</a></button></li>
+            <li><button class="links"><a href="Frota/index.php">Controle de frota</a></button></li>
+            <li><button class="links"><a href="Contas/index.php">Despesas</a></button></li>
+            <li><button class="links"><a href="Comercial/index.php">Comercial</a></button></li>
         </ul></div>
     </nav>
     </aside>

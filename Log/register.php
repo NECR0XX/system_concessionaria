@@ -45,8 +45,10 @@
             <div class="form-row">
                 <label>Endereço</label>
                 <input type="text" placeholder="Endereço" name="endereco">
-            </div>
-            <div class="form-row">
+
+                <label>Número</label>
+                <input type="number" placeholder="Número" name="numero">
+
                 <label>Complemento</label>
                 <input type="text" placeholder="Complemento" name="complemento">
             </div>
@@ -57,8 +59,10 @@
             <div class="form-row">
                 <label>Bairro</label>
                 <input type="text" placeholder="Bairro" name="bairro">
-            </div>
-            <div class="form-row">
+
+                <label>Cidade</label>
+                <input type="text" placeholder="Cidade" name="cidade">
+
                 <label>Telefone</label>
                 <input type="text" placeholder="Telefone" name="telefone">
             </div>

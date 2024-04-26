@@ -44,18 +44,37 @@ $fiscals = $fiscalController->listarFiscals();
     <h1>Gerenciamento Fiscal</h1>
     <form method="post">
         <input type="date" name="data" placeholder="Data" required>
-        <input type="text" name="descricao" placeholder="Descrição" required>
+        <textarea name="descricao" cols="30" rows="5" placeholder="Descrição" required></textarea>
         <input type="number" name="valor" placeholder="Valor" required>
-        <input type="text" name="tipo" placeholder="Tipo" required>
+        <select name="tipo" required>
+            <option value="">Tipo...</option>
+            <option value="Compra">Compra</option>
+            <option value="Venda">Venda</option>
+            <option value="Despesa">Despesa</option>
+            <option value="Receita">Receita</option>
+        </select>
         <input type="text" name="cliente_fornecedor" placeholder="Cliente/Fornecedor" required>
         <input type="text" name="nota_fiscal" placeholder="Nota Fiscal" required>
         <input type="number" name="imposto" placeholder="Imposto" required>
-        <input type="text" name="metodo_pagamento" placeholder="Método de Pagamento" required>
+        <select name="metodo_pagamento" required>
+            <option value="">Metódos de Pagamento</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Pix">Pix</option>
+            <option value="Boleto Bancário">Boleto Bancário</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Cartão de Debito">Cartão de Debito</option>
+        </select>
         <input type="text" name="codigo_fiscal" placeholder="Código Fiscal" required>
         <input type="text" name="contas_contabeis" placeholder="Contas Contábeis" required>
         <input type="text" name="localizacao" placeholder="Localização" required>
         <input type="text" name="responsavel" placeholder="Responsável" required>
-        <input type="text" name="status" placeholder="Status" required>
+        <select name="status"required>
+            <option value="">Status...</option>
+            <option value="">Status...</option>
+            <option value="">Status...</option>
+            <option value="">Status...</option>
+        </select>
+        <input type="text" name="" placeholder="Status" required>
         <input type="text" name="observacoes" placeholder="Observações" required>
         <button type="submit">Adicionar Conta</button>
     </form>

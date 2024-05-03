@@ -12,4 +12,6 @@ if (isset($_POST['nome']) &&
         $_POST['senha'],
         $_POST['tipo']);
 }
+
+
 ?>

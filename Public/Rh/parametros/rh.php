@@ -49,4 +49,33 @@
             $_POST['experiencia']
         );
     }
+
+    if (!empty($_POST)) {
+        $rhController = new RhController($pdo);
+
+        $rhController->listarRh(
+            $_POST['numero_ctps'],
+            $_POST['serie'],
+            $_POST['uf_rh'],
+            $_POST['data_expedicao_ctps'],
+            $_POST['pis'],
+            $_POST['data_cadastro_pis'],
+            $_POST['rg_rh'],
+            $_POST['data_expedicao_rg'],
+            $_POST['cpf_rh'],
+            $_POST['titulo_eleitor'],
+            $_POST['zona'],
+            $_POST['secao'],
+            $_POST['dependentes'],
+            $_POST['vale_transporte'],
+            $_POST['horario_trabalho'],
+            $_POST['entrada'],
+            $_POST['intervalo'],
+            $_POST['saida'],
+            $_POST['cargo'],
+            $_POST['data_admissao'],
+            $_POST['data_exame_medico'],
+            $_POST['experiencia']
+        );
+    }
 ?>

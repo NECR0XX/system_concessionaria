@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Log/app/model/dados.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/dados.php';
 
 class DadoUController {
     private $dadosUModel;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Abr-2024 às 12:51
+-- Tempo de geração: 26-Abr-2024 às 20:13
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -91,6 +91,23 @@ CREATE TABLE `dados_usuario` (
   `grau_instrucao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `dados_usuario`
+--
+
+INSERT INTO `dados_usuario` (`id_dados_u`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
+(13, '1', '1', '1', 'AC', 1, 'sim', 'branco', 'masculino', 'Solteiro', '1 completo'),
+(14, '1', '1', '1', 'AC', 1, 'sim', 'branco', 'masculino', 'Solteiro', '1 completo'),
+(15, '1', '1', '1', 'AC', 1, 'sim', 'branco', 'masculino', 'Solteiro', '1 completo'),
+(16, '1', '1', '1', 'AC', 1, 'sim', 'preto', 'masculino', 'Casado', '1 completo'),
+(17, '1', '1', '1', 'AC', 1, 'sim', 'branco', 'masculino', 'Solteiro', '1 incompleto'),
+(18, '1', '1', '1', 'AC', 1, 'não', 'preto', 'feminino', 'Separado', '2 incompleto'),
+(19, '1', '1', '1', 'AM', 1, 'não', 'branco', 'feminino', 'Casado', '1 incompleto'),
+(20, '1', '1', '1', 'AM', 1, 'não', 'branco', 'feminino', 'Casado', '1 incompleto'),
+(21, '1', '1', '1', 'AM', 1, 'não', 'branco', 'feminino', 'Casado', '1 incompleto'),
+(22, '1', '1', '1', 'AM', 1, 'não', 'branco', 'feminino', 'Casado', '1 incompleto'),
+(23, '1', '1', '1', 'AM', 1, 'não', 'branco', 'feminino', 'Casado', '1 incompleto');
+
 -- --------------------------------------------------------
 
 --
@@ -108,6 +125,27 @@ CREATE TABLE `endereco` (
   `telefone` varchar(255) NOT NULL,
   `celular` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+INSERT INTO `endereco` (`id_endereco`, `endereco`, `numero`, `complemento`, `cep`, `bairro`, `cidade`, `telefone`, `celular`) VALUES
+(2, '', 0, '', 0, '', '', '', ''),
+(3, '', 0, '', 0, '', '', '', ''),
+(4, '', 0, '', 0, '', '', '', ''),
+(5, '', 0, '', 0, '', '', '', ''),
+(6, '1', 1, '1', 1, '1', '1', '1', '1'),
+(7, '1', 1, '1', 1, '1', '1', '1', '1'),
+(8, '1', 1, '1', 1, '1', '1', '1', '1'),
+(9, '1', 1, '1', 1, '1', '1', '1', '1'),
+(10, '1', 1, '1', 1, '1', '1', '1', '1'),
+(11, '1', 1, '1', 1, '1', '1', '1', '1'),
+(12, '1', 1, '1', 1, '1', '1', '1', '1'),
+(13, '1', 1, '1', 1, '1', '1', '1', '1'),
+(14, '1', 1, '1', 1, '1', '1', '1', '1'),
+(15, '1', 1, '1', 1, '1', '1', '1', '1'),
+(16, '1', 1, '1', 1, '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -211,6 +249,23 @@ CREATE TABLE `rh` (
   `experiencia` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `rh`
+--
+
+INSERT INTO `rh` (`id_rh`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao_ctps`, `pis`, `data_cadastro_pis`, `rg_rh`, `data_expedicao_rg`, `cpf_rh`, `titulo_eleitor`, `zona`, `secao`, `dependentes`, `vale_transporte`, `horario_trabalho`, `entrada`, `intervalo`, `saida`, `cargo`, `data_admissao`, `data_exame_medico`, `experiencia`) VALUES
+(19, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-01-01', '1'),
+(20, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-01-01', '1'),
+(21, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-11-01', '1'),
+(22, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-01-01', '1'),
+(23, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-01-01', '1'),
+(24, '1', '1', 'AL', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0002-02-02', 'nao', 2, '02:02:00', '02:02:00', '02:02:00', '2', '0002-02-02', '0002-02-02', '.'),
+(25, '1', '1', 'AM', '0001-01-01', 1, '0001-11-01', 1, '0001-01-01', 1, 1, '1', '1', '0003-02-01', 'sim', 1, '03:03:00', '04:04:00', '04:04:00', '4', '0004-04-04', '0004-04-04', '4'),
+(26, '1', '1', 'AM', '0001-01-01', 1, '0001-11-01', 1, '0001-01-01', 1, 1, '1', '1', '0003-02-01', 'sim', 1, '03:03:00', '04:04:00', '04:04:00', '4', '0004-04-04', '0004-04-04', '4'),
+(27, '1', '1', 'AM', '0001-01-01', 1, '0001-11-01', 1, '0001-01-01', 1, 1, '1', '1', '0003-02-01', 'sim', 1, '03:03:00', '04:04:00', '04:04:00', '4', '0004-04-04', '0004-04-04', '4'),
+(28, '1', '1', 'AM', '0001-01-01', 1, '0001-11-01', 1, '0001-01-01', 1, 1, '1', '1', '0003-02-01', 'sim', 1, '03:03:00', '04:04:00', '04:04:00', '4', '0004-04-04', '0004-04-04', '4'),
+(29, '1', '1', 'AM', '0001-01-01', 1, '0001-11-01', 1, '0001-01-01', 1, 1, '1', '1', '0003-02-01', 'sim', 1, '03:03:00', '04:04:00', '04:04:00', '4', '0004-04-04', '0004-04-04', '4');
+
 -- --------------------------------------------------------
 
 --
@@ -224,6 +279,18 @@ CREATE TABLE `usuarios` (
   `senha` varchar(255) NOT NULL,
   `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
+(9, 'Adm', 'adm@gmail.com', '1234', 1),
+(11, 'user', 'user@gmail.com', '1234', 0),
+(12, 'gerente', 'gerente@gmail.com', '1234', 2),
+(13, 'comercial', 'comercial@gmail.com', '1234', 3),
+(14, 'Rh', 'rh@gmail.com', '1234', 4),
+(15, 'Comum', 'comum@gmail.com', '1234', 5);
 
 --
 -- Índices para tabelas despejadas
@@ -261,25 +328,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  MODIFY `id_dados_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_dados_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `rh`
 --
 ALTER TABLE `rh`
-  MODIFY `id_rh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_rh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

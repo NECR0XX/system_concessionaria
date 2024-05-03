@@ -1,3 +1,8 @@
+<?php 
+    require_once '../login-configs/config.php';
+    require_once '../login-configs/filtros.php';
+    require_once '../login-configs/verificacao.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,20 +31,20 @@
         <p>AMBIENTES</p>
     </div>
         <div>
-        <ul>
-            <li><button class="links"><a href="#">Controle de pessoas</a></button></li>
-            <li><button class="links"><a href="Fiscal/index.php">Controle fiscal</a></button></li>
-            <li><button class="links"><a href="Estoque/index.php">Controle de estoque</a></button></li>
-            <li><button class="links"><a href="Frota/index.php">Controle de frota</a></button></li>
-            <li><button class="links"><a href="Contas/index.php">Despesas</a></button></li>
-            <li><button class="links"><a href="Comercial/index.php">Comercial</a></button></li>
-        </ul></div>
+            <ul>
+                <?php $filtrosNav = FiltroNav(); ?>
+            </ul>
+        </div>
+
     </nav>
     </aside>
     <main>
         <div class="container-main">
             <p class="titulo">SELECIONE UM AMBIENTE</p>
             <p class="subtitulo">e configure como quiser!</p>
+            <div class="logout">
+            <li><button class="links"><a href="../login-configs/logout.php">Logout</a></button></li>
+        </div>
         </div>
 </main>
 </body>

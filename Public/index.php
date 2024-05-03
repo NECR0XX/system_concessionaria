@@ -1,12 +1,16 @@
+<?php
+        require_once '../login-configs/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Resources/Css/pagcss.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">-->
     <title>SCAR - Home</title>
 </head>
 <body>
@@ -14,7 +18,17 @@
     <header>
         <nav>
             <div class="logo"><p class="logo-p">SCAR</p></div>
-            <div class="cad-button"><a href="" class="link-cadastro">Cadastrar</a></div>
+            <div class="cad-button">
+                <?php 
+    
+                    if(!isset($_SESSION['usuarioEmail']) or $_SESSION['usuarioEmail'] == '') {
+                        echo '<a href="login.php" class="link-cadastro">Entre</a>';
+                    }
+                    else {
+                        echo '<a href="../login-configs/logout.php" class="link-cadastro">Sair</a>';
+                    }
+                ?>
+            </div>
         </nav>
     </header>
     <section>

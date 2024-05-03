@@ -19,7 +19,7 @@ class UserController {
 
     public function exibirListaUsers() {
         $users = $this->userModel->listarUsers();
-        include '';
+        include '../view/listar_user.php';
     }
 
     public function atualizarUser($id, $nome, $email, $senha, $tipo) {

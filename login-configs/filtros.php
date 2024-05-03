@@ -9,7 +9,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="#">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="../Rh/rh.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/rh.php">RH</a></button></li>';
     }
 
     //GERENTE

@@ -1,6 +1,6 @@
 <?php
-include '../../config/config.php';
-include '../controller/rh.php';
+include_once 'C:/xampp/htdocs/system_concessionaria/Config/config.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/rh.php';
 $rhController = new RhController($pdo);
 ?>
 <!DOCTYPE html>

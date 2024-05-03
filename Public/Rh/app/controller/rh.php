@@ -19,7 +19,7 @@ class RhController {
 
     public function exibirListaRhs() {
         $rhs = $this->rhModel->listarRhs();
-        include '';
+        include '../view/listar_rh.php';
     }
 
     public function atualizarRh($id, $numero_ctps, $serie, $uf_rh, $data_expedicao_ctps, $pis, $data_cadastro_pis, $rg_rh, $data_expedicao_rg, $cpf_rh, $titulo_eleitor, $zona, $secao, $dependentes, $vale_transporte, $horario_trabalho, $entrada, $intervalo, $saida, $cargo, $data_admissao, $data_exame_medico, $experiencia) {

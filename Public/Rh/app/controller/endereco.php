@@ -19,7 +19,7 @@ class EnderecoController {
 
     public function exibirListaEnderecos() {
         $enderecos = $this->enderecoModel->listarEnderecos();
-        include '';
+        include '../view/listar_endereco.php';
     }
 
     public function atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular) {

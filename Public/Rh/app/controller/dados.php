@@ -19,7 +19,7 @@ class DadoUController {
 
     public function exibirListaDadoUs() {
         $dadosUs = $this->dadosUModel->listarDadoUs();
-        include '';
+        include '../view/listar_dados.php';
     }
 
     public function atualizarDadoU($id_dados_u, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao) {

@@ -28,6 +28,7 @@
 <body>
 
 <p class="logo">SCAR</p>
+<a href="register.php"><img src="../Resources/Assets/seta2.png"></a>
 
     <div class="container"> 
 
@@ -102,6 +103,6 @@
                     </form>
 
                     </div>
-    
+                    <a href="part3.php"><img src="../Resources/Assets/seta.png"></a>
 </body>
 </html>

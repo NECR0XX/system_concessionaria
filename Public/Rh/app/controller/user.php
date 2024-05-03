@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/user.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/model/user.php';
 
 class UserController {
     private $userModel;

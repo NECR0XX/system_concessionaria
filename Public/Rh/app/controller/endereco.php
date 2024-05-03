@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/endereco.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/model/endereco.php';
 
 class EnderecoController {
     private $enderecoModel;

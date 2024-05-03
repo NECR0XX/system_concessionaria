@@ -1,5 +1,8 @@
 <?php 
     //Adm=1 Gerente=2 Func Comer=3 Rh=4 Func Comum=5
+
+    //FILTRO DE LINK PARA O ACESSO NA PÁGINA INICIAL
+
 function FiltroNav() {
     //ADM
     if ($_SESSION['usuarioNiveisAcessoId'] === 1) {
@@ -9,7 +12,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="#">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="../Rh/rh.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 
     //GERENTE
@@ -20,7 +23,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="#">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="Rh/rh.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 
     //Funcionario Comercial
@@ -34,7 +37,7 @@ function FiltroNav() {
 
     //RH
     elseif($_SESSION['usuarioNiveisAcessoId'] === 4) {        
-        echo '<li><button class="links"><a href="Rh/rh.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
         }
 
     //Funcionario Comum
@@ -45,8 +48,88 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="Frota/crud.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="#">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="Comercial/crud.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="Rh/rh.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 }
 
+//FILTRO DE ACESSO AS PÁGINAS
+
+function FiltroPessoas() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 3){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroComercial() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroContas() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroEmpresa() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroEstoque() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroFiscal() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroFrota() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 4){ 
+        header('Location: ../pg.php');
+    }
+}
+
+function FiltroRh() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] === 3){ 
+        header('Location: ../pg.php');
+    }
+}
+
+//FILTRO DE ACESSO AS FUNÇÔES
+
+function FiltroCadastro() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] != 5){ 
+        echo '<button type="submit">Criar</button>';
+    }
+}
+
+function FiltroAtualizar() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] != 5){ 
+        echo '';
+    }
+}
+
+function FiltroDeletar() {
+
+    if ($_SESSION['usuarioNiveisAcessoId'] != 5){ 
+        echo '';
+    }
+}
 ?>

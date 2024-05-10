@@ -5,7 +5,7 @@
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/user.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/endereco.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/dados.php';
-    require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/rh.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/Rh.php';
 
     require_once 'parametros/uf.php';
     require_once 'parametros/user.php';
@@ -22,9 +22,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylereg.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">-->
     <title>Document</title>
 </head>
 <body>

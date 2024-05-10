@@ -6,13 +6,24 @@ class controleRhModel {
         $this->pdo = $pdo;
     }
 
-    // Model para criar rh
-    public function criarControleRh($nome, $email, $senha, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao, $numero_ctps, $serie, $uf_rh, $data_expedicao_ctps, $pis, $data_cadastro_pis, $rg_rh, $data_expedicao_rg, $cpf_rh, $titulo_eleitor, $zona, $secao, $dependentes, $vale_transporte, $horario_trabalho, $entrada, $intervalo, $saida, $cargo, $data_admissao, $data_exame_medico, $experiencia, $tipo) {
-        $sql = "INSERT INTO usuarios
-        INNER JOIN rh
-        INNER JOIN endereco
-        INNER JOIN dados_usuario ($nome, $email, $senha, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao, $numero_ctps, $serie, $uf_rh, $data_expedicao_ctps, $pis, $data_cadastro_pis, $rg_rh, $data_expedicao_rg, $cpf_rh, $titulo_eleitor, $zona, $secao, $dependentes, $vale_transporte, $horario_trabalho, $entrada, $intervalo, $saida, $cargo, $data_admissao, $data_exame_medico, $experiencia, $tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    // Model para listar o controle de Rh 
+    public function listarControleRhs() {
+        $sql = "SELECT dados_usuario.*, endereco.*, rh.*, usuarios.*
+                FROM usuarios
+                INNER JOIN dados_usuario ON usuarios.id = dados_usuario.usuario_id
+                INNER JOIN endereco ON usuarios.id = endereco.usuario_id
+                INNER JOIN rh ON usuarios.id = rh.usuario_id";
+        
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function deletarControleRh($usuario_id) {
+        $sql = "DELETE FROM usuarios
+        INNER JOIN dados_usuario ON usuarios.id = dados_usuario.usuario_id
+        INNER JOIN endereco ON usuarios.id = endereco.usuario_id
+        INNER JOIN rh ON usuarios.id = rh.usuario_id WHERE usuarios.id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([]);
+        $stmt->execute([$usuario_id]);
     }
 }

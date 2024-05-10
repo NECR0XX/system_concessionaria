@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Maio-2024 às 19:12
+-- Tempo de geração: 10-Maio-2024 às 20:43
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -78,7 +78,7 @@ CREATE TABLE `contas` (
 --
 
 CREATE TABLE `dados_usuario` (
-  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
   `nome_pai` varchar(255) NOT NULL,
   `nome_mae` varchar(255) NOT NULL,
   `naturalidade` varchar(255) NOT NULL,
@@ -95,9 +95,8 @@ CREATE TABLE `dados_usuario` (
 -- Extraindo dados da tabela `dados_usuario`
 --
 
-INSERT INTO `dados_usuario` (`id`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
-(1, '1', '1', '1', 'AC', 1, 'sim', 'branco', 'masculino', 'Solteiro', '1 incompleto'),
-(2, '1', '1', '1', 'RR', 1, 'sim', 'pardo', 'masculino', 'Viúvo', '1 completo');
+INSERT INTO `dados_usuario` (`usuario_id`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
+(49, 'Pai', 'Mãe', 'Naturalidade', 'UF', 1990, 'sim', 'branco', 'masculino', 'solteiro', '3 completo');
 
 -- --------------------------------------------------------
 
@@ -106,7 +105,7 @@ INSERT INTO `dados_usuario` (`id`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`,
 --
 
 CREATE TABLE `endereco` (
-  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
   `endereco` varchar(255) NOT NULL,
   `numero` int(4) NOT NULL,
   `complemento` varchar(255) NOT NULL,
@@ -121,9 +120,8 @@ CREATE TABLE `endereco` (
 -- Extraindo dados da tabela `endereco`
 --
 
-INSERT INTO `endereco` (`id`, `endereco`, `numero`, `complemento`, `cep`, `bairro`, `cidade`, `telefone`, `celular`) VALUES
-(1, '1', 1, '1', 1, '1', '1', '1', '1'),
-(2, '1', 1, '1', 1, '1', '1', '1', '1');
+INSERT INTO `endereco` (`usuario_id`, `endereco`, `numero`, `complemento`, `cep`, `bairro`, `cidade`, `telefone`, `celular`) VALUES
+(49, 'Endereço', 123, 'Complemento', 12345, 'Bairro', 'Cidade', '123456789', '987654321');
 
 -- --------------------------------------------------------
 
@@ -202,7 +200,7 @@ CREATE TABLE `frota_veiculo` (
 --
 
 CREATE TABLE `rh` (
-  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
   `numero_ctps` varchar(11) NOT NULL,
   `serie` varchar(255) NOT NULL,
   `uf_rh` varchar(2) NOT NULL,
@@ -231,9 +229,8 @@ CREATE TABLE `rh` (
 -- Extraindo dados da tabela `rh`
 --
 
-INSERT INTO `rh` (`id`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao_ctps`, `pis`, `data_cadastro_pis`, `rg_rh`, `data_expedicao_rg`, `cpf_rh`, `titulo_eleitor`, `zona`, `secao`, `dependentes`, `vale_transporte`, `horario_trabalho`, `entrada`, `intervalo`, `saida`, `cargo`, `data_admissao`, `data_exame_medico`, `experiencia`) VALUES
-(1, '1', '1', 'AC', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'sim', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-11-01', '1'),
-(2, '1', '1', 'RN', '0001-01-01', 1, '0001-01-01', 1, '0001-01-01', 1, 1, '1', '1', '0001-01-01', 'nao', 1, '01:01:00', '01:01:00', '01:01:00', '1', '0001-01-01', '0001-01-01', '1');
+INSERT INTO `rh` (`usuario_id`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao_ctps`, `pis`, `data_cadastro_pis`, `rg_rh`, `data_expedicao_rg`, `cpf_rh`, `titulo_eleitor`, `zona`, `secao`, `dependentes`, `vale_transporte`, `horario_trabalho`, `entrada`, `intervalo`, `saida`, `cargo`, `data_admissao`, `data_exame_medico`, `experiencia`) VALUES
+(49, '987654321', '123', 'UF', '2020-01-01', 1234567890, '2020-01-01', 123456789, '2020-01-01', 123456, 1234567890, '123', '456', 'sim', 'sim', 8, '08:00:00', '12:00:00', '18:00:00', 'Cargo', '2020-01-01', '2020-01-01', 'experiencia');
 
 -- --------------------------------------------------------
 
@@ -254,8 +251,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
-(41, 'adm', 'adm@gmail.com', '1234', 1),
-(43, 'comum', 'comum@gmail.com', '1234', 5);
+(49, 'vi', 'exemplo@email.com', 'senha123', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -265,19 +261,19 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
 -- Índices para tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`usuario_id`);
 
 --
 -- Índices para tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`usuario_id`);
 
 --
 -- Índices para tabela `rh`
 --
 ALTER TABLE `rh`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`usuario_id`);
 
 --
 -- Índices para tabela `usuarios`
@@ -293,25 +289,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de tabela `rh`
 --
 ALTER TABLE `rh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

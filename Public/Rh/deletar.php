@@ -2,12 +2,14 @@
 require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
 $controleRhController = new controleRhController($pdo);
-var_dump($resposta);
-if (isset($_POST['deletar'])) {
-    if ($_POST['deletar'] === 'sim') {
+
+if (isset($_POST['resposta'])) {
+    if ($_POST['resposta'] === 'sim') {
+        $id = $_GET['id'];
         // Se 'sim' foi selecionado, deletar o usuário
         $resposta = $_POST['resposta']; // Você precisa passar o ID do usuário aqui
-        $controleRhController->deletarControleRh($resposta);
+        $controleRhController->deletarControleRh($id);
+        
     }
     header('Location: index.php');
     exit;

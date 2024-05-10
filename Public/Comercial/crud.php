@@ -46,7 +46,6 @@ $comerciais = $comercialController->listarComercials();
     <title>Gerenciamento de Comercial</title>
 </head>
 <body>
-    <a href="../pg.php">Home</a>
     <h2>Controle de Comercial</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="nome_cliente" placeholder="Nome do Cliente" required>

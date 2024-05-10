@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/endereco.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/model/endereco.php';
 
 class EnderecoController {
     private $enderecoModel;
@@ -19,7 +19,7 @@ class EnderecoController {
 
     public function exibirListaEnderecos() {
         $enderecos = $this->enderecoModel->listarEnderecos();
-        include '../view/listar_endereco.php';
+        include '';
     }
 
     public function atualizarEndereco($id_endereco, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular) {

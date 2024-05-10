@@ -1,5 +1,5 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/Rh/app/model/user.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/model/user.php';
 
 class UserController {
     private $userModel;
@@ -19,7 +19,7 @@ class UserController {
 
     public function exibirListaUsers() {
         $users = $this->userModel->listarUsers();
-        include '../view/listar_user.php';
+        include '';
     }
 
     public function atualizarUser($id, $nome, $email, $senha, $tipo) {

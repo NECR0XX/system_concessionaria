@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once '../../Config/config.php';
 require_once '../../App/Controller/EstoqueController.php';
+require_once '../../login-configs/filtros.php';
 
 $estoqueController = new EstoqueController($pdo);
 $estoques = $estoqueController->listarEstoque();
@@ -10,9 +12,36 @@ $estoques = $estoqueController->listarEstoque();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+<aside>
+       <nav>
+        <p class="logo">SCAR
+    </p>
+        
+    <div class="search-container">
+    <form action="" method="get">
+        <input type="text" class="search-box" name="q" placeholder="">
+        <img src="../Resources/Assets/lupa.svg">
+    </form>
+</div>
+    <div class="ambiente">
+        <p>AMBIENTES</p>
+    </div>
+        <div>
+            <ul>
+            <?php $filtrosNav = FiltroNav(); ?>
+
+            </ul>
+        </div>
+
+    </nav>
+    </aside>
 <a href="../pg.php">Home</a>
 
     <fieldset>

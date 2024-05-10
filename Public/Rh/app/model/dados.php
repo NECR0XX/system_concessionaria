@@ -15,14 +15,14 @@ class DadoUModel {
 
 
     // Model para listar Endereço
-    public function listarDado_Us() {
+    public function listarDadoUs() {
         $sql = "SELECT * FROM dados_usuario";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Model para atualizar Endereço
-    public function atualizarDado_U($id_dado_u, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao){
+    public function atualizarDadoU($id_dado_u, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao){
         $sql = "UPDATE dados_usuario SET nome_pai = ?, nome_mae = ?, naturalidade = ?, uf = ?, data_nascimento = ?, raca_cor = ?, sexo = ?, estado_civil = ?, grau_instrucao = ?
          WHERE id_dado_u = ?";
         $stmt = $this->pdo->prepare($sql);
@@ -30,7 +30,7 @@ class DadoUModel {
     }
     
     // Model para deletar Endereço
-    public function excluirDado_U($id_dado_u) {
+    public function excluirDadoU($id_dado_u) {
         $sql = "DELETE FROM dados_usuario WHERE id_dado_u = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id_dado_u]);

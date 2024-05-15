@@ -53,7 +53,7 @@
     if (!empty($_POST)) {
         $rhController = new RhController($pdo);
 
-        $rhController->listarRh(
+        $rhController->criarRh(
             $_POST['numero_ctps'],
             $_POST['serie'],
             $_POST['uf_rh'],

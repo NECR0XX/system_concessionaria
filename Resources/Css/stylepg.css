@@ -122,3 +122,11 @@ main {
     margin-top: 50px;
     color: #696969;
 }
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha quando não há espaço suficiente */
+}
+.content {
+    width: 85%; /* O restante do espaço disponível */
+}

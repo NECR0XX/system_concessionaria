@@ -6,7 +6,6 @@ class controleRhModel {
         $this->pdo = $pdo;
     }
     
-
     // Model para listar o controle de Rh 
     public function listarControleRhs() {
         $sql = "SELECT dados_usuario.*, endereco.*, rh.*, usuarios.*

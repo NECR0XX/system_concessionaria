@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Maio-2024 às 20:43
+-- Tempo de geração: 15-Maio-2024 às 16:08
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -79,16 +79,16 @@ CREATE TABLE `contas` (
 
 CREATE TABLE `dados_usuario` (
   `usuario_id` int(11) NOT NULL,
-  `nome_pai` varchar(255) NOT NULL,
-  `nome_mae` varchar(255) NOT NULL,
-  `naturalidade` varchar(255) NOT NULL,
-  `uf` varchar(255) NOT NULL,
-  `data_nascimento` int(11) NOT NULL,
-  `deficiente_fisico` varchar(255) NOT NULL,
-  `raca_cor` varchar(255) NOT NULL,
-  `sexo` varchar(255) NOT NULL,
-  `estado_civil` varchar(255) NOT NULL,
-  `grau_instrucao` varchar(255) NOT NULL
+  `nome_pai` varchar(255) DEFAULT NULL,
+  `nome_mae` varchar(255) DEFAULT NULL,
+  `naturalidade` varchar(255) DEFAULT NULL,
+  `uf` varchar(255) DEFAULT NULL,
+  `data_nascimento` varchar(255) DEFAULT NULL,
+  `deficiente_fisico` varchar(255) DEFAULT NULL,
+  `raca_cor` varchar(255) DEFAULT NULL,
+  `sexo` varchar(255) DEFAULT NULL,
+  `estado_civil` varchar(255) DEFAULT NULL,
+  `grau_instrucao` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `dados_usuario` (
 --
 
 INSERT INTO `dados_usuario` (`usuario_id`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
-(49, 'Pai', 'Mãe', 'Naturalidade', 'UF', 1990, 'sim', 'branco', 'masculino', 'solteiro', '3 completo');
+(50, '1', '1', '1', 'RN', '0001-01-01', 'não', 'branco', 'masculino', 'Solteiro', '1 completo');
 
 -- --------------------------------------------------------
 
@@ -106,14 +106,14 @@ INSERT INTO `dados_usuario` (`usuario_id`, `nome_pai`, `nome_mae`, `naturalidade
 
 CREATE TABLE `endereco` (
   `usuario_id` int(11) NOT NULL,
-  `endereco` varchar(255) NOT NULL,
-  `numero` int(4) NOT NULL,
-  `complemento` varchar(255) NOT NULL,
-  `cep` int(11) NOT NULL,
-  `bairro` varchar(255) NOT NULL,
-  `cidade` varchar(255) NOT NULL,
-  `telefone` varchar(255) NOT NULL,
-  `celular` varchar(255) NOT NULL
+  `endereco` varchar(255) DEFAULT NULL,
+  `numero` varchar(255) DEFAULT NULL,
+  `complemento` varchar(255) DEFAULT NULL,
+  `cep` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `cidade` varchar(255) DEFAULT NULL,
+  `telefone` varchar(255) DEFAULT NULL,
+  `celular` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -121,7 +121,7 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`usuario_id`, `endereco`, `numero`, `complemento`, `cep`, `bairro`, `cidade`, `telefone`, `celular`) VALUES
-(49, 'Endereço', 123, 'Complemento', 12345, 'Bairro', 'Cidade', '123456789', '987654321');
+(50, '1', '1', '1', '1', '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -201,28 +201,28 @@ CREATE TABLE `frota_veiculo` (
 
 CREATE TABLE `rh` (
   `usuario_id` int(11) NOT NULL,
-  `numero_ctps` varchar(11) NOT NULL,
-  `serie` varchar(255) NOT NULL,
-  `uf_rh` varchar(2) NOT NULL,
-  `data_expedicao_ctps` date NOT NULL,
-  `pis` int(11) NOT NULL,
-  `data_cadastro_pis` date NOT NULL,
-  `rg_rh` int(11) NOT NULL,
-  `data_expedicao_rg` date NOT NULL,
-  `cpf_rh` int(11) NOT NULL,
-  `titulo_eleitor` int(11) NOT NULL,
-  `zona` varchar(255) NOT NULL,
-  `secao` varchar(255) NOT NULL,
-  `dependentes` varchar(255) NOT NULL,
-  `vale_transporte` varchar(255) NOT NULL,
-  `horario_trabalho` int(2) NOT NULL,
-  `entrada` time NOT NULL,
-  `intervalo` time NOT NULL,
-  `saida` time NOT NULL,
-  `cargo` varchar(255) NOT NULL,
-  `data_admissao` date NOT NULL,
-  `data_exame_medico` date NOT NULL,
-  `experiencia` varchar(255) NOT NULL
+  `numero_ctps` varchar(11) DEFAULT NULL,
+  `serie` varchar(255) DEFAULT NULL,
+  `uf_rh` varchar(2) DEFAULT NULL,
+  `data_expedicao_ctps` text DEFAULT NULL,
+  `pis` varchar(255) DEFAULT NULL,
+  `data_cadastro_pis` varchar(255) DEFAULT NULL,
+  `rg_rh` varchar(255) DEFAULT NULL,
+  `data_expedicao_rg` varchar(255) DEFAULT NULL,
+  `cpf_rh` varchar(255) DEFAULT NULL,
+  `titulo_eleitor` varchar(255) DEFAULT NULL,
+  `zona` varchar(255) DEFAULT NULL,
+  `secao` varchar(255) DEFAULT NULL,
+  `dependentes` varchar(255) DEFAULT NULL,
+  `vale_transporte` varchar(255) DEFAULT NULL,
+  `horario_trabalho` varchar(255) DEFAULT NULL,
+  `entrada` varchar(255) DEFAULT NULL,
+  `intervalo` varchar(255) DEFAULT NULL,
+  `saida` varchar(255) DEFAULT NULL,
+  `cargo` varchar(255) DEFAULT NULL,
+  `data_admissao` varchar(255) DEFAULT NULL,
+  `data_exame_medico` varchar(255) DEFAULT NULL,
+  `experiencia` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -230,7 +230,7 @@ CREATE TABLE `rh` (
 --
 
 INSERT INTO `rh` (`usuario_id`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao_ctps`, `pis`, `data_cadastro_pis`, `rg_rh`, `data_expedicao_rg`, `cpf_rh`, `titulo_eleitor`, `zona`, `secao`, `dependentes`, `vale_transporte`, `horario_trabalho`, `entrada`, `intervalo`, `saida`, `cargo`, `data_admissao`, `data_exame_medico`, `experiencia`) VALUES
-(49, '987654321', '123', 'UF', '2020-01-01', 1234567890, '2020-01-01', 123456789, '2020-01-01', 123456, 1234567890, '123', '456', 'sim', 'sim', 8, '08:00:00', '12:00:00', '18:00:00', 'Cargo', '2020-01-01', '2020-01-01', 'experiencia');
+(50, '1', '1', 'AP', '0001-01-01', '1', '0001-01-01', '1', '0001-01-01', '1', '1', '1', '1', '0001-01-01', 'nao', '1', '01:01', '01:01', '01:01', '1', '0001-01-01', '0001-01-01', '1');
 
 -- --------------------------------------------------------
 
@@ -240,9 +240,9 @@ INSERT INTO `rh` (`usuario_id`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
   `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -251,7 +251,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
-(49, 'vi', 'exemplo@email.com', 'senha123', 0);
+(50, 'adm', 'adm@gmail.com', '1234', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -289,25 +289,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de tabela `rh`
 --
 ALTER TABLE `rh`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

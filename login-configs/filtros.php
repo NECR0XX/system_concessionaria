@@ -11,7 +11,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="../Frota/index.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="../Contas/index.php">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="../Comercial/index.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="../index.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 
     //GERENTE
@@ -21,7 +21,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="../Frota/index.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="../Contas/index.php">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="../Comercial/index.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="../index.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 
     //Funcionario Comercial
@@ -45,7 +45,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="../Frota/index.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="../Contas/index.php">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="../Comercial/index.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="../index.php">RH</a></button></li>';
+        echo '<li><button class="links"><a href="Rh/index.php">RH</a></button></li>';
     }
 }
 

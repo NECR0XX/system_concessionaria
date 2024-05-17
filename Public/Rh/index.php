@@ -155,9 +155,10 @@ $controles = $controleRhModel->listarControleRhs();
     <!-- Modal de confirmação -->
     <div id="myModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p>Tem certeza que deseja deletar este usuário?</p>
-        <button id="confirmDeleteBtn">Confirmar</button>
+        <p>Tem certeza que deseja excluir o item?</p>
+        <div class="op">
+        <button class="confirm" id="confirmDeleteBtn">Sim</button>
+        <button class="close" onclick="closeModal()">Cancelar</button></div>
     </div>
 </div>
 <script>

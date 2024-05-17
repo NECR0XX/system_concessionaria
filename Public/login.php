@@ -1,4 +1,6 @@
-
+<?php
+require_once '../login-configs/verificacaoEmpresa.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

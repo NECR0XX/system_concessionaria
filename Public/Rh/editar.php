@@ -5,7 +5,8 @@
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
     require_once 'parametros/uf.php';
     require_once 'parametros/controleRh.php';
-    //include_once '../login-configs/verificacao.php';
+    require_once '../login-configs/verificacaoEmpresa.php';
+    require_once '../login-configs/verificacao.php';
 
     $controleRhController = new controleRhController($pdo);
     

@@ -1,39 +1,19 @@
 <?php
 require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
-$controleRhController = new controleRhController($pdo);
+require_once '../login-configs/verificacaoEmpresa.php';
+require_once '../login-configs/verificacao.php';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $controleRhController = new controleRhController($pdo);
 
-if (isset($_POST['resposta'])) {
-    if ($_POST['resposta'] === 'sim') {
-        $id = $_GET['id'];
-        // Se 'sim' foi selecionado, deletar o usuário
-        $resposta = $_POST['resposta']; // Você precisa passar o ID do usuário aqui
+    try {
         $controleRhController->deletarControleRh($id);
-        
+        echo "success";
+    } catch (Exception $e) {
+        echo "error";
     }
-    header('Location: index.php');
-    exit;
+} else {
+    echo "error";
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post">
-        <label>Deseja deletar esse usuario?</label><br>
-
-        <label>sim</label>
-        <input type="radio" name="resposta" value="sim"><br>
-
-        <label>não</label>
-        <input type="radio" name="resposta" value="nao"><br>
-
-        <button type="submit">Pronto</button>
-    </form>
-</body>
-</html>

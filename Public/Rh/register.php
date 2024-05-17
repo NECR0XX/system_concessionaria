@@ -13,6 +13,8 @@
     require_once 'parametros/dados.php';
     require_once 'parametros/rh.php';
 
+    require_once '../login-configs/verificacaoEmpresa.php';
+    require_once '../login-configs/verificacao.php';
     //include_once '../login-configs/verificacao.php';
     ?>
 

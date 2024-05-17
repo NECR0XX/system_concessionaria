@@ -1,5 +1,6 @@
 <?php
-        require_once '../login-configs/config.php';
+    require_once '../login-configs/config.php';
+    require_once '../login-configs/verificacaoEmpresa.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +19,9 @@
     <header>
         <nav>
             <div class="logo"><p class="logo-p">SCAR</p></div>
+            <div class="cad-button">
+            <a href="../login-configs/logout-empresa.php">Sair</a>
+            </div>
             <div class="cad-button">
                 <?php 
 

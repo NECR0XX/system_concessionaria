@@ -1,5 +1,9 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
+session_start();
+
+require_once '../../login-configs/filtros.php';
+require_once '../../Config/config.php';
+
 require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
 $controleRhModel = new controleRhModel($pdo);
 $controles = $controleRhModel->listarControleRhs();
@@ -9,13 +13,43 @@ $controles = $controleRhModel->listarControleRhs();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
+    <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <title>SCAR - Home</title>
     <title>RH</title>
 </head>
 <body>
-    <a href="register.php">Cadastrar</a>
+<aside>
+       <nav>
+        <p class="logo">SCAR
+    </p>
+        
+    <div class="search-container">
+    <form action="" method="get">
+        <input type="text" class="search-box" name="q" placeholder="">
+        <img src="../Resources/Assets/lupa.svg">
+    </form>
+</div>
+    <div class="ambiente">
+        <p>AMBIENTES</p>
+    </div>
+        <div>
+            <ul>
+            <?php $filtrosNav = FiltroNav(); ?>
 
-    <?php foreach($controles as $controlerh): ?>
-        <table border="1">
+            </ul>
+        </div>
+
+    </nav>
+    </aside>
+    <div class="content-wrapper">
+        <div class="content">
+            <a href="../pg.php">Home</a>
+            <?php foreach($controles as $controlerh): ?>
+                <table border="1">
             <tr>
                 <td>Id</td>
                 <td>Nome</td>
@@ -111,10 +145,52 @@ $controles = $controleRhModel->listarControleRhs();
                 <td><?php echo $controlerh['data_exame_medico']; ?></td>
                 <td><?php echo $controlerh['experiencia']; ?></td>
                 <td><?php echo $controlerh['tipo']; ?></td>
-                <td><?php echo '<a href="deletar.php?id=' . $controlerh['id'] . '">'?>Deletar</a></td>
+                <td><a href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">Deletar</a></td>
                 <td><?php echo '<a href="editar.php?id=' . $controlerh['id'] . '">'?>Editar</a></td>
             </tr>
         </table>
     <?php endforeach; ?>
+    </div>
+    </div>
+    <!-- Modal de confirmação -->
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>Tem certeza que deseja excluir o item?</p>
+        <div class="op">
+        <button class="confirm" id="confirmDeleteBtn">Sim</button>
+        <button class="close" onclick="closeModal()">Cancelar</button></div>
+    </div>
+</div>
+<script>
+    function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function confirmDelete(id) {
+        openModal();
+        document.getElementById("confirmDeleteBtn").onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "deletar.php?id=" + id, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (xhr.responseText == "success") {
+                        window.location.href = "index.php";
+                    } else {
+                        alert("Falha ao excluir o usuário.");
+                    }
+                }
+            };
+            xhr.send();
+        };
+    }
+</script>
+
 </body>
 </html>
+

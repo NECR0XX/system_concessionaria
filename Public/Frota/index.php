@@ -3,8 +3,8 @@ session_start();
 require_once '../../Config/config.php';
 require_once '../../App/Controller/FrotaController.php';
 require_once '../../login-configs/filtros.php';
-require_once '../login-configs/verificacaoEmpresa.php';
-require_once '../login-configs/verificacao.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
 
 $frotaController = new FrotaController($pdo);
 $frotas = $frotaController->listarFrotas();

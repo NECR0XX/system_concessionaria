@@ -1,8 +1,6 @@
 <?php
 require_once '../../Config/config.php';
 require_once '../../App/Controller/ComercialController.php';
-require_once '../login-configs/verificacaoEmpresa.php';
-require_once '../login-configs/verificacao.php';
 
 $comercialController = new ComercialController($pdo);
 

@@ -14,16 +14,16 @@ include_once 'Public/Rh/parametros/uf.php';
     <a href="login.php">Login</a>
 
 <?php
-// Consulta rápida para verificar se há algum registro no banco de dados
-$query = "SELECT COUNT(*) as total FROM empresa";
-$stmt = $pdo->prepare($query);
-$stmt->execute();
-$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Consulta rápida para verificar se há algum registro no banco de dados
+    $query = "SELECT COUNT(*) as total FROM empresa";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Se houver pelo menos um registro no banco de dados, redirecione para 'index.php'
-if ($resultado['total'] != 1) {
-    echo '<a href="cadastro.php">Cadastro</a>';
-}
+    // Se houver pelo menos um registro no banco de dados, redirecione para 'index.php'
+    if ($resultado['total'] != 1) {
+        echo '<a href="cadastro.php">Cadastro</a>';
+    }
 ?>
 </body>
 </html>

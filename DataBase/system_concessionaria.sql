@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2024 às 16:08
+-- Tempo de geração: 22-Maio-2024 às 12:23
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -97,6 +97,33 @@ CREATE TABLE `dados_usuario` (
 
 INSERT INTO `dados_usuario` (`usuario_id`, `nome_pai`, `nome_mae`, `naturalidade`, `uf`, `data_nascimento`, `deficiente_fisico`, `raca_cor`, `sexo`, `estado_civil`, `grau_instrucao`) VALUES
 (50, '1', '1', '1', 'RN', '0001-01-01', 'não', 'branco', 'masculino', 'Solteiro', '1 completo');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `empresa_id` int(11) NOT NULL,
+  `numero_inscricao` varchar(255) NOT NULL,
+  `data_abertura` varchar(255) NOT NULL,
+  `razao_social` varchar(255) NOT NULL,
+  `nome_fantasia` varchar(255) NOT NULL,
+  `cnpj` varchar(255) NOT NULL,
+  `porte` varchar(255) NOT NULL,
+  `capital_social` varchar(255) NOT NULL,
+  `lagradouro` varchar(255) NOT NULL,
+  `cep` varchar(255) NOT NULL,
+  `bairro_restrito` varchar(255) NOT NULL,
+  `municipio` varchar(255) NOT NULL,
+  `numero` varchar(255) NOT NULL,
+  `complemento` varchar(255) NOT NULL,
+  `telefone` varchar(255) NOT NULL,
+  `uf` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -264,6 +291,12 @@ ALTER TABLE `dados_usuario`
   ADD PRIMARY KEY (`usuario_id`);
 
 --
+-- Índices para tabela `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`empresa_id`);
+
+--
 -- Índices para tabela `endereco`
 --
 ALTER TABLE `endereco`
@@ -290,6 +323,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `dados_usuario`
   MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de tabela `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `empresa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`

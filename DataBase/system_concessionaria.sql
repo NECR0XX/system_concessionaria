@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2024 às 15:15
+-- Tempo de geração: 22-Maio-2024 às 19:06
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -40,13 +40,20 @@ CREATE TABLE `comercial` (
   `numero_chassi` int(11) NOT NULL,
   `data_venda` date NOT NULL,
   `tipo_transacao` int(11) NOT NULL,
-  `foma_paga` varchar(255) NOT NULL,
+  `forma_paga` varchar(255) NOT NULL,
   `nota_fiscal` int(11) NOT NULL,
   `valor_total` int(11) NOT NULL,
   `canal_venda` varchar(255) NOT NULL,
   `vendedor` varchar(255) NOT NULL,
   `estado_transacao` enum('aprovado','cancelado','em andamento') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `comercial`
+--
+
+INSERT INTO `comercial` (`id_comercial`, `nome_cliente`, `telefone_cliente`, `email_cliente`, `identificacao_cliente`, `marca_car`, `modelo_car`, `caracteristicas_car`, `preco_car`, `numero_chassi`, `data_venda`, `tipo_transacao`, `forma_paga`, `nota_fiscal`, `valor_total`, `canal_venda`, `vendedor`, `estado_transacao`) VALUES
+(2, 'adsasd', '213123', 'adsa@asda', 'sadasd', 'asd', 'sad', 'sda', 213, 0, '2024-05-22', 0, 'Dinheiro', 0, 132, 'sad', 'ads', 'cancelado');
 
 -- --------------------------------------------------------
 
@@ -70,6 +77,13 @@ CREATE TABLE `contas` (
   `pesquisa` int(11) NOT NULL COMMENT 'Investimento em pesquisa e desenvolvimento de novas tecnologias, design de veículos, segurança, eficiência energética, entre outros.',
   `garantia` int(11) NOT NULL COMMENT 'Reservas para cobrir custos de garantia de veículos, bem como serviços de manutenção e reparo oferecidos aos clientes após a compra.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `contas`
+--
+
+INSERT INTO `contas` (`id_conta`, `fornecedores`, `salarios_benef`, `aluguel`, `contas_publicas`, `impostos`, `emprestimos`, `manutencao`, `seguros`, `marketing`, `despesas_adm`, `logistica`, `pesquisa`, `garantia`) VALUES
+(2, 12123, 123132, 123123, 12323, 12312, 213312, 321321, 46645, 466, 45, 645, 656, 4654);
 
 -- --------------------------------------------------------
 
@@ -130,7 +144,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`empresa_id`, `numero_inscricao`, `data_abertura`, `razao_social`, `nome_fantasia`, `cnpj`, `porte`, `capital_social`, `lagradouro`, `cep`, `bairro_restrito`, `municipio`, `numero`, `complemento`, `telefone`, `uf`, `empresa_email`, `senha`) VALUES
-(3, '1', '0001-01-01', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'AC', 'empresa@gmail.com', '1234');
+(3, '1', '0001-01-01', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'DF', 'empresa@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -177,6 +191,13 @@ CREATE TABLE `estoque` (
   `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `estoque`
+--
+
+INSERT INTO `estoque` (`id_estoque`, `numero_referencia`, `categoria`, `quantidade`, `preco_unitario`, `fornecedor`, `localizacao`, `reabastecimento_minimo`, `validade`, `observacoes`, `imagem`) VALUES
+(3, 123123, 'adadsas', 23123, 23123, 'addad', 'asdasd', 213123, '2024-11-09', 'sadasdasdsa', '../../Resources/Assets/Uploads/sankhya.PNG');
+
 -- --------------------------------------------------------
 
 --
@@ -185,11 +206,10 @@ CREATE TABLE `estoque` (
 
 CREATE TABLE `fiscal` (
   `id_fiscal` int(11) NOT NULL,
-  `data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `descricao` text NOT NULL,
+  `data` date NOT NULL DEFAULT current_timestamp(),
   `valor` int(11) NOT NULL,
   `tipo` varchar(255) NOT NULL COMMENT 'Indicando se a transação é uma venda, compra, despesa, receita, etc. ',
-  `cliente_fornecedor` text NOT NULL COMMENT 'O nome e informações de contato do cliente ou fornecedor envolvido na transação. ',
+  `cliente_fornecedor` varchar(255) NOT NULL COMMENT 'O nome e informações de contato do cliente ou fornecedor envolvido na transação. ',
   `nota_fiscal` int(11) NOT NULL COMMENT 'O número de fatura ou nota fiscal associado à transação.',
   `imposto` int(11) NOT NULL,
   `metodo_pagamento` varchar(255) NOT NULL,
@@ -197,9 +217,16 @@ CREATE TABLE `fiscal` (
   `contas_contabeis` int(11) NOT NULL COMMENT ' A conta contábil específica associada à transação, para fins de contabilidade e relatórios financeiros. ',
   `localizacao` varchar(255) NOT NULL,
   `responsavel` varchar(255) NOT NULL COMMENT 'O funcionário ou departamento responsável pela transação. ',
-  `status` tinyint(1) NOT NULL,
+  `status` enum('Concluída','Pendente','Cancelada') NOT NULL,
   `observacoes` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `fiscal`
+--
+
+INSERT INTO `fiscal` (`id_fiscal`, `data`, `valor`, `tipo`, `cliente_fornecedor`, `nota_fiscal`, `imposto`, `metodo_pagamento`, `codigo_fiscal`, `contas_contabeis`, `localizacao`, `responsavel`, `status`, `observacoes`) VALUES
+(3, '2024-05-16', 12312, 'Despesa', 'sadsd', 21312, 2133, 'Dinheiro', 213123, 231213, 'asdasd', 'adasd', 'Concluída', 'dasdsdadsa');
 
 -- --------------------------------------------------------
 
@@ -226,6 +253,13 @@ CREATE TABLE `frota_veiculo` (
   `observacoes` text NOT NULL,
   `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `frota_veiculo`
+--
+
+INSERT INTO `frota_veiculo` (`id_frota`, `marca_modelo`, `ano_fabricacao`, `placa`, `numero_chassi`, `tipo_veiculo`, `tipo_combustivel`, `quilometragem`, `data_prox_rev`, `historico_manutencao`, `seguro`, `documentacao`, `localizacao_atual`, `responsavel`, `status`, `observacoes`, `imagem`) VALUES
+(2, 'sadasd', 23123, 'asdasd', 0, 'hbchj', 'b', 213, '2024-05-24', 0, 0, 'adsas', 'adad', 'dads', 0, 'asdadadads', '../../Resources/Assets/Uploads/sankhya.PNG');
 
 -- --------------------------------------------------------
 
@@ -292,6 +326,18 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
 --
 
 --
+-- Índices para tabela `comercial`
+--
+ALTER TABLE `comercial`
+  ADD PRIMARY KEY (`id_comercial`);
+
+--
+-- Índices para tabela `contas`
+--
+ALTER TABLE `contas`
+  ADD PRIMARY KEY (`id_conta`);
+
+--
 -- Índices para tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
@@ -310,6 +356,24 @@ ALTER TABLE `endereco`
   ADD PRIMARY KEY (`usuario_id`);
 
 --
+-- Índices para tabela `estoque`
+--
+ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`id_estoque`);
+
+--
+-- Índices para tabela `fiscal`
+--
+ALTER TABLE `fiscal`
+  ADD PRIMARY KEY (`id_fiscal`);
+
+--
+-- Índices para tabela `frota_veiculo`
+--
+ALTER TABLE `frota_veiculo`
+  ADD PRIMARY KEY (`id_frota`);
+
+--
 -- Índices para tabela `rh`
 --
 ALTER TABLE `rh`
@@ -324,6 +388,18 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `comercial`
+--
+ALTER TABLE `comercial`
+  MODIFY `id_comercial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `contas`
+--
+ALTER TABLE `contas`
+  MODIFY `id_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `dados_usuario`
@@ -342,6 +418,24 @@ ALTER TABLE `empresa`
 --
 ALTER TABLE `endereco`
   MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de tabela `estoque`
+--
+ALTER TABLE `estoque`
+  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `fiscal`
+--
+ALTER TABLE `fiscal`
+  MODIFY `id_fiscal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `frota_veiculo`
+--
+ALTER TABLE `frota_veiculo`
+  MODIFY `id_frota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `rh`

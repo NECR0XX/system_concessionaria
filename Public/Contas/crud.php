@@ -43,7 +43,7 @@ $contas = $contasController->listarcontas();
     <title>Gerenciamento de Contas</title>
 </head>
 <body>
-    <a href="../pg.php">Home</a>
+    <a href="index.php">Home</a>
     <h2>Controle de Contas</h2>
     <form method="post">
         <input type="number" name="fornecedores" placeholder="Fornecedores" required>

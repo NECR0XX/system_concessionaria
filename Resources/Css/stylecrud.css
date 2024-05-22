@@ -41,6 +41,8 @@ form input[type="text"],
 form input[type="number"],
 form input[type="email"],
 form input[type="date"],
+textarea,
+textarea,
 form select {
     font-size: 17px;
     width: 100%;

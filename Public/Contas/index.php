@@ -8,6 +8,10 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 $contasController = new contasController($pdo);
 $contas = $contasController->listarcontas();
+
+if (isset($_POST['excluir_id_conta'])) {
+    $contasController->excluirconta($_POST['excluir_id_conta']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

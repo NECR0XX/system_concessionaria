@@ -1,0 +1,17 @@
+{
+    "name": "46169836822/system_concessionaria",
+    "autoload": {
+        "psr-4": {
+            "46169836822\\SystemConcessionaria\\": "Public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NECR0XX",
+            "email": "carronananiasx@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}

@@ -8,6 +8,10 @@ require_once '../login-configs/verificacao.php';
 
 $comercialController = new ComercialController($pdo);
 $comerciais = $comercialController->listarComercials();
+
+if (isset($_POST['excluir_id_comercial'])) {
+    $comercialController->excluirComercial($_POST['excluir_id_comercial']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

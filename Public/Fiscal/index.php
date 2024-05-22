@@ -8,6 +8,10 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 $fiscalController = new FiscalController($pdo);
 $fiscals = $fiscalController->listarFiscals();
+
+if (isset($_POST['excluir_id_fiscal'])) {
+    $fiscalController->excluirFiscal($_POST['excluir_id_fiscal']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,13 +48,11 @@ $fiscals = $fiscalController->listarFiscals();
 
     </nav>
     </aside>
-<a href="../pg.php">Home</a>
-
 <fieldset>
     <legend><h2>Lista Fiscal</h2></legend>
         <ul>
         <?php foreach ($fiscals as $fiscal): ?>
-            <li><strong>ID:</strong> <?php echo $fiscal['id_fiscal']; ?> - <strong>Data:</strong> <?php echo $fiscal['data']; ?> - <strong>Descrição:</strong> <?php echo $fiscal['descricao']; ?> 
+            <li><strong>ID:</strong> <?php echo $fiscal['id_fiscal']; ?> - <strong>Data:</strong> <?php echo $fiscal['data']; ?> 
             - <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?> - <strong>Tipo:</strong> <?php echo $fiscal['tipo']; ?> - <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?> 
             - <strong>Nota Fiscal:</strong> <?php echo $fiscal['nota_fiscal']; ?> - <strong>Imposto:</strong> R$<?php echo $fiscal['imposto']; ?> - <strong>Método de Pagamento:</strong> <?php echo $fiscal['metodo_pagamento']; ?> 
             - <strong>Código Fiscal:</strong> <?php echo $fiscal['codigo_fiscal']; ?> - <strong>Contas Contábeis:</strong> <?php echo $fiscal['contas_contabeis']; ?> - <strong>Localização:</strong> <?php echo $fiscal['localizacao']; ?> 
@@ -70,7 +72,6 @@ $fiscals = $fiscalController->listarFiscals();
         </select>
         <button type="submit">Excluir</button>
         <button><a href="crud.php">Criar</a></button>
-
     </form>
 </body>
 </html>

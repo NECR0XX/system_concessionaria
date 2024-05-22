@@ -8,6 +8,10 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 $estoqueController = new EstoqueController($pdo);
 $estoques = $estoqueController->listarEstoque();
+
+if (isset($_POST['excluir_id_estoque'])) {
+    $estoqueController->excluirEstoque($_POST['excluir_id_estoque']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2024 às 12:30
+-- Tempo de geração: 22-Maio-2024 às 15:15
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -186,6 +186,7 @@ CREATE TABLE `estoque` (
 CREATE TABLE `fiscal` (
   `id_fiscal` int(11) NOT NULL,
   `data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `descricao` text NOT NULL,
   `valor` int(11) NOT NULL,
   `tipo` varchar(255) NOT NULL COMMENT 'Indicando se a transação é uma venda, compra, despesa, receita, etc. ',
   `cliente_fornecedor` text NOT NULL COMMENT 'O nome e informações de contato do cliente ou fornecedor envolvido na transação. ',

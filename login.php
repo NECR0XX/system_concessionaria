@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>Login</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="post" action="Public/index.php">
         <label>email:</label><br>
         <input type="email" id="empresa_email" name="empresa_email"><br>
         <label>Senha:</label><br>

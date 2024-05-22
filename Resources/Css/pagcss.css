@@ -147,4 +147,25 @@ img {
         max-width: 100px; 
         margin: 0 1vw; 
     }
+
+    .container-subinfo .subinfo{
+      font-size: 13px;
+      margin-top: -70px;
+      width: 166px;
+    }
+    .container-subinfo .img{
+        margin-top: -100px;
+        width: 60px;
+        height: 60px;
+    }
+    .container-subinfo .vid{
+        margin-top: -100px;
+        width: 60px;
+        height: 80px;
+        margin-right: 100px;
+        padding-left: 0px;
+    }
+    .lado-e{
+        margin-bottom: 50px;
+    }
 }

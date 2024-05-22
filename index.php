@@ -11,7 +11,8 @@ include_once 'Public/Rh/parametros/uf.php';
     <title>Document</title>
 </head>
 <body>
-    <a href="login.php">Entrar</a>
+    <a href="login.php">Login</a>
+
 <?php
     // Consulta rápida para verificar se há algum registro no banco de dados
     $query = "SELECT COUNT(*) as total FROM empresa";

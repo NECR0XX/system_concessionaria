@@ -47,7 +47,7 @@ $estoques = $estoqueController->listarEstoque();
     <title>CRUD com MVC e PDO</title>
 </head>
 <body>
-    <a href="../pg.php">Home</a>
+    <a href="index.php">Home</a>
     <h2>Controle do Estoque</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="number" name="numero_referencia" placeholder="Número de Referência" required>
@@ -58,7 +58,7 @@ $estoques = $estoqueController->listarEstoque();
         <input type="text" name="localizacao" placeholder="Localização" required>
         <input type="number" name="reabastecimento_minimo" placeholder="Reabastecimento Mínimo" required>
         <input type="date" name="validade" placeholder="Validade" required>
-        <input type="text" name="observacoes" placeholder="Observações" required>
+        <textarea name="observacoes" placeholder="Observações" required></textarea>
         <input type="file" name="imagem" accept="image/*" placeholder="Imagem" required>
         <button type="submit">Adicionar Conta</button>
     </form>

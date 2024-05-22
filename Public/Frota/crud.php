@@ -53,7 +53,7 @@ $frotas = $frotaController->listarFrotas();
     <title>Gerenciamento de Frota de Veículos</title>
 </head>
 <body>
-    <a href="../pg.php">Home</a>
+    <a href="index.php">Home</a>
     <h2>Controle de Frota de Veículos</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="marca_modelo" placeholder="Marca e Modelo" required>

@@ -8,6 +8,10 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 $frotaController = new FrotaController($pdo);
 $frotas = $frotaController->listarFrotas();
+
+if (isset($_POST['excluir_id_frota'])) {
+    $frotaController->excluirFrota($_POST['excluir_id_frota']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

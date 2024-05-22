@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_fiscal = $_GET['id'];
 
     $data = $_POST['data'];
-    $descricao = $_POST['descricao'];
     $valor = $_POST['valor'];
     $tipo = $_POST['tipo'];
     $cliente_fornecedor = $_POST['cliente_fornecedor'];
@@ -24,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $status = $_POST['status'];
     $observacoes = $_POST['observacoes'];
 
-    $stmt = $pdo->prepare('UPDATE fiscal SET data = ?, descricao = ?, valor = ?, tipo = ?, cliente_fornecedor = ?, nota_fiscal = ?, imposto = ?, metodo_pagamento = ?, codigo_fiscal = ?, contas_contabeis = ?, localizacao = ?, responsavel = ?, status = ?, observacoes = ? WHERE id_fiscal = ?');
+    $stmt = $pdo->prepare('UPDATE fiscal SET data = ?, valor = ?, tipo = ?, cliente_fornecedor = ?, nota_fiscal = ?, imposto = ?, metodo_pagamento = ?, codigo_fiscal = ?, contas_contabeis = ?, localizacao = ?, responsavel = ?, status = ?, observacoes = ? WHERE id_fiscal = ?');
     $stmt->execute([$data, $descricao, $valor, $tipo, $cliente_fornecedor, $nota_fiscal, $imposto, $metodo_pagamento, $codigo_fiscal, $contas_contabeis, $localizacao, $responsavel, $status, $observacoes, $id_fiscal]);
     header('Location: ../../Public/Fiscal/index.php');
     exit;
@@ -47,7 +46,6 @@ if (!$appointment) {
 }
 
 $data = $appointment['data'];
-$descricao = $appointment['descricao'];
 $valor = $appointment['valor'];
 $tipo = $appointment['tipo'];
 $cliente_fornecedor = $appointment['cliente_fornecedor'];
@@ -79,9 +77,6 @@ $observacoes = $appointment['observacoes'];
 
     <label for="data">Data:</label>
     <input type="date" name="data" value="<?php echo $data; ?>" required><br>
-
-    <label for="descricao">Descrição:</label>
-    <input type="text" name="descricao" value="<?php echo $descricao; ?>" required><br>
 
     <label for="valor">Valor:</label>
     <input type="number" name="valor" value="<?php echo $valor; ?>" required><br>

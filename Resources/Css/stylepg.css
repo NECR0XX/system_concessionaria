@@ -137,12 +137,13 @@ main {
     main {
         width:250px;
         float: right;
+        position:absolute;
         height: 300px;
+        margin-left: 126px;
+        margin-top: 200px;
     }
 
-    .container-main{
-        margin-bottom: 932.8px;
-    }
+
 
     aside {
         width:158px;

@@ -121,25 +121,31 @@ main {
 @media screen and (max-width:768px) {
 
     .titulo {
-        font-size: 15px;
-        margin-bottom: 60px;
+        font-size: 17px;
+        margin-bottom: 40px;
+        margin-left: 35px;
     }
     .subtitulo {      
-        font-size: 15px;
-        margin-bottom: 20px;
-        
+        font-size: 17px;
+        margin-bottom: 40px;
+        margin-left: 35px;
     }
+
     .logout .links a {
         font-size: 15px;
     }
+
     main {
         width:250px;
         float: right;
+        position:absolute;
         height: 300px;
+        margin-left: 126px;
+        margin-top: 200px;
     }
-    .container-main{
-        margin-bottom: 932.8px;
-    }
+
+
+
     aside {
         width:158px;
     }
@@ -157,6 +163,7 @@ main {
         width:20px;
         margin-left: 15px;
         margin-top: 45px;
+        font-size: 17px;
     }
     .ambiente {
         top: 50px;

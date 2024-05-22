@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2024 às 12:30
+-- Tempo de geração: 22-Maio-2024 às 14:12
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -121,9 +121,16 @@ CREATE TABLE `empresa` (
   `complemento` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
   `uf` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `empresa_email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `empresa`
+--
+
+INSERT INTO `empresa` (`empresa_id`, `numero_inscricao`, `data_abertura`, `razao_social`, `nome_fantasia`, `cnpj`, `porte`, `capital_social`, `lagradouro`, `cep`, `bairro_restrito`, `municipio`, `numero`, `complemento`, `telefone`, `uf`, `empresa_email`, `senha`) VALUES
+(3, '1', '0001-01-01', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'AC', 'empresa@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -328,7 +335,7 @@ ALTER TABLE `dados_usuario`
 -- AUTO_INCREMENT de tabela `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `empresa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `empresa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`

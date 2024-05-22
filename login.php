@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $_SESSION["empresa_id"] = $row['empresa_id'];
             $_SESSION["empresa_email"] = $row['empresa_email'];
-            header("location:  public/pg.php");
+            header("location:  public/index.php");
             exit;
         } else {
             // Credenciais inválidas, exibir mensagem de erro
@@ -39,6 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = "Por favor, insira empresa_email e senha.";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

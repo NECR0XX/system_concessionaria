@@ -121,12 +121,13 @@ main {
 
     .titulo {
         font-size: 17px;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         margin-left: 35px;
     }
     .subtitulo {      
         font-size: 17px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        margin-left: 35px;
     }
 
     .logout .links a {
@@ -142,7 +143,7 @@ main {
     .container-main{
         margin-bottom: 932.8px;
     }
-    
+
     aside {
         width:158px;
     }
@@ -160,6 +161,7 @@ main {
         width:20px;
         margin-left: 15px;
         margin-top: 45px;
+        font-size: 17px;
     }
     .ambiente {
         top: 50px;

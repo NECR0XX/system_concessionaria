@@ -30,7 +30,7 @@
 </div>
     <div class="ambiente">
         <p>AMBIENTES</p>
-    </div>
+</div>
         <div>
             <ul>
                 <?php $filtrosNav = FiltroNav(); ?>

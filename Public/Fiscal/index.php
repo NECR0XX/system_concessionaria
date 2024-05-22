@@ -67,6 +67,8 @@ $fiscals = $fiscalController->listarFiscals();
             <?php endforeach; ?>
         </select>
         <button type="submit">Excluir</button>
+        <button><a href="crud.php">Criar</a></button>
+
     </form>
 </body>
 </html>

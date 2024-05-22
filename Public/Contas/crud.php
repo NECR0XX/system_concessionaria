@@ -37,11 +37,14 @@ $contas = $contasController->listarcontas();
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <title>Gerenciamento de Contas</title>
 </head>
 <body>
     <a href="../pg.php">Home</a>
-    <h1>Controle de Contas</h1>
+    <h2>Controle de Contas</h2>
     <form method="post">
         <input type="number" name="fornecedores" placeholder="Fornecedores" required>
         <input type="number" name="salarios_benef" placeholder="Salários e Benefícios" required>

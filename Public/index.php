@@ -20,7 +20,6 @@
         <nav>
             <div class="logo"><p class="logo-p">SCAR</p></div>
             <div class="cad-button">
-            <a href="../login-configs/logout-empresa.php">Sair</a>
             </div>
             <div class="cad-button">
                 <?php 

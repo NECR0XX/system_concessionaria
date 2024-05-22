@@ -50,7 +50,6 @@ $fiscals = $fiscalController->listarFiscals();
     <h2>Controle de Fiscal</h2>
     <form method="post">
         <input type="date" name="data" placeholder="Data" required>
-        <textarea name="descricao" cols="30" rows="5" placeholder="Descrição" required></textarea>
         <input type="number" name="valor" placeholder="Valor" required>
         <select name="tipo" required>
             <option value="">Tipo...</option>
@@ -80,7 +79,6 @@ $fiscals = $fiscalController->listarFiscals();
             <option value="2">Pendente</option>
             <option value="3">Cancelada</option>
         </select>
-        <textarea name="observacoes" cols="30" rows="5" placeholder="Observações" required></textarea>
         <button type="submit">Adicionar Conta</button>
     </form>
 </body>

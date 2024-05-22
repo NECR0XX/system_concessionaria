@@ -1,0 +1,18 @@
+h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #696969;
+    font-family: ABeeZee;
+}
+
+.a3:active{
+    color: #ec5567;
+}
+
+.a3 {
+    color:  #ABABAB;
+    font-size: 50px;
+    text-decoration: none;
+}

@@ -3,6 +3,8 @@ session_start();
 require_once '../../Config/config.php';
 require_once '../../App/Controller/ContasController.php';
 require_once '../../login-configs/filtros.php';
+require_once '../login-configs/verificacaoEmpresa.php';
+require_once '../login-configs/verificacao.php';
 
 $contasController = new contasController($pdo);
 $contas = $contasController->listarcontas();

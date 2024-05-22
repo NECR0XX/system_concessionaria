@@ -3,6 +3,8 @@ session_start();
 require_once '../../Config/config.php';
 require_once '../../App/Controller/EstoqueController.php';
 require_once '../../login-configs/filtros.php';
+require_once '../login-configs/verificacaoEmpresa.php';
+require_once '../login-configs/verificacao.php';
 
 $estoqueController = new EstoqueController($pdo);
 $estoques = $estoqueController->listarEstoque();

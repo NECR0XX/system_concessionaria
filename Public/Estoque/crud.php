@@ -43,11 +43,14 @@ $estoques = $estoqueController->listarEstoque();
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <title>CRUD com MVC e PDO</title>
 </head>
 <body>
     <a href="../pg.php">Home</a>
-    <h1>Controle do Estoque</h1>
+    <h2>Controle do Estoque</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="number" name="numero_referencia" placeholder="Número de Referência" required>
         <input type="text" name="categoria" placeholder="Categoria" required>

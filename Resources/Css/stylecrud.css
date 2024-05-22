@@ -1,0 +1,122 @@
+/* Reset básico para remover margens e padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px; /* Adiciona um padding ao body para evitar corte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilização do título */
+h2 {
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilização do formulário */
+form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid #FF1430;
+}
+
+/* Estilização dos inputs e select */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="date"],
+form select {
+    font-size: 17px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border:none;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    background-color: #D9D9D9;
+}
+
+
+/* Ajuste de estilo para dispositivos menores */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="email"],
+    form input[type="date"],
+    form select {
+        font-size: 14px;
+    }
+
+    form button {
+        font-size: 14px;
+    }
+}
+
+a button {
+    text-decoration: none;
+}
+
+button {
+    background: #FF1430;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 50px;
+    font-size: 1em; /* Alteração na font-size */
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    display: block;
+    margin: 0 auto; /* Isso centralizará o botão horizontalmente */
+}
+
+button:hover {
+    background: transparent;
+    color: #FF1430;
+}
+
+button:before,
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #FF1430;
+    transition: 400ms ease all;
+}
+
+button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+button:hover:before,
+button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}

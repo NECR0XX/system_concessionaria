@@ -1,8 +1,6 @@
 <?php
 require_once '../../Config/config.php';
 require_once '../../App/Controller/EstoqueController.php';
-require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
-require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
 
 $estoqueController = new EstoqueController($pdo);
 

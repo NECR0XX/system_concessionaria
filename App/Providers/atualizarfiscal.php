@@ -72,8 +72,11 @@ $observacoes = $appointment['observacoes'];
     <title>Atualizar Conta</title>
 </head>
 <body>
-    <a href="../../Public/Fiscal/index.php">Voltar</a>
-<h1>Atualizar Conta</h1>
+    
+    <div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../../Public/Fiscal/index.php">«</a>
+<h1>Atualizar </h1>
 <form method="post">
 
     <label for="data">Data:</label>

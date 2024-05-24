@@ -29,7 +29,10 @@
     <title>Document</title>
 </head>
 <body>
-<a href="index.php">Home</a>
+<div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="index.php">«</a>
+
     <p class="logo">SCAR</p>
 
     <div class="container"> 

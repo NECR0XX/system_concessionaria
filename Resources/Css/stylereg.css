@@ -149,3 +149,15 @@ button:hover:after {
 .pinto1 {
     display: flex;
 }
+
+.a3 {
+    color: #ABABAB;
+    font-size: 50px;
+    text-decoration: none;
+    padding: 1vw;
+}
+
+h1 {
+    text-align: center;
+    color: #696969;
+}

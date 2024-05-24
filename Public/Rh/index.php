@@ -46,6 +46,7 @@ $controles = $controleRhModel->listarControleRhs();
 
     </nav>
     </aside>
+    
     <div class="content-wrapper">
         <div class="content">
             <a class="a3" href="../pg.php">«</a>
@@ -103,7 +104,7 @@ $controles = $controleRhModel->listarControleRhs();
         };
     }
 </script>
-
+<a href="register.php">Criar</a>
 </body>
 </html>
 

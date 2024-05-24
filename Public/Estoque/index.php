@@ -20,6 +20,7 @@ if (isset($_POST['excluir_id_estoque'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -49,23 +50,19 @@ if (isset($_POST['excluir_id_estoque'])) {
 
     </nav>
     </aside>
-<a href="../pg.php">Home</a>
 
-    <fieldset>
-    <legend><h2>Lista</h2></legend>
-        <ul>
+    <div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../pg.php">«</a>
+
+        <h1>CONTROLE DE ESTOQUE</h1>
+
+        <ul class="list">
         <?php foreach ($estoques as $estoque): ?>
-            <li><strong>ID:</strong> <?php echo $estoque['id_estoque']; ?> - <strong>Número de Referência:</strong> <?php echo $estoque['numero_referencia']; ?> - <strong>Categoria:</strong> <?php echo $estoque['categoria']; ?> - <strong>Quantidade:</strong> <?php echo $estoque['quantidade']; ?> 
+            <li><strong>Número de Referência:</strong> <?php echo $estoque['numero_referencia']; ?> - <strong>Categoria:</strong> <?php echo $estoque['categoria']; ?> - <strong>Quantidade:</strong> <?php echo $estoque['quantidade']; ?> 
             - <strong>Preço Unitário:</strong> <?php echo $estoque['preco_unitario']; ?> - <strong>Fornecedor:</strong> <?php echo $estoque['fornecedor']; ?> - <strong>Localização:</strong> <?php echo $estoque['localizacao']; ?> 
             - <strong>Reabastecimento Mínimo:</strong> <?php echo $estoque['reabastecimento_minimo']; ?> - <strong>Validade:</strong> <?php echo $estoque['validade']; ?> 
-            - <strong>Observações:</strong> <?php echo $estoque['observacoes']; ?> 
-            - <?php 
-                if (!empty($estoque['imagem'])) {
-                    echo '<img src="' . $estoque['imagem'] . '" alt="Imagem do produto" width="100">';
-                } else {
-                    echo 'Sem Imagem';
-                }; ?>
-            - <?php echo "<a href='../../App/Providers/atualizarestoque.php?id={$estoque['id_estoque']}'>Atualizar</a>" ?>
+             | <?php echo '<a class="a1"  href="../../App/Providers/atualizarestoque.php?id=' . $estoque['id_estoque']. '">'?>editar</a>
             ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $estoque['id_estoque']; ?>)">excluir</a></li>
         <?php endforeach; ?>
         </ul>
@@ -111,6 +108,8 @@ if (isset($_POST['excluir_id_estoque'])) {
             };
         }
     </script>
-    <button><a href="crud.php">Criar</a></button>
+    
+    <div class="butespaco"><button class="but"><a href="crud.php">Criar</a></button></div>
+    
 </body>
 </html>

@@ -13,9 +13,8 @@
     require_once 'parametros/dados.php';
     require_once 'parametros/rh.php';
 
-    require_once '../login-configs/verificacaoEmpresa.php';
-    require_once '../login-configs/verificacao.php';
-    //include_once '../login-configs/verificacao.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
     ?>
 
 <!DOCTYPE html>
@@ -30,6 +29,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="index.php">Home</a>
     <p class="logo">SCAR</p>
 
     <div class="container"> 

@@ -19,10 +19,11 @@ if (isset($_POST['excluir_id_estoque'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
+    <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>SCAR - Listagem de Estoque</title>
 </head>
 <body>
 <aside>
@@ -33,7 +34,7 @@ if (isset($_POST['excluir_id_estoque'])) {
     <div class="search-container">
     <form action="" method="get">
         <input type="text" class="search-box" name="q" placeholder="">
-        <img src="../Resources/Assets/lupa.svg">
+        <img src="../../Resources/Assets/lupa.svg">
     </form>
 </div>
     <div class="ambiente">
@@ -64,23 +65,52 @@ if (isset($_POST['excluir_id_estoque'])) {
                 } else {
                     echo 'Sem Imagem';
                 }; ?>
-            - <?php echo "<a href='../../App/Providers/atualizarestoque.php?id={$estoque['id_estoque']}'>Atualizar</a>" ?></li>
+            - <?php echo "<a href='../../App/Providers/atualizarestoque.php?id={$estoque['id_estoque']}'>Atualizar</a>" ?>
+            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $estoque['id_estoque']; ?>)">excluir</a></li>
         <?php endforeach; ?>
         </ul>
 </fieldset>
 
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Tem certeza que deseja excluir o item?</p>
+            <div class="op">
+            <button class="confirm" id="confirmDeleteBtn">Sim</button>
+            <button class="close" onclick="closeModal()">Cancelar</button></div>
+        </div>
+    </div>
 
+    <script>
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
 
-<h2>Excluir Estoque</h2>
-    <form method="post">
-        <select name="excluir_id_estoque">
-            <?php foreach ($estoques as $estoque): ?>
-                <option value="<?php echo $estoque['id_estoque']; ?>"><?php echo $estoque['id_estoque']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <button type="submit">Excluir Conta</button>
-        <button><a href="crud.php">Criar</a></button>
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
 
-    </form>
+        function confirmDelete(id_estoque) {
+            openModal();
+            document.getElementById("confirmDeleteBtn").onclick = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "../../App/Providers/deletarestoque.php?id_estoque=" + id_estoque, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            if (xhr.responseText == "success") {
+                                window.location.href = "index.php";
+                            } else {
+                                alert("Falha ao excluir o usuário: " + xhr.responseText);
+                            }
+                        }
+                    }
+                };
+                xhr.send();
+            };
+        }
+    </script>
+    <button><a href="crud.php">Criar</a></button>
 </body>
 </html>

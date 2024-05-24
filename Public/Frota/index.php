@@ -19,10 +19,11 @@ if (isset($_POST['excluir_id_frota'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
+    <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>SCAR - Listagem de Frota</title>
 </head>
 <body>
 <aside>
@@ -33,7 +34,7 @@ if (isset($_POST['excluir_id_frota'])) {
     <div class="search-container">
     <form action="" method="get">
         <input type="text" class="search-box" name="q" placeholder="">
-        <img src="../Resources/Assets/lupa.svg">
+        <img src="../../Resources/Assets/lupa.svg">
     </form>
 </div>
     <div class="ambiente">
@@ -67,23 +68,52 @@ if (isset($_POST['excluir_id_frota'])) {
                 } else {
                     echo 'Sem Imagem';
                 }; ?>
-            - <?php echo "<a href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>Atualizar</a>" ?></li>
+            - <?php echo "<a href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>Atualizar</a>" ?>
+            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $frota['id_frota']; ?>)">excluir</a></li>
         <?php endforeach; ?>
     </ul>
 </fieldset>
 
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Tem certeza que deseja excluir o item?</p>
+            <div class="op">
+            <button class="confirm" id="confirmDeleteBtn">Sim</button>
+            <button class="close" onclick="closeModal()">Cancelar</button></div>
+        </div>
+    </div>
 
+    <script>
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
 
-<h2>Excluir</h2>
-    <form method="post">
-        <select name="excluir_id_frota">
-            <?php foreach ($frotas as $frota): ?>
-                <option value="<?php echo $frota['id_frota']; ?>"><?php echo $frota['marca_modelo']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <button type="submit">Excluir</button>
-        <button><a href="crud.php">Criar</a></button>
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
 
-    </form>
+        function confirmDelete(id_frota) {
+            openModal();
+            document.getElementById("confirmDeleteBtn").onclick = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "../../App/Providers/deletarfrota.php?id_frota=" + id_frota, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            if (xhr.responseText == "success") {
+                                window.location.href = "index.php";
+                            } else {
+                                alert("Falha ao excluir o usuário: " + xhr.responseText);
+                            }
+                        }
+                    }
+                };
+                xhr.send();
+            };
+        }
+    </script>
+    <button><a href="crud.php">Criar</a></button>
 </body>
 </html>

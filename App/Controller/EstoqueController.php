@@ -1,7 +1,7 @@
 <?php
 require_once '../../App/Model/EstoqueModel.php';
 
-class estoqueController {
+class EstoqueController {
     private $estoqueModel;
 
     public function __construct($pdo) {

@@ -15,11 +15,11 @@ $controles = $controleRhModel->listarControleRhs();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
-    <link rel="stylesheet" href="../../Resources/Css/rh.css">
+    <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <title>SCAR - Home</title>
+    <title>SCAR - RH</title>
     <title>RH</title>
 </head>
 <body>
@@ -31,7 +31,7 @@ $controles = $controleRhModel->listarControleRhs();
     <div class="search-container">
     <form action="" method="get">
         <input type="text" class="search-box" name="q" placeholder="">
-        <img src="../Resources/Assets/lupa.svg">
+        <img src="../../Resources/Assets/lupa.svg">
     </form>
 </div>
     <div class="ambiente">

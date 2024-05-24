@@ -16,6 +16,14 @@ body {
     align-items: center;
     flex-direction: column;
 }
+a.home {
+    text-decoration: none;
+    color: #FF1430;
+}
+a.home:hover {
+    text-decoration: underline;
+    color: #333;
+}
 
 /* Estilização do título */
 h2 {

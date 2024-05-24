@@ -43,7 +43,7 @@ $fiscals = $fiscalController->listarFiscals();
     <title>Gerenciamento Fiscal</title>
 </head>
 <body>
-    <a href="index.php">Home</a>
+    <a class="home" href="index.php">Home</a>
     <h2>Controle de Fiscal</h2>
     <form method="post">
         <input type="date" name="data" placeholder="Data" required>

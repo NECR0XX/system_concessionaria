@@ -12,6 +12,7 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylerelat.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -44,25 +45,27 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 <section>
     <h1>Gerar relatórios</h1>
-    <ul>
-        <li>
+    <ul class="container">
+    <hr>
+
+        <li class="listinhas">
             <a href="rh.php">Gerar relatório do controle de pessoas - RH</a>
-        </li>
-        <li>
+        </li><hr>
+        <li class="listinhas">            
             <a href="fiscal.php">Gerar relatório do controle fiscal</a>
-        </li>
-        <li>
+        </li><hr>
+        <li class="listinhas">
             <a href="frota.php">Gerar relatório de frota de veículos</a>
-        </li>
-        <li>
+        </li><hr>
+        <li class="listinhas">
             <a href="despesas.php">Gerar relatório das despesas</a>
-        </li>
-        <li>
+        </li><hr>
+        <li class="listinhas">
             <a href="comercial.php">Gerar relatório do comercial</a>
-        </li>
-        <li>
+        </li><hr>
+        <li class="listinhas">
             <a href="relatorio.php">Gerar relatório geral</a>
-        </li>
+        </li><hr>
     </ul>
 </section>
 </body>

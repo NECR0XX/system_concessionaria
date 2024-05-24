@@ -2,6 +2,8 @@
 require_once '../../Config/config.php';
 require_once '../../App/Controller/FiscalController.php';
 
+$mensagem = "";
+
 $fiscalController = new FiscalController($pdo);
 
 if (isset($_POST['data']) &&
@@ -19,19 +21,8 @@ if (isset($_POST['data']) &&
     isset($_POST['observacoes'])) 
 {
     $fiscalController->criarFiscal($_POST['data'], $_POST['valor'], $_POST['tipo'], $_POST['cliente_fornecedor'], $_POST['nota_fiscal'], $_POST['imposto'], $_POST['metodo_pagamento'], $_POST['codigo_fiscal'], $_POST['contas_contabeis'], $_POST['localizacao'], $_POST['responsavel'], $_POST['status'], $_POST['observacoes']);
+    $mensagem = 'Cadastro realizado com sucesso!';
 }
-
-// Atualiza fiscal
-if (isset($_POST['id_fiscal_atualizar']) && isset($_POST['data_atualizar']) && isset($_POST['valor_atualizar']) && isset($_POST['tipo_atualizar']) && isset($_POST['cliente_fornecedor_atualizar']) && isset($_POST['nota_fiscal_atualizar']) && isset($_POST['imposto_atualizar']) && isset($_POST['metodo_pagamento_atualizar']) && isset($_POST['codigo_fiscal_atualizar']) && isset($_POST['fiscal_contabeis_atualizar']) && isset($_POST['localizacao_atualizar']) && isset($_POST['responsavel_atualizar']) && isset($_POST['status_atualizar']) && isset($_POST['observacoes_atualizar'])) 
-{
-    $fiscalController->atualizarFiscal($_POST['id_fiscal_atualizar'], $_POST['data_atualizar'], $_POST['valor_atualizar'], $_POST['tipo_atualizar'], $_POST['cliente_fornecedor_atualizar'], $_POST['nota_fiscal_atualizar'], $_POST['imposto_atualizar'], $_POST['metodo_pagamento_atualizar'], $_POST['codigo_fiscal_atualizar'], $_POST['contas_contabeis_atualizar'], $_POST['localizacao_atualizar'], $_POST['responsavel_atualizar'], $_POST['status_atualizar'], $_POST['observacoes_atualizar']);
-}
-
-// Excluir fiscal
-if (isset($_POST['excluir_id_fiscal'])) {
-    $fiscalController->excluirFiscal($_POST['excluir_id_fiscal']);
-}
-
 $fiscals = $fiscalController->listarFiscals();
 ?>
 <!DOCTYPE html>
@@ -40,10 +31,24 @@ $fiscals = $fiscalController->listarFiscals();
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
+    <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
     <title>Gerenciamento Fiscal</title>
 </head>
 <body>
     <a class="home" href="index.php">Home</a>
+
+    <?php if ($mensagem): ?>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                <p><?= $mensagem ?></p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('modal').style.display = 'block';
+        </script>
+    <?php endif; ?>
+    
     <h2>Controle de Fiscal</h2>
     <form method="post">
         <input type="date" name="data" placeholder="Data" required>

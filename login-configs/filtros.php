@@ -7,7 +7,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Frota/index.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Contas/index.php">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Comercial/index.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Relat/relatorio.php">Relatório</a></button></li>';
+        echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Relat/index.php">Relatório</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Rh/index.php">RH</a></button></li>';
     }
 
@@ -18,7 +18,7 @@ function FiltroNav() {
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Frota/index.php">Controle de frota</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Contas/index.php">Despesas</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Comercial/index.php">Comercial</a></button></li>';
-        echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Relat/relatorio.php">Relatório</a></button></li>';
+        echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Relat/index.php">Relatório</a></button></li>';
         echo '<li><button class="links"><a href="http://localhost/system_concessionaria/Public/Rh/index.php">RH</a></button></li>';
     }
 

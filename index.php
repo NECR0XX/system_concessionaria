@@ -11,6 +11,12 @@ include_once 'Public/Rh/parametros/uf.php';
     <title>SCAR</title>
 </head>
 <body>
+    <?php if (isset($_GET['mensagem']) && $_GET['mensagem'] == 'sucesso'): ?>
+        <script>
+            alert("Cadastro realizado com sucesso!");
+        </script>
+    <?php endif; ?>
+
     <a href="login.php">Login</a>
 
 <?php

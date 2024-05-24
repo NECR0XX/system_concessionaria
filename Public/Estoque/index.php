@@ -109,7 +109,7 @@ if (isset($_POST['excluir_id_estoque'])) {
         }
     </script>
     
-    <div class="butespaco"><button class="but"><a href="crud.php">Criar</a></button></div>
+    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR PRODUTO</a></button></div>
     
 </body>
 </html>

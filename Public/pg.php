@@ -45,7 +45,7 @@
             <p class="titulo">SELECIONE UM AMBIENTE</p>
             <p class="subtitulo">e configure como quiser!</p>
             <div class="logout">
-            <li><button class="links"><a href="../login-configs/logout.php">Logout</a></button></li>
+            <li><button class="links2"><a href="../login-configs/logout.php">Logout</a></button></li>
         </div>
         </div>
 </main>

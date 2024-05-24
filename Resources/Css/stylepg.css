@@ -56,6 +56,27 @@ aside {
     margin-left: 10px;
 }
 
+.links2 {
+    flex: auto;
+    line-height: 50px;
+    font-family: "ABeeZee", sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #A7A7A7;
+    text-align: left;
+    font-size: 17px;
+}
+
+.links2 a {
+    color: #FF1430;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.links2:hover a {
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
 .search-box {
     margin-left: 25px;
     padding: 10px 20px 10px 5px; 

@@ -2,7 +2,7 @@
 require_once 'C:/xampp/htdocs/system_concessionaria/App/Model/ContasModel.php';
 
 
-class contasController {
+class ContasController {
     private $contaModel;
 
     public function __construct($pdo) {

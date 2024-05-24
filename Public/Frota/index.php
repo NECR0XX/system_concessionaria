@@ -51,7 +51,9 @@ if (isset($_POST['excluir_id_frota'])) {
 
         </nav>
     </aside>
-    <a href="../pg.php">Home</a>
+    <div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../pg.php">«</a>
 
 
     <h1>CONTROLE DE FROTA DE VEÍCULO</h1>
@@ -73,7 +75,7 @@ if (isset($_POST['excluir_id_frota'])) {
                 - <strong>Responsável:</strong> <?php echo $frota['responsavel']; ?>
                 - <strong>Status:</strong> <?php echo $frota['status']; ?> - <strong>Observações:</strong>
                 <?php echo $frota['observacoes'] . " |"; ?>
-                <?php echo "<a href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>Atualizar</a>" ?>
+                <?php echo "<a class='a1'href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>editar</a>" ?>
                 ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $frota['id_frota']; ?>)">excluir</a>
                 <hr>
             </li>
@@ -126,7 +128,8 @@ if (isset($_POST['excluir_id_frota'])) {
             };
         }
     </script>
-    <button><a href="crud.php">Criar</a></button>
+    
+    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR VEÍCULO</a></button></div>
 </body>
 
 </html>

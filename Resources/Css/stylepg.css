@@ -120,12 +120,12 @@ main {
 @media screen and (max-width:768px) {
 
     .titulo {
-        font-size: 17px;
+        font-size: 16px;
         margin-bottom: 40px;
         margin-left: 35px;
     }
     .subtitulo {      
-        font-size: 17px;
+        font-size: 16px;
         margin-bottom: 40px;
         margin-left: 35px;
     }
@@ -139,7 +139,7 @@ main {
         float: right;
         position:absolute;
         height: 300px;
-        margin-left: 126px;
+        margin-left: 118px;
         margin-top: 200px;
     }
 

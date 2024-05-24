@@ -16,6 +16,7 @@ $controles = $controleRhModel->listarControleRhs();
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
     <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
+    <link rel="stylesheet" href="../../Resources/Css/correcao.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -56,11 +57,11 @@ $controles = $controleRhModel->listarControleRhs();
         <?php foreach($controles as $controlerh): ?>
     <ul class="list">
         
-        <li><?php echo $controlerh['nome'] . " - >" ; ?></li>
-        <li><?php echo $controlerh['cargo'] . " |"; ?></li>
-        <li><?php echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">'?>editar</a></li>
-        <li><?php echo " ou ";?></li>
-        <li><a class="a2" href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">excluir</a></li>
+        <li><?php echo $controlerh['nome'] . " - >" ; ?>
+        <?php echo $controlerh['cargo'] . " |"; ?>
+        <?php echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">'?>editar</a>
+        <?php echo " ou ";?>
+        <a class="a2" href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">excluir</a></li>
         
     </ul>
 <?php endforeach; ?>

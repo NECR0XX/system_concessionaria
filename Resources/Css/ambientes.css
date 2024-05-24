@@ -1,9 +1,11 @@
 .list {
+    flex-direction: column;
     display: flex;
     list-style: none;
     gap: 10px;
     color: #505050;
     text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+    padding: 10px;
 }
 
 .list .a1 {

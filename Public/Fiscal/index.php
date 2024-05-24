@@ -60,11 +60,11 @@ if (isset($_POST['excluir_id_fiscal'])) {
         <ul>
         <?php foreach ($fiscals as $fiscal): ?>
             <li><strong>Data:</strong> <?php echo $fiscal['data']; ?> 
-            - <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?>
-            - <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>  
-            - <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?> 
-            - <strong>Status:</strong> <?php echo $fiscal['status']; ?> 
-            - <?php echo "<a href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>Atualizar</a>" ?></li>
+            - > <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?>
+            - > <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>  
+            - > <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?> 
+            - > <strong>Status:</strong> <?php echo $fiscal['status']; ?> 
+             |   <?php echo "<a href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>editar</a>" ?></li>
         <?php endforeach; ?>
         </ul>
 </div>

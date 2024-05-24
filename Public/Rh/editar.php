@@ -26,7 +26,12 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <title>Document</title>
 </head>
 <body>
-    <p class="logo">SCAR</p>
+
+<div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="index.php">«</a>
+
+    <h1>ATUALIZAR</h1>
 
     <div class="container"> 
         <form method="post" class="form">

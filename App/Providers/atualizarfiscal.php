@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $observacoes = $_POST['observacoes'];
 
     $stmt = $pdo->prepare('UPDATE fiscal SET data = ?, valor = ?, tipo = ?, cliente_fornecedor = ?, nota_fiscal = ?, imposto = ?, metodo_pagamento = ?, codigo_fiscal = ?, contas_contabeis = ?, localizacao = ?, responsavel = ?, status = ?, observacoes = ? WHERE id_fiscal = ?');
-    $stmt->execute([$data, $descricao, $valor, $tipo, $cliente_fornecedor, $nota_fiscal, $imposto, $metodo_pagamento, $codigo_fiscal, $contas_contabeis, $localizacao, $responsavel, $status, $observacoes, $id_fiscal]);
+    $stmt->execute([$data, $valor, $tipo, $cliente_fornecedor, $nota_fiscal, $imposto, $metodo_pagamento, $codigo_fiscal, $contas_contabeis, $localizacao, $responsavel, $status, $observacoes, $id_fiscal]);
     header('Location: ../../Public/Fiscal/index.php');
     exit;
 }

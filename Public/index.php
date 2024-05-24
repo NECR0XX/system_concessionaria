@@ -19,18 +19,22 @@
     <header>
         <nav>
             <div class="logo"><p class="logo-p">SCAR</p></div>
-            <div class="cad-button">
-            </div>
-            <div class="cad-button">
-                <?php 
+            <div class="bts">
+                <div class="cad-button">
+                    <a href="../login-configs/logout-empresa.php" class="link-cadastro">Sair</a>
+                </div>
+            
+                <div class="cad-button">
+                    <?php 
 
-                    if(!isset($_SESSION['usuarioEmail']) or $_SESSION['usuarioEmail'] == '') {
-                        echo '<a href="login.php" class="link-cadastro">Entre</a>';
-                    }
-                    else {
-                        echo '<a href="../login-configs/logout.php" class="link-cadastro">Sair</a>';
-                    }
-                ?>
+                        if(!isset($_SESSION['usuarioEmail']) or $_SESSION['usuarioEmail'] == '') {
+                            echo '<a href="login.php" class="link-cadastro">Entre</a>';
+                        }
+                        else {
+                            echo '<a href="../login-configs/logout.php" class="link-cadastro">Sair</a>';
+                        }
+                    ?>
+                </div>
             </div>
         </nav>
     </header>

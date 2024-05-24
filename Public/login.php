@@ -15,7 +15,7 @@ require_once '../login-configs/verificacaoEmpresa.php';
                 <a href="index.php">Voltar</a>
     <form action="../login-configs/config.php" method="POST">
         <h2>Login</h2>
-        <input type="text" name="email" placeholder="E-mail ou Nome de Usuário">
+        <input type="text" name="email" placeholder="E-mail">
         <input type="password" name="senha" placeholder="Senha">
         <button type="submit">Logar</button>
     </form>

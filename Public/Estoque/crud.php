@@ -47,7 +47,7 @@ $estoques = $estoqueController->listarEstoque();
     <title>CRUD com MVC e PDO</title>
 </head>
 <body>
-    <a href="index.php">Home</a>
+    <a class="home" href="index.php">Home</a>
     <h2>Controle do Estoque</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="number" name="numero_referencia" placeholder="Número de Referência" required>

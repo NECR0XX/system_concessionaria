@@ -55,6 +55,7 @@ $controles = $controleRhModel->listarControleRhs();
 
         <?php foreach($controles as $controlerh): ?>
     <ul class="list">
+        
         <li><?php echo $controlerh['nome'] . " - >" ; ?></li>
         <li><?php echo $controlerh['cargo'] . " |"; ?></li>
         <li><?php echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">'?>editar</a></li>

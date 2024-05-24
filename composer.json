@@ -1,8 +1,8 @@
 {
-    "name": "46169836822/system_concessionaria",
+    "name": "wesley/system_concessionaria",
     "autoload": {
         "psr-4": {
-            "46169836822\\SystemConcessionaria\\": "Public/"
+            "Wesley\\SystemConcessionaria\\": "src/"
         }
     },
     "authors": [
@@ -12,6 +12,6 @@
         }
     ],
     "require": {
-        "dompdf/dompdf": "^3.0"
+        "dompdf/dompdf": "*"
     }
 }

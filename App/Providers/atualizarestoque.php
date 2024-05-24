@@ -76,6 +76,7 @@ $observacoes = $appointment['observacoes'];
 </head>
 <body>
     <a href="../../Public/Estoque/index.php">Voltar</a>
+    
 <h1>Atualizar Produto</h1>
 <form method="post" enctype="multipart/form-data">
     <label for="imagem">Imagem:</label>

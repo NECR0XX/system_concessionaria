@@ -1,9 +1,11 @@
 .list {
+    flex-direction: column;
     display: flex;
     list-style: none;
     gap: 10px;
     color: #505050;
     text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+    padding: 10px;
 }
 
 .list .a1 {
@@ -31,4 +33,38 @@ h1 {
     color:  #ABABAB;
     font-size: 50px;
     text-decoration: none;
+    padding: 1vw;
+}
+
+.but {
+    font-size: 18px;
+    color: #FF1430; /* Cor do texto no estado padrão */
+    background-color: transparent; /* Fundo transparente no estado padrão */
+    border: 2px solid #FF1430; /* Borda vermelha no estado padrão */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+.but:hover {  
+    color: #FFFFFF; /* Cor do texto quando o botão é focado ou clicado */
+    background-color: #FF1430; /* Cor de fundo quando o botão é focado ou clicado */
+    
+  
+}
+
+a{
+    text-decoration: none;
+    color: #FF1430;
+   
+}
+a:hover{
+    color: #FFFFFF;
+}
+
+.butespaco {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
 }

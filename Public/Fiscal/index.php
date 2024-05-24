@@ -20,7 +20,7 @@ if (isset($_POST['excluir_id_fiscal'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
-    <link rel="stylesheet" href="../../Resources/Css/rh.css">
+    <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -60,11 +60,11 @@ if (isset($_POST['excluir_id_fiscal'])) {
         <ul>
         <?php foreach ($fiscals as $fiscal): ?>
             <li><strong>Data:</strong> <?php echo $fiscal['data']; ?> 
-            - <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?>
-            - <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>  
-            - <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?> 
-            - <strong>Status:</strong> <?php echo $fiscal['status']; ?> 
-            - <?php echo "<a href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>Atualizar</a>" ?></li>
+            - > <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?>
+            - > <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>  
+            - > <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?> 
+            - > <strong>Status:</strong> <?php echo $fiscal['status']; ?> 
+             |   <?php echo "<a href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>editar</a>" ?></li>
         <?php endforeach; ?>
         </ul>
 </div>

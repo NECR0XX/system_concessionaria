@@ -57,15 +57,16 @@ if (isset($_POST['excluir_id_fiscal'])) {
 
         <h1>CONTROLE FISCAL</h1>
 
-        <ul>
+      
         <?php foreach ($fiscals as $fiscal): ?>
+            <ul class= "list">
             <li><strong>Data:</strong> <?php echo $fiscal['data']; ?> 
             - <strong>Valor:</strong> R$<?php echo $fiscal['valor']; ?>
             - <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>  
             - <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?> 
-            - <strong>Status:</strong> <?php echo $fiscal['status']; ?> 
-            - <?php echo "<a href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>Atualizar</a>" ?>
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">excluir</a></li>
+            - <strong>Status:</strong> <?php echo $fiscal['status'] . " |"; ?> 
+            - <?php echo "<a class='a1' href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>Editar</a> "?>
+            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">Excluir</a></li>
         <?php endforeach; ?>
         </ul>
 </div>

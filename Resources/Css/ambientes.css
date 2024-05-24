@@ -41,8 +41,10 @@ h1 {
         gap: 10px;
         color: #505050;
         text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+        margin-left: 125px;
         margin-top:50px;
         font-size: 12.5px;
+        position: absolute;
     }
     
     .list .a1 {

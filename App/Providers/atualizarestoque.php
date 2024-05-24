@@ -71,10 +71,12 @@ $observacoes = $appointment['observacoes'];
     <link rel="stylesheet" href="../../public/css/style3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/adm3.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <title>Atualizar Produto</title>
 </head>
 <body>
     <a href="../../Public/Estoque/index.php">Voltar</a>
+    
 <h1>Atualizar Produto</h1>
 <form method="post" enctype="multipart/form-data">
     <label for="imagem">Imagem:</label>

@@ -2,6 +2,8 @@
 require_once '../../Config/config.php';
 require_once '../../App/Controller/ComercialController.php';
 
+$mensagem = "";
+
 $comercialController = new ComercialController($pdo);
 
 if (isset($_POST['nome_cliente']) && 
@@ -23,19 +25,8 @@ if (isset($_POST['nome_cliente']) &&
     isset($_POST['estado_transacao'])) 
 {
     $comercialController->criarComercial($_POST['nome_cliente'], $_POST['telefone_cliente'], $_POST['email_cliente'], $_POST['identificacao_cliente'], $_POST['marca_car'], $_POST['modelo_car'], $_POST['caracteristicas_car'], $_POST['preco_car'], $_POST['numero_chassi'], $_POST['data_venda'], $_POST['tipo_transacao'], $_POST['forma_paga'], $_POST['nota_fiscal'], $_POST['valor_total'], $_POST['canal_venda'], $_POST['vendedor'], $_POST['estado_transacao']);
-    header('Location: #');
+    $mensagem = 'Cadastro realizado com sucesso!';
 }
-
-// Atualiza Comercial
-if (isset($_POST['id_comercial']) && isset($_POST['atualizar_nome_cliente']) && isset($_POST['atualizar_telefone_cliente']) && isset($_POST['atualizar_email_cliente']) && isset($_POST['atualizar_identificacao_cliente']) && isset($_POST['atualizar_marca_car']) && isset($_POST['atualizar_modelo_car']) && isset($_POST['atualizar_caracteristicas_car']) && isset($_POST['atualizar_preco_car']) && isset($_POST['atualizar_numero_chassi']) && isset($_POST['atualizar_data_venda']) && isset($_POST['atualizar_tipo_transacao']) && isset($_POST['atualizar_forma_paga']) && isset($_POST['atualizar_nota_fiscal']) && isset($_POST['atualizar_valor_total']) && isset($_POST['atualizar_canal_venda']) && isset($_POST['atualizar_vendedor']) && isset($_POST['atualizar_estado_transacao'])) {
-    $comercialController->atualizarComercial($_POST['id_comercial'], $_POST['atualizar_nome_cliente'], $_POST['atualizar_telefone_cliente'], $_POST['atualizar_email_cliente'], $_POST['atualizar_identificacao_cliente'], $_POST['atualizar_marca_car'], $_POST['atualizar_modelo_car'], $_POST['atualizar_caracteristicas_car'], $_POST['atualizar_preco_car'], $_POST['atualizar_numero_chassi'], $_POST['atualizar_data_venda'], $_POST['atualizar_tipo_transacao'], $_POST['atualizar_forma_paga'], $_POST['atualizar_nota_fiscal'], $_POST['atualizar_valor_total'], $_POST['atualizar_canal_venda'], $_POST['atualizar_vendedor'], $_POST['atualizar_estado_transacao']);
-}
-
-// Excluir Comercial
-if (isset($_POST['excluir_id_comercial'])) {
-    $comercialController->excluirComercial($_POST['excluir_id_comercial']);
-}
-
 $comerciais = $comercialController->listarComercials();
 ?>
 <!DOCTYPE html>
@@ -44,10 +35,24 @@ $comerciais = $comercialController->listarComercials();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
+    <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
     <title>Gerenciamento de Comercial</title>
 </head>
 <body>
     <a class="home" href="index.php">Home</a>
+
+    <?php if ($mensagem): ?>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                <p><?= $mensagem ?></p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('modal').style.display = 'block';
+        </script>
+    <?php endif; ?>
+
 <h2>Controle de Comercial</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="nome_cliente" placeholder="Nome do Cliente" required>

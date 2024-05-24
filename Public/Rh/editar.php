@@ -5,9 +5,8 @@
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
     require_once 'parametros/uf.php';
     require_once 'parametros/controleRh.php';
-    require_once '../login-configs/verificacaoEmpresa.php';
-    require_once '../login-configs/verificacao.php';
-
+    require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
     $controleRhController = new controleRhController($pdo);
     
     //recupera o id e aciona a função que lista dentro dos inputs

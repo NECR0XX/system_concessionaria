@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2024 às 19:06
+-- Tempo de geração: 24-Maio-2024 às 16:21
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -53,7 +53,7 @@ CREATE TABLE `comercial` (
 --
 
 INSERT INTO `comercial` (`id_comercial`, `nome_cliente`, `telefone_cliente`, `email_cliente`, `identificacao_cliente`, `marca_car`, `modelo_car`, `caracteristicas_car`, `preco_car`, `numero_chassi`, `data_venda`, `tipo_transacao`, `forma_paga`, `nota_fiscal`, `valor_total`, `canal_venda`, `vendedor`, `estado_transacao`) VALUES
-(2, 'adsasd', '213123', 'adsa@asda', 'sadasd', 'asd', 'sad', 'sda', 213, 0, '2024-05-22', 0, 'Dinheiro', 0, 132, 'sad', 'ads', 'cancelado');
+(7, 'asdasd', '21321', 'sdaasd@asd', 'asdas', 'asd', 'sadasd', 'asdasd', 1312, 0, '0123-03-21', 0, 'Boleto Bancário', 0, 12313, 'sadda', 'adas', 'cancelado');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE `contas` (
 --
 
 INSERT INTO `contas` (`id_conta`, `fornecedores`, `salarios_benef`, `aluguel`, `contas_publicas`, `impostos`, `emprestimos`, `manutencao`, `seguros`, `marketing`, `despesas_adm`, `logistica`, `pesquisa`, `garantia`) VALUES
-(2, 12123, 123132, 123123, 12323, 12312, 213312, 321321, 46645, 466, 45, 645, 656, 4654);
+(3, 126456, 6465, 645, 656, 46, 64, 654, 6545, 456, 546, 546, 46, 456);
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,7 @@ CREATE TABLE `estoque` (
 --
 
 INSERT INTO `estoque` (`id_estoque`, `numero_referencia`, `categoria`, `quantidade`, `preco_unitario`, `fornecedor`, `localizacao`, `reabastecimento_minimo`, `validade`, `observacoes`, `imagem`) VALUES
-(3, 123123, 'adadsas', 23123, 23123, 'addad', 'asdasd', 213123, '2024-11-09', 'sadasdasdsa', '../../Resources/Assets/Uploads/sankhya.PNG');
+(4, 213123, 'dasd', 12321, 231132, 'sdasd', 'dasdas', 13, '2024-05-31', 'asdsadasd', '../../Resources/Assets/Uploads/sankhya.PNG');
 
 -- --------------------------------------------------------
 
@@ -226,7 +226,7 @@ CREATE TABLE `fiscal` (
 --
 
 INSERT INTO `fiscal` (`id_fiscal`, `data`, `valor`, `tipo`, `cliente_fornecedor`, `nota_fiscal`, `imposto`, `metodo_pagamento`, `codigo_fiscal`, `contas_contabeis`, `localizacao`, `responsavel`, `status`, `observacoes`) VALUES
-(3, '2024-05-16', 12312, 'Despesa', 'sadsd', 21312, 2133, 'Dinheiro', 213123, 231213, 'asdasd', 'adasd', 'Concluída', 'dasdsdadsa');
+(4, '2024-05-31', 13213, 'Compra', 'adad', 213123, 213123, 'Dinheiro', 12312, 21331, 'asdasd', 'dsasd', 'Pendente', 'asdadssadasds');
 
 -- --------------------------------------------------------
 
@@ -259,7 +259,7 @@ CREATE TABLE `frota_veiculo` (
 --
 
 INSERT INTO `frota_veiculo` (`id_frota`, `marca_modelo`, `ano_fabricacao`, `placa`, `numero_chassi`, `tipo_veiculo`, `tipo_combustivel`, `quilometragem`, `data_prox_rev`, `historico_manutencao`, `seguro`, `documentacao`, `localizacao_atual`, `responsavel`, `status`, `observacoes`, `imagem`) VALUES
-(2, 'sadasd', 23123, 'asdasd', 0, 'hbchj', 'b', 213, '2024-05-24', 0, 0, 'adsas', 'adad', 'dads', 0, 'asdadadads', '../../Resources/Assets/Uploads/sankhya.PNG');
+(3, 'adasdasd', 12321, 'asdasd', 231, 'asdda', 'asd', 123, '0000-00-00', 0, 0, 'asdasd', 'asdsad', 'asdasd', 0, 'asdasd', '../../Resources/Assets/Uploads/sankhya.PNG');
 
 -- --------------------------------------------------------
 
@@ -393,13 +393,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `comercial`
 --
 ALTER TABLE `comercial`
-  MODIFY `id_comercial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comercial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `contas`
 --
 ALTER TABLE `contas`
-  MODIFY `id_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `dados_usuario`
@@ -423,19 +423,19 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT de tabela `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `fiscal`
 --
 ALTER TABLE `fiscal`
-  MODIFY `id_fiscal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_fiscal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `frota_veiculo`
 --
 ALTER TABLE `frota_veiculo`
-  MODIFY `id_frota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_frota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `rh`

@@ -68,11 +68,15 @@ $observacoes = $appointment['observacoes'];
     <link rel="stylesheet" href="../../public/css/style3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/adm3.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <title>Atualizar Conta</title>
 </head>
 <body>
-    <a href="../../Public/Fiscal/index.php">Voltar</a>
-<h1>Atualizar Conta</h1>
+    
+    <div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../../Public/Fiscal/index.php">«</a>
+<h1>Atualizar </h1>
 <form method="post">
 
     <label for="data">Data:</label>

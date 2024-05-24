@@ -48,6 +48,7 @@ form {
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
+form input[type="password"],
 form input[type="date"],
 textarea,
 textarea,
@@ -129,4 +130,16 @@ button:hover:before,
 button:hover:after {
     width: 100%;
     transition: 800ms ease all;
+}
+
+.a3 {
+    color: #ABABAB;
+    font-size: 50px;
+    text-decoration: none;
+    padding: 1vw;
+}
+
+h1 {
+    text-align: center;
+    color: #696969;
 }

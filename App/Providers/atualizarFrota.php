@@ -87,11 +87,12 @@ $observacoes = $appointment['observacoes'];
     <title>Atualizar Veículo</title>
 </head>
 <body>
-    <a href="../../Public/Frota/index.php">Voltar</a>
+<div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../../Public/Frota/index.php">«</a>
 <h1>Atualizar Veículo</h1>
 <form method="post" enctype="multipart/form-data">
-    <label for="imagem">Imagem:</label>
-    <input type="file" name="nova_imagem" accept="image/*"><br>
+  
 
     <label for="marca_modelo">Marca/Modelo:</label>
     <input type="text" name="marca_modelo" value="<?php echo $marca_modelo; ?>" required><br>

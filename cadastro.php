@@ -3,13 +3,11 @@ include_once 'config/config.php';
 include_once 'App/Controller/EmpresaController.php';
 include_once 'Public/Rh/parametros/uf.php';
 
-// Consulta rápida para verificar se há algum registro no banco de dados
 $query = "SELECT COUNT(*) as total FROM empresa";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Se houver pelo menos um registro no banco de dados, redirecione para 'index.php'
 if ($resultado['total'] > 0) {
     header("Location: index.php");
     exit;
@@ -17,8 +15,8 @@ if ($resultado['total'] > 0) {
 
 $empresaController = new EmpresaController($pdo);
 
-
-if (isset($_POST['numero_inscricao']) &&
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
+    isset($_POST['numero_inscricao']) &&
     isset($_POST['data_abertura']) &&
     isset($_POST['razao_social']) &&
     isset($_POST['nome_fantasia']) &&
@@ -55,18 +53,22 @@ if (isset($_POST['numero_inscricao']) &&
         $_POST['email'],
         $_POST['senha']
     );
+
+    header("Location: index.php?mensagem=sucesso");
+    exit;
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Resources/Css/stylecrud.css">
     <title>Criar Empresa</title>
 </head>
 <body>
+    <a class="home" href="index.php">Voltar</a>
+
     <form method="POST">
         <label>Número Inscrição</label>
         <input type="text" name="numero_inscricao">
@@ -97,14 +99,14 @@ if (isset($_POST['numero_inscricao']) &&
         <label>Telefone</label>
         <input type="text" name="telefone">
         <label>UF</label>
-                <select name="uf">
-                <option value="" disabled selected hidden>Selecione um UF</option>
-                    <?php
-                        foreach ($ufs as $sigla => $nome) {
-                            echo '<option value="' . $sigla . '">' . $sigla . '</option>';
-                        }
-                    ?>
-                </select>
+        <select name="uf">
+            <option value="" disabled selected hidden>Selecione um UF</option>
+            <?php
+                foreach ($ufs as $sigla => $nome) {
+                    echo '<option value="' . $sigla . '">' . $sigla . '</option>';
+                }
+            ?>
+        </select>
         <label>Email</label>
         <input type="email" name="email">
         <label>Senha</label>

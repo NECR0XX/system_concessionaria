@@ -50,7 +50,7 @@ foreach ($comerciais as $comercial) {
 }
 $html .= '</ul>
 
-<h2>Relatório das Contas</h2>
+<h2>Relatório das Despesas</h2>
 <ul>';
 foreach ($contas as $conta) {
     $html .= '<li>' 

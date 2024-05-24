@@ -56,6 +56,9 @@ if (isset($_POST['excluir_id_fiscal'])) {
             <a class="a3" href="../pg.php">«</a>
 
         <h1>CONTROLE FISCAL</h1>
+        <br>
+        <hr>
+        <br>
 
       
         <?php foreach ($fiscals as $fiscal): ?>
@@ -69,6 +72,9 @@ if (isset($_POST['excluir_id_fiscal'])) {
             ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">Excluir</a></li>
         <?php endforeach; ?>
         </ul>
+        <br>
+        <hr>
+        <br>
 </div>
 </div>
 

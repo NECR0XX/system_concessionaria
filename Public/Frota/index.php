@@ -20,6 +20,7 @@ if (isset($_POST['excluir_id_frota'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -50,9 +51,9 @@ if (isset($_POST['excluir_id_frota'])) {
     </aside>
 <a href="../pg.php">Home</a>
 
-<fieldset>
-    <legend><h2>Lista</h2></legend>
-    <ul>
+
+    <h2>Lista</h2>
+    <ul class="list">
         <?php foreach ($frotas as $frota): ?>
             <li><strong>ID:</strong> <?php echo $frota['id_frota']; ?> - <strong>Marca/Modelo:</strong> <?php echo $frota['marca_modelo']; ?> - <strong>Ano de Fabricação:</strong> <?php echo $frota['ano_fabricacao']; ?> 
             - <strong>Placa:</strong> <?php echo $frota['placa']; ?> - <strong>Número de Chassi:</strong> <?php echo $frota['numero_chassi']; ?> 
@@ -62,17 +63,11 @@ if (isset($_POST['excluir_id_frota'])) {
             - <strong>Documentação:</strong> <?php echo $frota['documentacao']; ?> - <strong>Localização Atual:</strong> <?php echo $frota['localizacao_atual']; ?> 
             - <strong>Responsável:</strong> <?php echo $frota['responsavel']; ?> 
             - <strong>Status:</strong> <?php echo $frota['status']; ?> - <strong>Observações:</strong> <?php echo $frota['observacoes']; ?>
-            - <?php 
-                if (!empty($frota['imagem'])) {
-                    echo '<img src="' . $frota['imagem'] . '" alt="Imagem do produto" width="100">';
-                } else {
-                    echo 'Sem Imagem';
-                }; ?>
             - <?php echo "<a href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>Atualizar</a>" ?>
             ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $frota['id_frota']; ?>)">excluir</a></li>
         <?php endforeach; ?>
     </ul>
-</fieldset>
+
 
 <div id="myModal" class="modal">
         <div class="modal-content">

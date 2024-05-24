@@ -46,9 +46,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="../Resources/Css/login.css">
+    <link rel="stylesheet" href="Resources/Css/login.css">
 </head>
 <body>
+    <div class="container">
     <h2>Login</h2>
     <form method="post" >
         <label>email:</label><br>
@@ -57,6 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" id="senha" name="senha"><br><br>
         <input type="submit" value="Login">
     </form>
+    </div>
     <?php if(isset($erro)) { echo "<p>$erro</p>"; } ?>
 </body>
 </html>

@@ -24,6 +24,7 @@ h2 {
     text-align: center;
 }
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: 95%;
     padding: 10px;

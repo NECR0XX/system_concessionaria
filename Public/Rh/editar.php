@@ -328,10 +328,9 @@ if (isset($_GET['id'])
 
 <label>Possui Experiência?</label>
 <label>Sim</label>
-<input value="<?php echo $UserRh['experiencia']; ?>" type="radio" name="atualizar_experiencia" value="sim">
+<input type="radio" name="atualizar_experiencia" value="sim"<?php echo $UserRh['experiencia'] === 'sim' ? ' checked' : ''; ?>>
 <label>Não</label>
-<input value="<?php echo $UserRh['experiencia']; ?>" type="radio" name="atualizar_experiencia" value="nao">
-<input value="<?php echo $UserRh['experiencia']; ?>" type="text" placeholder="Quanto tempo" name="atualizar_experiencia">
+<input type="radio" name="atualizar_experiencia" value="nao"<?php echo $UserRh['experiencia'] === 'nao' ? ' checked' : ''; ?>>
 
 <label>Tipo de Usuário</label>
 <label>Administrador</label>

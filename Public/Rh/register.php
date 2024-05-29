@@ -191,10 +191,6 @@
                 <label>Sim</label>
                 <input type="radio" name="dependentes" value="sim, ">
                 <label>Não</label>
-                <input type="radio" name="dependentes" value="nao, ">
-                <input type="text" placeholder="Qual parentesco?" name="dependentes">
-                <label> Data de Nascimento do Dependente</label>
-                <input type="date" name="dependentes">
             
                 <label>Vale Transporte</label>
                 <label>Sim</label>

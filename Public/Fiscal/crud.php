@@ -32,10 +32,15 @@ $fiscals = $fiscalController->listarFiscals();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylereg.css">
     <title>Gerenciamento Fiscal</title>
 </head>
 <body>
-    <a class="home" href="index.php">Home</a>
+<div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="index.php">«</a>
+
+    <p class="logo">SCAR</p>
 
     <?php if ($mensagem): ?>
         <div id="modal" class="modal">
@@ -49,7 +54,6 @@ $fiscals = $fiscalController->listarFiscals();
         </script>
     <?php endif; ?>
     
-    <h2>Controle de Fiscal</h2>
     <form method="post">
         <input type="date" name="data" placeholder="Data" required>
         <input type="number" name="valor" placeholder="Valor" required>

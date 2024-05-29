@@ -125,6 +125,7 @@ main {
     display: inline;
     text-align: center;
     justify-content: center;
+    margin-left: 16px;
 }
 
 .titulo {

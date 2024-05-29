@@ -67,9 +67,9 @@ if (isset($_POST['excluir_id_fiscal'])) {
                         - <strong>Cliente/Fornecedor:</strong> <?php echo $fiscal['cliente_fornecedor']; ?>
                         - <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?>
                         - <strong>Status:</strong> <?php echo $fiscal['status'] . " |"; ?>
-                        -
-                        <?php echo "<a class='a1' href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>Editar</a> " ?>
-                        ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">Excluir</a>
+                        
+                        <?php echo "<a class='a1' href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>editar</a> " ?>
+                        ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">excluir</a>
                         <hr>
                     </li>
                 <?php endforeach; ?>
@@ -120,7 +120,8 @@ if (isset($_POST['excluir_id_fiscal'])) {
             };
         }
     </script>
-    <button><a href="crud.php">Criar</a></button>
+
+    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR</a></button></div>
 </body>
 
 </html>

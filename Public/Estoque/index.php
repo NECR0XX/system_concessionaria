@@ -63,10 +63,11 @@ if (isset($_POST['excluir_id_estoque'])) {
             - <strong>Preço Unitário:</strong> <?php echo $estoque['preco_unitario']; ?> - <strong>Fornecedor:</strong> <?php echo $estoque['fornecedor']; ?> - <strong>Localização:</strong> <?php echo $estoque['localizacao']; ?> 
             - <strong>Reabastecimento Mínimo:</strong> <?php echo $estoque['reabastecimento_minimo']; ?> - <strong>Validade:</strong> <?php echo $estoque['validade']; ?> 
              | <?php echo '<a class="a1"  href="../../App/Providers/atualizarestoque.php?id=' . $estoque['id_estoque']. '">'?>editar</a>
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $estoque['id_estoque']; ?>)">excluir</a></li>
+            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $estoque['id_estoque']; ?>)">excluir</a> <hr></li>
+           
         <?php endforeach; ?>
         </ul>
-</fieldset>
+
 
 <div id="myModal" class="modal">
         <div class="modal-content">
@@ -109,7 +110,7 @@ if (isset($_POST['excluir_id_estoque'])) {
         }
     </script>
     
-    <div class="butespaco"><button class="but"><a href="crud.php">Criar</a></button></div>
+    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR PRODUTO</a></button></div>
     
 </body>
 </html>

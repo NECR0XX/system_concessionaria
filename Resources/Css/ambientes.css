@@ -45,6 +45,7 @@ h1 {
     text-align: center;
     text-decoration: none;
     list-style: none;
+    
 }
 
 .but:hover {  
@@ -67,4 +68,72 @@ a:hover{
     display: flex;
     justify-content: space-around;
     align-content: space-around;
+}
+
+@media screen and (max-width:768px) {
+
+    .list {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        color: #505050;
+        text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+        font-size: 14px;
+
+    }
+    
+    
+    .list .a1 {
+        color: #6290c5;
+    }
+    
+    .list .a2 {
+        color: #ec5567;
+    }
+
+    .list2 {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        color: #505050;
+        text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    
+    .list2 .a1 {
+        color: #6290c5;
+    }
+    
+    .list2 .a2 {
+        color: #ec5567;
+    }
+    
+    h1 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #696969;
+        font-family: ABeeZee;
+        font-size:14px;
+        margin-bottom: 70px;
+    }
+    
+    .a3:active{
+        color: #ec5567;
+    }
+    
+    .a3 {
+        color:  #ABABAB;
+        font-size: 50px;
+        text-decoration: none;
+    }
+
+    .butespaco {
+        float: right;
+        width: 213px;
+    }
+
 }

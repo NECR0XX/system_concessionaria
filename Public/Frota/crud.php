@@ -2,6 +2,8 @@
 require_once '../../Config/config.php';
 require_once '../../App/Controller/FrotaController.php';
 
+$mensagem = "";
+
 $frotaController = new FrotaController($pdo);
 
 if (isset($_FILES['imagem']) && !empty($_FILES['imagem'])) {
@@ -28,19 +30,8 @@ if (isset($_POST['marca_modelo']) &&
     isset($_POST['observacoes'])) 
 {
     $frotaController->criarFrota($_POST['marca_modelo'], $_POST['ano_fabricacao'], $_POST['placa'], $_POST['numero_chassi'], $_POST['tipo_veiculo'], $_POST['tipo_combustivel'], $_POST['quilometragem'], $_POST['data_prox_rev'], $_POST['historico_manutencao'], $_POST['seguro'], $_POST['documentacao'], $_POST['localizacao_atual'], $_POST['responsavel'], $_POST['status'], $_POST['observacoes'], $imagem);
-    header('Location: #');
+    $mensagem = 'Cadastro realizado com sucesso!';
 }
-
-// Atualiza Frota
-if (isset($_POST['id_frota']) && isset($_POST['atualizar_marca_modelo']) && isset($_POST['atualizar_ano_fabricacao']) && isset($_POST['atualizar_placa']) && isset($_POST['atualizar_numero_chassi']) && isset($_POST['atualizar_tipo_veiculo']) && isset($_POST['atualizar_tipo_combustivel']) && isset($_POST['atualizar_quilometragem']) && isset($_POST['atualizar_data_prox_rev']) && isset($_POST['atualizar_historico_manutencao']) && isset($_POST['atualizar_seguro']) && isset($_POST['atualizar_documentacao']) && isset($_POST['atualizar_localizacao_atual']) && isset($_POST['atualizar_responsavel']) && isset($_POST['atualizar_status']) && isset($_POST['atualizar_observacoes'])) {
-    $frotaController->atualizarFrota($_POST['id_frota'], $_POST['atualizar_marca_modelo'], $_POST['atualizar_ano_fabricacao'], $_POST['atualizar_placa'], $_POST['atualizar_numero_chassi'], $_POST['atualizar_tipo_veiculo'], $_POST['atualizar_tipo_combustivel'], $_POST['atualizar_quilometragem'], $_POST['atualizar_data_prox_rev'], $_POST['atualizar_historico_manutencao'], $_POST['atualizar_seguro'], $_POST['atualizar_documentacao'], $_POST['atualizar_localizacao_atual'], $_POST['atualizar_responsavel'], $_POST['atualizar_status'], $_POST['atualizar_observacoes']);
-}
-
-// Excluir Frota
-if (isset($_POST['excluir_id_frota'])) {
-    $frotaController->excluirFrota($_POST['excluir_id_frota']);
-}
-
 $frotas = $frotaController->listarFrotas();
 ?>
 
@@ -50,10 +41,24 @@ $frotas = $frotaController->listarFrotas();
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
+    <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
     <title>Gerenciamento de Frota de Veículos</title>
 </head>
 <body>
     <a class="home" href="index.php">Home</a>
+
+    <?php if ($mensagem): ?>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                <p><?= $mensagem ?></p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('modal').style.display = 'block';
+        </script>
+    <?php endif; ?>
+    
     <h2>Controle de Frota de Veículos</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="marca_modelo" placeholder="Marca e Modelo" required>

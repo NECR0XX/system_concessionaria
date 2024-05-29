@@ -2,6 +2,8 @@
 require_once '../../Config/config.php';
 require_once '../../App/Controller/ContasController.php';
 
+$mensagem = "";
+
 $contasController = new contasController($pdo);
 
 if (isset($_POST['fornecedores']) && 
@@ -19,19 +21,8 @@ if (isset($_POST['fornecedores']) &&
     isset($_POST['garantia'])) 
 {
     $contasController->criarConta($_POST['fornecedores'], $_POST['salarios_benef'], $_POST['aluguel'], $_POST['contas_publicas'], $_POST['impostos'], $_POST['emprestimos'], $_POST['manutencao'], $_POST['seguros'], $_POST['marketing'], $_POST['despesas_adm'], $_POST['logistica'], $_POST['pesquisa'], $_POST['garantia']);
+    $mensagem = 'Cadastro realizado com sucesso!';
 }
-
-// Atualiza conta
-if (isset($_POST['id_conta']) && isset($_POST['fornecedores_atualizar']) && isset($_POST['salarios_benef_atualizar']) &&isset($_POST['aluguel_atualizar']) &&isset($_POST['contas_publicas_atualizar']) &&isset($_POST['impostos_atualizar']) &&isset($_POST['emprestimos_atualizar']) &&isset($_POST['manutencao_atualizar']) &&isset($_POST['seguros_atualizar']) &&isset($_POST['marketing_atualizar']) &&isset($_POST['despesas_adm_atualizar']) &&isset($_POST['logistica_atualizar']) &&isset($_POST['pesquisa_atualizar']) &&isset($_POST['garantia_atualizar'])) 
-{
-    $contasController->atualizarConta($_POST['id_conta'], $_POST['fornecedores_atualizar'], $_POST['salarios_benef_atualizar'], $_POST['aluguel_atualizar'], $_POST['contas_publicas_atualizar'], $_POST['impostos_atualizar'], $_POST['emprestimos_atualizar'], $_POST['manutencao_atualizar'], $_POST['seguros_atualizar'], $_POST['marketing_atualizar'], $_POST['despesas_adm_atualizar'], $_POST['logistica_atualizar'], $_POST['pesquisa_atualizar'], $_POST['garantia_atualizar']);
-}
-
-// Excluir conta
-if (isset($_POST['excluir_id_conta'])) {
-    $contasController->excluirconta($_POST['excluir_id_conta']);
-}
-
 $contas = $contasController->listarcontas();
 ?>
 <!DOCTYPE html>
@@ -40,10 +31,24 @@ $contas = $contasController->listarcontas();
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
+    <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
     <title>Gerenciamento de Contas</title>
 </head>
 <body>
     <a class="home" href="index.php">Home</a>
+
+    <?php if ($mensagem): ?>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                <p><?= $mensagem ?></p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('modal').style.display = 'block';
+        </script>
+    <?php endif; ?>
+    
     <h2>Controle de Contas</h2>
     <form method="post">
         <input type="number" name="fornecedores" placeholder="Fornecedores" required>

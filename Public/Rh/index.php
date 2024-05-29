@@ -105,7 +105,7 @@ $controles = $controleRhModel->listarControleRhs();
         };
     }
 </script>
-<a href="register.php">Criar</a>
+<div class="butespaco"><button class="but"> <a href="register.php">CADASTRAR NO RH</a></button></div>
 </body>
 </html>
 

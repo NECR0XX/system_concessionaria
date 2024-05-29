@@ -55,7 +55,16 @@ aside {
 .links a {
     margin-left: 10px;
 }
+.a3:active{
+    color: #ec5567;
+}
 
+.a3 {
+    color:  #ABABAB;
+    font-size: 50px;
+    text-decoration: none;
+    padding: 1vw;
+}
 .links2 {
     flex: auto;
     line-height: 50px;

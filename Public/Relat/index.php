@@ -41,7 +41,11 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
     </nav>
     </aside>
-<a href="../pg.php">Home</a>
+
+    <div class="content-wrapper">
+        
+        <div class="content">
+            <a class="a3" href="../pg.php">«</a>
 
 <section>
     <h1>Gerar relatórios</h1>
@@ -68,5 +72,8 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
         </li><hr>
     </ul>
 </section>
+</div>
+</div>
+
 </body>
 </html>

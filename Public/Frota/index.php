@@ -34,12 +34,6 @@ if (isset($_POST['excluir_id_frota'])) {
             <p class="logo">SCAR
             </p>
 
-            <div class="search-container">
-                <form action="" method="get">
-                    <input type="text" class="search-box" name="q" placeholder="">
-                    <img src="../../Resources/Assets/lupa.svg">
-                </form>
-            </div>
             <div class="ambiente">
                 <p>AMBIENTES</p>
             </div>
@@ -57,7 +51,7 @@ if (isset($_POST['excluir_id_frota'])) {
 
 
     <h1>CONTROLE DE FROTA DE VEÍCULO</h1>
-    <ul class="list">
+    <ul class="list2">
         <?php foreach ($frotas as $frota): ?>
             <li><strong>ID:</strong> <?php echo $frota['id_frota']; ?> - <strong>Marca/Modelo:</strong>
                 <?php echo $frota['marca_modelo']; ?>

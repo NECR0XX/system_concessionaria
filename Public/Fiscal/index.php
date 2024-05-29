@@ -33,13 +33,6 @@ if (isset($_POST['excluir_id_fiscal'])) {
         <nav>
             <p class="logo">SCAR</p>
 
-            <div class="search-container">
-                <form action="" method="get">
-                    <input type="text" class="search-box" name="q" placeholder="">
-                    <img src="../../Resources/Assets/lupa.svg">
-                </form>
-            </div>
-
             <div class="ambiente">
                 <p>AMBIENTES</p>
             </div>

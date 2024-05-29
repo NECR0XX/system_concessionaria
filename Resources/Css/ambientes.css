@@ -16,6 +16,40 @@
     color: #ec5567;
 }
 
+.list2 {
+    flex-direction: column;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    color: #505050;
+    text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+    padding: 10px;
+}
+
+.list2 .a1 {
+    color: #6290c5;
+}
+
+.list2 .a2 {
+    color: #ec5567;
+}
+.list3 {
+    flex-direction: column;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    color: #505050;
+    text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+    padding: 10px;
+}
+
+.list3 .a1 {
+    color: #6290c5;
+}
+
+.list3 .a2 {
+    color: #ec5567;
+}
 h1 {
     display: flex;
     text-align: center;
@@ -79,10 +113,8 @@ a:hover{
         color: #505050;
         text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
         font-size: 14px;
-
     }
-    
-    
+        
     .list .a1 {
         color: #6290c5;
     }
@@ -110,6 +142,47 @@ a:hover{
         color: #ec5567;
     }
     
+    .list3 {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        color: #505050;
+        text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+        font-size: 12px;
+        padding:10px;
+
+    }
+    
+    
+    .list3 .a1 {
+        color: #6290c5;
+    }
+    
+    .list3 .a2 {
+        color: #ec5567;
+    }
+
+    .list4 {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        color: #505050;
+        text-shadow: 0.1em 0.1em 0.2em #2c2b2b4d;
+        font-size: 12px;
+        padding:10px;
+
+    }
+    
+    
+    .list4 .a1 {
+        color: #6290c5;
+    }
+    
+    .list4 .a2 {
+        color: #ec5567;
+    }
+
+
     h1 {
         display: flex;
         text-align: center;

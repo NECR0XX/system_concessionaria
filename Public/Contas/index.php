@@ -49,7 +49,7 @@ if (isset($_POST['excluir_id_conta'])) {
             <a class="a3" href="../pg.php">«</a>
 
     <h1>DESPESAS</h1>
-    <ul class="list">
+    <ul class="list3">
         <?php foreach ($contas as $conta): ?>
             <li><strong>ID:</strong> <?php echo $conta['id_conta']; ?> - <strong>Fornecedores:</strong> R$<?php echo $conta['fornecedores']; ?>  
             - <strong>Salários e Benefícios:</strong> R$<?php echo $conta['salarios_benef']; ?> 

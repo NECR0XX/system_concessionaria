@@ -56,7 +56,10 @@ $controles = $controleRhModel->listarControleRhs();
         <?php echo $controlerh['cargo'] . " |"; ?>
         <?php echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">'?>editar</a>
         <?php echo " ou ";?>
-        <a class="a2" href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">excluir</a></li>
+        <a class="a2" href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">excluir</a>
+    <hr>
+    
+    </li>
         
     </ul>
 <?php endforeach; ?>

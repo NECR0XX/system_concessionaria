@@ -30,9 +30,6 @@
                         if(!isset($_SESSION['usuarioEmail']) or $_SESSION['usuarioEmail'] == '') {
                             echo '<a href="login.php" class="link-cadastro">Entre</a>';
                         }
-                        else {
-                            echo '<a href="../login-configs/logout.php" class="link-cadastro">Sair</a>';
-                        }
                     ?>
                 </div>
             </div>

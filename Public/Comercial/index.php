@@ -61,7 +61,7 @@ if (isset($_POST['excluir_id_comercial'])) {
             - <strong>Nota Fiscal:</strong> <?php echo $comercial['nota_fiscal']; ?> - <strong>Valor Total:</strong> R$<?php echo $comercial['valor_total']; ?> 
             - <strong>Canal de Venda:</strong> <?php echo $comercial['canal_venda']; ?> - <strong>Vendedor:</strong> <?php echo $comercial['vendedor']; ?> 
             - <strong>Estado da Transação:</strong> <?php echo $comercial['estado_transacao']; ?>
-            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>Atualizar</a>" ?> 
+            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>editar</a>" ?> 
             ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $comercial['id_comercial']; ?>)">excluir</a><hr></li>
         <?php endforeach; ?>
     </ul>

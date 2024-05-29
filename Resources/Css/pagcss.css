@@ -44,6 +44,14 @@ nav .logo{
 .cad-button{
     margin: 0 20px 0 0;
 }
+.cad-button a{
+    color: #F5F5F5;
+    text-decoration: none;
+}
+.cad-button a:hover{
+    color: #FF1430;
+    text-decoration: underline;
+}
 
 .link-cadastro {
     font-family: "ABeeZee", sans-serif;

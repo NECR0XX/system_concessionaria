@@ -1,8 +1,6 @@
 <?php
 require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
-require_once '../login-configs/verificacaoEmpresa.php';
-require_once '../login-configs/verificacao.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $controleRhController = new controleRhController($pdo);

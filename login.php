@@ -32,11 +32,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             // Credenciais inválidas, exibir mensagem de erro
-            $erro = "empresa_email ou senha incorretos.";
+            $erro = "E-mail da empresa ou senha incorretos.";
         }
     } else {
         // Se empresa_email ou senha não foram enviados, exibir mensagem de erro
-        $erro = "Por favor, insira empresa_email e senha.";
+        $erro = "Por favor, insira o E-mail a empresa e senha.";
     }
 }
 

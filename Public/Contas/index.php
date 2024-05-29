@@ -31,13 +31,7 @@ if (isset($_POST['excluir_id_conta'])) {
        <nav>
         <p class="logo">SCAR
     </p>
-        
-    <div class="search-container">
-    <form action="" method="get">
-        <input type="text" class="search-box" name="q" placeholder="">
-        <img src="../../Resources/Assets/lupa.svg">
-    </form>
-</div>
+    
     <div class="ambiente">
         <p>AMBIENTES</p>
     </div>
@@ -110,6 +104,6 @@ if (isset($_POST['excluir_id_conta'])) {
             };
         }
     </script>
-    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR EMPRESAS</a></button></div>
+    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR DESPESA</a></button></div>
 </body>
 </html>

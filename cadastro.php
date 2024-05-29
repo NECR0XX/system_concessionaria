@@ -69,6 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
 <body>
     <a class="home" href="index.php">Voltar</a>
 
+    <h1>Cadastre sua empresa</h1>
+
     <form method="POST">
         <label>Número Inscrição</label>
         <input type="text" name="numero_inscricao">

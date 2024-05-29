@@ -32,10 +32,13 @@ $contas = $contasController->listarcontas();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylereg.css">
     <title>Gerenciamento de Contas</title>
 </head>
 <body>
-    <a class="home" href="index.php">Home</a>
+<div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="index.php">«</a>
 
     <?php if ($mensagem): ?>
         <div id="modal" class="modal">

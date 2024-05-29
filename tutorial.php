@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="Resources/Css/stylevid.css">
 </head>
 <body>
+<a class="a3" href="index.php">Voltar</a>
     <div class="container">
         <h1>Video Tutorial</h1>
         <video controls>
-            <source src="yt5s.io-TVアニメ「ヴィンランド・サガ」SEASON 2 第2クール ノンクレジットオープニングムービー_ 2nd Cour Textless Opening Video-(1080p).mp4" type="video/mp4">
+            <source src="Resources/Assets/Uploads/Tutorial .mov">
             Your browser does not support the video tag.
         </video>
     </div>

@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(white, rgb(187, 187, 187));
+    flex-direction: column;
 }
 
 .container {
@@ -26,3 +27,15 @@ video {
     max-width: 600px;
     border-radius: 2px;
 }
+
+.a3 {
+    color: #808080;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 1vw;
+}
+
+.a3:active {
+    color: #cf0000;
+}
+

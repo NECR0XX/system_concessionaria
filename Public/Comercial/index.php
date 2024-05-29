@@ -20,6 +20,7 @@ if (isset($_POST['excluir_id_comercial'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -43,10 +44,12 @@ if (isset($_POST['excluir_id_comercial'])) {
 
     </nav>
     </aside>
+    <div class="content-wrapper">
+        <div class="content">
+            <a class="a3" href="../pg.php">«</a>
 
-<fieldset>
-    <legend><h2>Lista</h2></legend>
-    <ul>
+    <h1>COMERCIAL</h1>
+    <ul class="list">
         <?php foreach ($comerciais as $comercial): ?>
             <li><strong>Id Comercial:</strong> <?php echo $comercial['id_comercial']; ?> - <strong>Nome do Cliente:</strong> <?php echo $comercial['nome_cliente']; ?> 
             - <strong>Telefone do Cliente:</strong> <?php echo $comercial['telefone_cliente']; ?> 
@@ -58,11 +61,10 @@ if (isset($_POST['excluir_id_comercial'])) {
             - <strong>Nota Fiscal:</strong> <?php echo $comercial['nota_fiscal']; ?> - <strong>Valor Total:</strong> R$<?php echo $comercial['valor_total']; ?> 
             - <strong>Canal de Venda:</strong> <?php echo $comercial['canal_venda']; ?> - <strong>Vendedor:</strong> <?php echo $comercial['vendedor']; ?> 
             - <strong>Estado da Transação:</strong> <?php echo $comercial['estado_transacao']; ?>
-            - <?php echo "<a href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>Atualizar</a>" ?> 
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $comercial['id_comercial']; ?>)">excluir</a></li>
+            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>Atualizar</a>" ?> 
+            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $comercial['id_comercial']; ?>)">excluir</a><hr></li>
         <?php endforeach; ?>
     </ul>
-</fieldset>
 
 <div id="myModal" class="modal">
     <div class="modal-content">
@@ -105,6 +107,6 @@ if (isset($_POST['excluir_id_comercial'])) {
     }
 </script>
 
-    <button><a href="crud.php">Criar</a></button>
+<div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR PRODUTO</a></button></div>
 </body>
 </html>

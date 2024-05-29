@@ -4,14 +4,110 @@
     require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
     require_once 'parametros/uf.php';
-    require_once 'parametros/controleRh.php';
     require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
-require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
+    require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
     $controleRhController = new controleRhController($pdo);
     
     //recupera o id e aciona a função que lista dentro dos inputs
     $id = $_GET['id'];
     $UserRh = $controleRhController->listarRhPorID($id);
+
+//atualizar
+if (isset($_GET['id']) 
+    && isset($_POST['atualizar_nome']) 
+    && isset($_POST['atualizar_email']) 
+    && isset($_POST['atualizar_senha']) 
+    && isset($_POST['atualizar_tipo']) 
+    && isset($_POST['atualizar_nome_pai']) 
+    && isset($_POST['atualizar_nome_mae']) 
+    && isset($_POST['atualizar_naturalidade']) 
+    && isset($_POST['atualizar_uf']) 
+    && isset($_POST['atualizar_data_nascimento']) 
+    && isset($_POST['atualizar_deficiente_fisico']) 
+    && isset($_POST['atualizar_raca_cor']) 
+    && isset($_POST['atualizar_sexo']) 
+    && isset($_POST['atualizar_estado_civil']) 
+    && isset($_POST['atualizar_grau_instrucao']) 
+    && isset($_POST['atualizar_endereco']) 
+    && isset($_POST['atualizar_numero']) 
+    && isset($_POST['atualizar_complemento']) 
+    && isset($_POST['atualizar_cep']) 
+    && isset($_POST['atualizar_bairro']) 
+    && isset($_POST['atualizar_cidade']) 
+    && isset($_POST['atualizar_telefone']) 
+    && isset($_POST['atualizar_celular']) 
+    && isset($_POST['atualizar_numero_ctps']) 
+    && isset($_POST['atualizar_serie']) 
+    && isset($_POST['atualizar_uf_rh']) 
+    && isset($_POST['atualizar_data_expedicao_ctps']) 
+    && isset($_POST['atualizar_pis']) 
+    && isset($_POST['atualizar_data_cadastro_pis']) 
+    && isset($_POST['atualizar_rg_rh']) 
+    && isset($_POST['atualizar_data_expedicao_rg']) 
+    && isset($_POST['atualizar_cpf_rh']) 
+    && isset($_POST['atualizar_titulo_eleitor']) 
+    && isset($_POST['atualizar_zona']) 
+    && isset($_POST['atualizar_secao']) 
+    && isset($_POST['atualizar_dependentes']) 
+    && isset($_POST['atualizar_vale_transporte']) 
+    && isset($_POST['atualizar_horario_trabalho']) 
+    && isset($_POST['atualizar_entrada']) 
+    && isset($_POST['atualizar_intervalo']) 
+    && isset($_POST['atualizar_saida']) 
+    && isset($_POST['atualizar_cargo']) 
+    && isset($_POST['atualizar_data_admissao']) 
+    && isset($_POST['atualizar_data_exame_medico']) 
+    && isset($_POST['atualizar_experiencia'])) {
+    
+        $controleRhController->atualizarControleRh(
+        $_GET['id'], 
+        $_POST['atualizar_nome'], 
+        $_POST['atualizar_email'], 
+        $_POST['atualizar_senha'], 
+        $_POST['atualizar_tipo'], 
+        $_POST['atualizar_nome_pai'], 
+        $_POST['atualizar_nome_mae'], 
+        $_POST['atualizar_naturalidade'], 
+        $_POST['atualizar_uf'], 
+        $_POST['atualizar_data_nascimento'], 
+        $_POST['atualizar_deficiente_fisico'], 
+        $_POST['atualizar_raca_cor'], 
+        $_POST['atualizar_sexo'], 
+        $_POST['atualizar_estado_civil'], 
+        $_POST['atualizar_grau_instrucao'], 
+        $_POST['atualizar_endereco'], 
+        $_POST['atualizar_numero'], 
+        $_POST['atualizar_complemento'], 
+        $_POST['atualizar_cep'], 
+        $_POST['atualizar_bairro'], 
+        $_POST['atualizar_cidade'], 
+        $_POST['atualizar_telefone'], 
+        $_POST['atualizar_celular'], 
+        $_POST['atualizar_numero_ctps'], 
+        $_POST['atualizar_serie'], 
+        $_POST['atualizar_uf_rh'], 
+        $_POST['atualizar_data_expedicao_ctps'], 
+        $_POST['atualizar_pis'], 
+        $_POST['atualizar_data_cadastro_pis'], 
+        $_POST['atualizar_rg_rh'], 
+        $_POST['atualizar_data_expedicao_rg'], 
+        $_POST['atualizar_cpf_rh'], 
+        $_POST['atualizar_titulo_eleitor'], 
+        $_POST['atualizar_zona'], 
+        $_POST['atualizar_secao'], 
+        $_POST['atualizar_dependentes'], 
+        $_POST['atualizar_vale_transporte'], 
+        $_POST['atualizar_horario_trabalho'], 
+        $_POST['atualizar_entrada'], 
+        $_POST['atualizar_intervalo'], 
+        $_POST['atualizar_saida'], 
+        $_POST['atualizar_cargo'], 
+        $_POST['atualizar_data_admissao'], 
+        $_POST['atualizar_data_exame_medico'], 
+        $_POST['atualizar_experiencia']
+        );
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -70,9 +166,6 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
         <label>Bairro</label>
         <input value="<?php echo $UserRh['bairro']; ?>" type="text" placeholder="Bairro" name="atualizar_bairro">
 
-        <label>Cidade</label>
-        <input value="<?php echo $UserRh['cidade']; ?>" type="text" placeholder="Cidade" name="atualizar_cidade">
-
         <label>Telefone</label>
         <input value="<?php echo $UserRh['telefone']; ?>" type="text" placeholder="Telefone" name="atualizar_telefone">
     </div>
@@ -97,7 +190,7 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
             <option value="" disabled selected hidden>Selecione um UF</option>
             <?php
             foreach ($ufs as $sigla => $nome) {
-                echo '<option value="' . $sigla . '">' . $sigla . '</option>';
+                echo '<option value="' . $sigla . '" ' . ($UserRh['uf'] === $sigla ? 'selected' : '') . '>' . $sigla . '</option>';
             }
             ?>
         </select>
@@ -125,38 +218,8 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <option value="3 incompleto" <?php echo $UserRh['grau_instrucao'] === '3 incompleto' ? 'selected' : ''; ?>>Terceiro grau incompleto</option>
 </select>
 
-<label>Endereço</label>
-<input value="<?php echo $UserRh['endereco']; ?>" type="text" placeholder="Endereço" name="atualizar_endereco">
-
-<label>Número</label>
-<input value="<?php echo $UserRh['numero']; ?>" type="number" placeholder="Número" name="atualizar_numero">
-
-<label>Complemento</label>
-<input value="<?php echo $UserRh['complemento']; ?>" type="text" placeholder="Complemento" name="atualizar_complemento">
-
-<label>CEP</label>
-<input value="<?php echo $UserRh['cep']; ?>" type="text" placeholder="CEP" name="atualizar_cep">
-
-<label>Bairro</label>
-<input value="<?php echo $UserRh['bairro']; ?>" type="text" placeholder="Bairro" name="atualizar_bairro">
-
 <label>Cidade</label>
 <input value="<?php echo $UserRh['cidade']; ?>" type="text" placeholder="Cidade" name="atualizar_cidade">
-
-<label>Telefone</label>
-<input value="<?php echo $UserRh['telefone']; ?>" type="text" placeholder="Telefone" name="atualizar_telefone">
-
-<label>Celular</label>
-<input value="<?php echo $UserRh['celular']; ?>" type="text" placeholder="Celular" name="atualizar_celular">
-
-<label>Nome do Pai</label>
-<input value="<?php echo $UserRh['nome_pai']; ?>" type="text" placeholder="Nome do Pai" name="atualizar_nome_pai">
-
-<label>Nome da Mãe</label>
-<input value="<?php echo $UserRh['nome_mae']; ?>" type="text" placeholder="Nome da Mãe" name="atualizar_nome_mae">
-
-<label>Naturalidade</label>
-<input value="<?php echo $UserRh['naturalidade']; ?>" type="text" placeholder="Naturalidade" name="atualizar_naturalidade">
 
 <label>Data de Nascimento</label>
 <input value="<?php echo $UserRh['data_nascimento']; ?>" type="date" placeholder="Data de Nascimento" name="atualizar_data_nascimento">
@@ -184,27 +247,6 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <option value="feminino" <?php echo $UserRh['sexo'] === 'feminino' ? 'selected' : ''; ?>>Feminino</option>
 </select>
 
-<label>Estado Civil</label>
-<select name="atualizar_estado_civil">
-    <option value="" disabled selected hidden>Selecione o Estado Civil</option>
-    <option value="Solteiro" <?php echo $UserRh['estado_civil'] === 'Solteiro' ? 'selected' : ''; ?>>Solteiro</option>
-    <option value="Casado" <?php echo $UserRh['estado_civil'] === 'Casado' ? 'selected' : ''; ?>>Casado</option>
-    <option value="Separado" <?php echo $UserRh['estado_civil'] === 'Separado' ? 'selected' : ''; ?>>Separado</option>
-    <option value="Divorciado" <?php echo $UserRh['estado_civil'] === 'Divorciado' ? 'selected' : ''; ?>>Divorciado</option>
-    <option value="Viúvo" <?php echo $UserRh['estado_civil'] === 'Viúvo' ? 'selected' : ''; ?>>Viúvo</option>
-</select>
-
-<label>Grau de Instrução</label>
-<select name="atualizar_grau_instrucao">
-    <option value="" disabled selected hidden>Selecione o Grau de Instrução</option>
-    <option value="1 completo" <?php echo $UserRh['grau_instrucao'] === '1 completo' ? 'selected' : ''; ?>>Primeiro grau completo</option>
-    <option value="1 incompleto" <?php echo $UserRh['grau_instrucao'] === '1 incompleto' ? 'selected' : ''; ?>>Primeiro grau incompleto</option>
-    <option value="2" <?php echo $UserRh['grau_instrucao'] === '2' ? 'selected' : ''; ?>>Segundo grau</option>
-    <option value="2 incompleto" <?php echo $UserRh['grau_instrucao'] === '2 incompleto' ? 'selected' : ''; ?>>Segundo grau incompleto</option>
-    <option value="3" <?php echo $UserRh['grau_instrucao'] === '3' ? 'selected' : ''; ?>>Terceiro grau</option>
-    <option value="3 incompleto" <?php echo $UserRh['grau_instrucao'] === '3 incompleto' ? 'selected' : ''; ?>>Terceiro grau incompleto</option>
-</select>
-
 <label>Numero CTPS</label>
 <input value="<?php echo $UserRh['numero_ctps']; ?>" type="text" placeholder="Numero CTPS" name="atualizar_numero_ctps">
 
@@ -217,7 +259,8 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <?php
         foreach ($ufs as $sigla => $nome) {
             $selected = $UserRh['uf_rh'] === $sigla ? 'selected' : '';
-            echo '<option value="' . $sigla . '" ' . $selected . '>' . $sigla . '</option>';
+            echo '<option value="' . $sigla . '" ' . ($UserRh['uf_rh'] === $sigla ? 'selected' : '') . '>' . $sigla . '</option>';
+
         }
     ?>
 </select>
@@ -251,15 +294,16 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 <label>Possui dependentes?</label>
 <label>Sim</label>
-<input value="<?php echo $UserRh['dependentes']; ?>" type="radio" name="atualizar_dependentes" value="sim">
+<input type="radio" name="atualizar_dependentes" value="sim"<?php echo $UserRh['dependentes'] === 'sim' ? 'checked' : ''; ?>>
 <label>Não</label>
-<input value="<?php echo $UserRh['dependentes']; ?>" type="radio" name="atualizar_dependentes" value="nao">
+<input type="radio" name="atualizar_dependentes" value="nao"<?php echo $UserRh['dependentes'] === 'nao' ? 'checked' : ''; ?>>
 
 <label>Vale Transporte</label>
 <label>Sim</label>
-<input value="<?php echo $UserRh['vale_transporte']; ?>" type="radio" name="atualizar_vale_transporte" value="sim">
+<input type="radio" name="atualizar_vale_transporte" value="sim"<?php echo $UserRh['vale_transporte'] === 'sim' ? ' checked' : ''; ?>>
 <label>Não</label>
-<input value="<?php echo $UserRh['vale_transporte']; ?>" type="radio" name="atualizar_vale_transporte" value="nao">
+<input type="radio" name="atualizar_vale_transporte" value="nao"<?php echo $UserRh['vale_transporte'] === 'nao' ? ' checked' : ''; ?>>
+
 
 <label>Horário de Trabalho</label>
 <input value="<?php echo $UserRh['horario_trabalho']; ?>" type="number" placeholder="Horário de Trabalho" name="atualizar_horario_trabalho">
@@ -291,15 +335,16 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
 
 <label>Tipo de Usuário</label>
 <label>Administrador</label>
-<input value="<?php echo $UserRh['tipo']; ?>" type="radio" name="atualizar_tipo" value="1">
+<input type="radio" name="atualizar_tipo" value="1"<?php echo $UserRh['tipo'] === 1 ? ' checked' : ''; ?>>
 <label>Gerente</label>
-<input value="<?php echo $UserRh['tipo']; ?>" type="radio" name="atualizar_tipo" value="2">
+<input type="radio" name="atualizar_tipo" value="2"<?php echo $UserRh['tipo'] === 2 ? ' checked' : ''; ?>>
 <label>Funcionário Comercial</label>
-<input value="<?php echo $UserRh['tipo']; ?>" type="radio" name="atualizar_tipo" value="3">
+<input type="radio" name="atualizar_tipo" value="3"<?php echo $UserRh['tipo'] === 3 ? ' checked' : ''; ?>>
 <label>Estagiário</label>
-<input value="<?php echo $UserRh['tipo']; ?>" type="radio" name="atualizar_tipo" value="4">
+<input type="radio" name="atualizar_tipo" value="4"<?php echo $UserRh['tipo'] === 4 ? ' checked' : ''; ?>>
 <label>Funcionário Comum</label>
-<input value="<?php echo $UserRh['tipo']; ?>" type="radio" name="atualizar_tipo" value="5">
+<input type="radio" name="atualizar_tipo" value="5"<?php echo $UserRh['tipo'] === 5 ? ' checked' : ''; ?>>
+
 
                 <button type="submit">  Editar</button>
         </form>

@@ -51,7 +51,7 @@ if (isset($_POST['excluir_id_frota'])) {
 
 
     <h1>CONTROLE DE FROTA DE VEÍCULO</h1>
-    <ul class="list">
+    <ul class="list3">
         <?php foreach ($frotas as $frota): ?>
             <li><strong>ID:</strong> <?php echo $frota['id_frota']; ?> - <strong>Marca/Modelo:</strong>
                 <?php echo $frota['marca_modelo']; ?>

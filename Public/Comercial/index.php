@@ -49,7 +49,7 @@ if (isset($_POST['excluir_id_comercial'])) {
             <a class="a3" href="../pg.php">«</a>
 
     <h1>COMERCIAL</h1>
-    <ul class="list">
+    <ul class="list3">
         <?php foreach ($comerciais as $comercial): ?>
             <li><strong>Id Comercial:</strong> <?php echo $comercial['id_comercial']; ?> - <strong>Nome do Cliente:</strong> <?php echo $comercial['nome_cliente']; ?> 
             - <strong>Telefone do Cliente:</strong> <?php echo $comercial['telefone_cliente']; ?> 

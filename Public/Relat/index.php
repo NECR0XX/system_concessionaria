@@ -24,12 +24,7 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
         <p class="logo">SCAR
     </p>
         
-    <div class="search-container">
-    <form action="" method="get">
-        <input type="text" class="search-box" name="q" placeholder="">
-        <img src="../../Resources/Assets/lupa.svg">
-    </form>
-</div>
+  
     <div class="ambiente">
         <p>AMBIENTES</p>
     </div>

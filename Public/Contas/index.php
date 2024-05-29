@@ -58,8 +58,8 @@ if (isset($_POST['excluir_id_conta'])) {
             - <strong>Manutenção:</strong> R$<?php echo $conta['manutencao']; ?> - <strong>Seguros:</strong> R$<?php echo $conta['seguros']; ?> 
             - <strong>Marketing:</strong> R$<?php echo $conta['marketing']; ?> - <strong>Despesas Administrativas:</strong> R$<?php echo $conta['despesas_adm']; ?> 
             - <strong>Logística:</strong> R$<?php echo $conta['logistica']; ?> 
-            - <strong>Pesquisa:</strong> R$<?php echo $conta['pesquisa']; ?> - <strong>Garantia:</strong> R$<?php echo $conta['garantia']; ?>
-            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcontas.php?id={$conta['id_conta']}'>Editar</a>" ?>
+            - <strong>Pesquisa:</strong> R$<?php echo $conta['pesquisa']; ?> - <strong>Garantia:</strong> R$<?php echo $conta['garantia']. " |"; ?>
+             <?php echo "<a class='a1' href='../../App/Providers/atualizarcontas.php?id={$conta['id_conta']}'>Editar</a>" ?>
             ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $conta['id_conta']; ?>)">excluir</a><hr></li>
         <?php endforeach; ?>
     </ul>

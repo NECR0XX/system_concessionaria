@@ -11,6 +11,8 @@ class ComercialModel {
         $sql = "INSERT INTO comercial (nome_cliente, telefone_cliente, email_cliente, identificacao_cliente, marca_car, modelo_car, caracteristicas_car, preco_car, numero_chassi, data_venda, tipo_transacao, forma_paga, nota_fiscal, valor_total, canal_venda, vendedor, estado_transacao) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome_cliente, $telefone_cliente, $email_cliente, $identificacao_cliente, $marca_car, $modelo_car, $caracteristicas_car, $preco_car, $numero_chassi, $data_venda, $tipo_transacao, $forma_paga, $nota_fiscal, $valor_total, $canal_venda, $vendedor, $estado_transacao]);
+        header("Location: index.php");
+        exit;
     }
 
     // Model para listar Comercials
@@ -25,6 +27,8 @@ class ComercialModel {
         $sql = "UPDATE comercial SET nome_cliente = ?, telefone_cliente = ?, email_cliente = ?, identificacao_cliente = ?, marca_car = ?, modelo_car = ?, caracteristicas_car = ?, preco_car = ?, numero_chassi = ?, data_venda = ?, tipo_transacao = ?, forma_paga = ?, nota_fiscal = ?, valor_total = ?, canal_venda = ?, vendedor = ?, estado_transacao = ? WHERE id_comercial = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nome_cliente, $telefone_cliente, $email_cliente, $identificacao_cliente, $marca_car, $modelo_car, $caracteristicas_car, $preco_car, $numero_chassi, $data_venda, $tipo_transacao, $forma_paga, $nota_fiscal, $valor_total, $canal_venda, $vendedor, $estado_transacao, $id_comercial]);
+        header("Location: index.php");
+        exit;
     }
     
     // Model para deletar Comercial

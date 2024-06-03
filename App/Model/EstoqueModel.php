@@ -10,6 +10,8 @@ class EstoqueModel {
         $sql = "INSERT INTO Estoque (numero_referencia, categoria, quantidade, preco_unitario, fornecedor, localizacao, reabastecimento_minimo, validade, observacoes, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$numero_referencia, $categoria, $quantidade, $preco_unitario, $fornecedor, $localizacao, $reabastecimento_minimo, $validade, $observacoes, $imagem]);
+        header("Location: index.php");
+        exit;
     }
 
     public function listarEstoque() {
@@ -22,6 +24,8 @@ class EstoqueModel {
         $sql = "UPDATE Estoque SET numero_referencia = ?, categoria = ?, quantidade = ?, preco_unitario = ?, fornecedor = ?, localizacao = ?, reabastecimento_minimo = ?, validade = ?, observacoes = ?, imagem = ? WHERE id_estoque = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$numero_referencia, $categoria, $quantidade, $preco_unitario, $fornecedor, $localizacao, $reabastecimento_minimo, $validade, $observacoes, $imagem, $id_estoque]);
+        header("Location: index.php");
+        exit;
     }
 
     public function excluirEstoque($id_estoque) {

@@ -11,6 +11,8 @@ class FiscalModel {
         $sql = "INSERT INTO fiscal (data, valor, tipo, cliente_fornecedor, nota_fiscal, imposto, metodo_pagamento, codigo_fiscal, contas_contabeis, localizacao, responsavel, status, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$data, $valor, $tipo, $cliente_fornecedor, $nota_fiscal, $imposto, $metodo_pagamento, $codigo_fiscal, $contas_contabeis, $localizacao, $responsavel, $status, $observacoes]);
+        header("Location: index.php");
+        exit;
     }
 
     // Model para listar Fiscals
@@ -25,6 +27,8 @@ class FiscalModel {
         $sql = "UPDATE fiscal SET data = ?, valor = ?, tipo = ?, cliente_fornecedor = ?, nota_fiscal = ?, imposto = ?, metodo_pagamento = ?, codigo_fiscal = ?, contas_contabeis = ?, localizacao = ?, responsavel = ?, status = ?, observacoes = ? WHERE id_fiscal = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$data, $valor, $tipo, $cliente_fornecedor, $nota_fiscal, $imposto, $metodo_pagamento, $codigo_fiscal, $contas_contabeis, $localizacao, $responsavel, $status, $observacoes, $id_fiscal]);
+        header("Location: index.php");
+        exit;
     }
     
     // Model para deletar Fiscal

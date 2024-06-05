@@ -5,7 +5,7 @@ require_once '../../App/Controller/EstoqueController.php';
 require_once '../../login-configs/filtros.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
-
+$filtroRh = FiltroRh();
 $estoqueController = new EstoqueController($pdo);
 $estoques = $estoqueController->listarEstoque();
 
@@ -20,6 +20,7 @@ if (isset($_POST['excluir_id_estoque'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/modal-imagem.css">
     <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,15 +55,43 @@ if (isset($_POST['excluir_id_estoque'])) {
 
         <ul class="list">
         <?php foreach ($estoques as $estoque): ?>
-            <li><strong>Número de Referência:</strong> <?php echo $estoque['numero_referencia']; ?> - <strong>Categoria:</strong> <?php echo $estoque['categoria']; ?> - <strong>Quantidade:</strong> <?php echo $estoque['quantidade']; ?> 
-            - <strong>Preço Unitário:</strong> <?php echo $estoque['preco_unitario']; ?> - <strong>Fornecedor:</strong> <?php echo $estoque['fornecedor']; ?> - <strong>Localização:</strong> <?php echo $estoque['localizacao']; ?> 
-            - <strong>Reabastecimento Mínimo:</strong> <?php echo $estoque['reabastecimento_minimo']; ?> - <strong>Validade:</strong> <?php echo $estoque['validade']; ?> 
-             | <?php echo '<a class="a1"  href="../../App/Providers/atualizarestoque.php?id=' . $estoque['id_estoque']. '">'?>editar</a>
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $estoque['id_estoque']; ?>)">excluir</a> <hr></li>
+            <li><strong>Número de Referência:</strong> 
+            <?php echo $estoque['numero_referencia']; ?> - 
+            <strong>Categoria:</strong> 
+            <?php echo $estoque['categoria']; ?> - 
+            <strong>Quantidade:</strong> 
+            <?php echo $estoque['quantidade']; ?> 
+            - <strong>Preço Unitário:</strong> 
+            <?php echo $estoque['preco_unitario']; ?> - 
+            <strong>Fornecedor:</strong> 
+            <?php echo $estoque['fornecedor']; ?> - 
+            <strong>Localização:</strong> 
+            <?php echo $estoque['localizacao']; ?> 
+            - <strong>Reabastecimento Mínimo:</strong> 
+            <?php echo $estoque['reabastecimento_minimo']; ?> - 
+            <strong>Validade:</strong> 
+            <?php echo $estoque['validade']; ?> - 
+            <strong>Imagem:</strong> 
+            <img class="imagemPequena" alt="Imagem do Produto" style="width:50px; cursor:pointer;" src="<?php echo $estoque['imagem']; ?>"> 
+             | 
+            <?php
+            if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                echo '<a class="a1" href="../../App/Providers/atualizarestoque.php?id=' . $estoque['id_estoque'] . '">editar</a>';
+                echo ' ou ';
+                echo '<a class="a2" href="#" onclick="confirmDelete(' . $estoque['id_estoque'] . ')">excluir</a>';
+                echo '<hr></li>';
+            }
+            ?>
+
            
         <?php endforeach; ?>
         </ul>
 
+<!-- Modal -->
+<div id="meuModal" class="modal">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imagemExpandida">
+    </div>
 
 <div id="myModal" class="modal">
         <div class="modal-content">
@@ -105,7 +134,8 @@ if (isset($_POST['excluir_id_estoque'])) {
         }
     </script>
     
-    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR PRODUTO</a></button></div>
+    <?php $FiltroCadastroEstoque = FiltroCadastroEstoque(); ?>
     
+<script src="../../Resources/js/script.js"></script>
 </body>
 </html>

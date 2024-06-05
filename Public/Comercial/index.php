@@ -5,7 +5,7 @@ require_once '../../App/Controller/ComercialController.php';
 require_once '../../login-configs/filtros.php';
 require_once '../../login-configs/verificacaoEmpresa.php';
 require_once '../../login-configs/verificacao.php';
-
+$filtroRh = FiltroRh();
 $comercialController = new ComercialController($pdo);
 $comerciais = $comercialController->listarComercials();
 
@@ -61,8 +61,14 @@ if (isset($_POST['excluir_id_comercial'])) {
             - <strong>Nota Fiscal:</strong> <?php echo $comercial['nota_fiscal']; ?> - <strong>Valor Total:</strong> R$<?php echo $comercial['valor_total']; ?> 
             - <strong>Canal de Venda:</strong> <?php echo $comercial['canal_venda']; ?> - <strong>Vendedor:</strong> <?php echo $comercial['vendedor']; ?> 
             - <strong>Estado da Transação:</strong> <?php echo $comercial['estado_transacao']; ?>
-            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>editar</a>" ?> 
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $comercial['id_comercial']; ?>)">excluir</a><hr></li>
+            - 
+            <?php
+            if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                echo "<a class='a1' href='../../App/Providers/atualizarcomercial.php?id={$comercial['id_comercial']}'>editar</a>";
+                echo " ou <a class='a2' href='#' onclick='confirmDelete({$comercial['id_comercial']})'>excluir</a><hr></li>";
+            }
+            ?>
+
         <?php endforeach; ?>
     </ul>
 
@@ -107,6 +113,6 @@ if (isset($_POST['excluir_id_comercial'])) {
     }
 </script>
 
-<div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR PRODUTO</a></button></div>
+<?php $FiltroCadastroComercial = FiltroCadastroComercial(); ?>
 </body>
 </html>

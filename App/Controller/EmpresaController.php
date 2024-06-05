@@ -8,16 +8,24 @@ class EmpresaController {
         $this->empresaModel = new EmpresaModel($pdo);
     }
 
-    public function criarEmpresa($numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $lagradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha) {
-        $this->empresaModel->criarEmpresa($numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $lagradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha);
+    public function criarEmpresa($numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $logradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha) {
+        $this->empresaModel->criarEmpresa($numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $logradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha);
     }
 
-    public function atualizarEmpresa($empresa_id, $numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $lagradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha) {
-    $this->empresaModel->atualizarEmpresa($empresa_id, $numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $lagradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha);
+    public function listarEmpresas() {
+        return $this->empresaModel->listarEmpresa();
+    }
+
+    public function atualizarEmpresa($empresa_id, $numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $logradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha) {
+    $this->empresaModel->atualizarEmpresa($empresa_id, $numero_inscricao, $data_abertura, $razao_social, $nome_fantasia, $cnpj, $porte, $capital_social, $logradouro, $cep, $bairro_restrito, $municipio, $numero, $complemento, $telefone, $uf, $empresa_email, $senha);
     }
 
     public function deletarEmpresa($empresa_id) {
         $this->empresaModel->deletarEmpresa($empresa_id);
     }
+
+    public function listarEmpresaPorId($id) {
+        return $this->empresaModel->listarEmpresaPorId($id);
+    }    
 }
 ?>

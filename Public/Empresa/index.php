@@ -4,10 +4,10 @@ require_once '../../login-configs/filtros.php';
 require_once '../../Config/config.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
-require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
-$FiltroComercial = FiltroComercial();
-$controleRhModel = new controleRhModel($pdo);
-$controles = $controleRhModel->listarControleRhs();
+require_once 'C:/xampp/htdocs/system_concessionaria/App/Controller/EmpresaController.php';
+$empresaModel = new empresaModel($pdo);
+$empresas = $empresaModel->listarempresas();
+$filtroEmpresa = FiltroEmpresa();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +21,8 @@ $controles = $controleRhModel->listarControleRhs();
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <title>SCAR - RH</title>
-    <title>RH</title>
+    <title>SCAR - Empresa</title>
+    <title></title>
 </head>
 <body>
 <aside>
@@ -48,24 +48,38 @@ $controles = $controleRhModel->listarControleRhs();
         <div class="content">
             <a class="a3" href="../pg.php">«</a>
 
-        <h1>CONTROLE DE PESSOAS - RH</h1>
+        <h1>empresa DA EMPRESA</h1>
 
-        <?php foreach($controles as $controlerh): ?>
+        <?php foreach($empresas as $empresa): ?>
     <ul class="list">
-        
-        <li><?php echo $controlerh['nome'] . " - >" ; ?>
-        <?php echo $controlerh['email'] . " - >"; ?>
-        <?php echo $controlerh['cargo'] . " |" ; ?>
-        <?php if ($_SESSION['usuarioNiveisAcessoId'] != 5) { 
-        echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">editar</a>';
-        echo ' ou ';
-        echo '<a class="a2" href="#" onclick="confirmDelete(' . $controlerh['id'] . ')">excluir</a>';}?>
-    <hr>
-    
-    </li>
-        
+        <li>
+            <?php echo $empresa['numero_inscricao'] . " - >" ; ?>
+            <?php echo $empresa['data_abertura'] . " - >"; ?>
+            <?php echo $empresa['razao_social'] . " - >" ; ?>
+            <?php echo $empresa['nome_fantasia'] . " - >" ; ?>
+            <?php echo $empresa['cnpj'] . " - >" ; ?>
+            <?php echo $empresa['porte'] . " - >" ; ?>
+            <?php echo $empresa['capital_social'] . " - >" ; ?>
+            <?php echo $empresa['logradouro'] . " - >" ; ?>
+            <?php echo $empresa['cep'] . " - >" ; ?>
+            <?php echo $empresa['bairro_restrito'] . " - >" ; ?>
+            <?php echo $empresa['municipio'] . " - >" ; ?>
+            <?php echo $empresa['numero'] . " - >" ; ?>
+            <?php echo $empresa['complemento'] . " - >" ; ?>
+            <?php echo $empresa['telefone'] . " - >" ; ?>
+            <?php echo $empresa['uf'] . " - >" ; ?>
+            <?php echo $empresa['empresa_email'] . " - >"; ?>
+            <?php echo $empresa['senha'] . " |" ; ?>
+            <?php
+            if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                echo "<a class='a1' href='../../App/Providers/atualizarEmpresa.php?id={$empresa['empresa_id']}'>editar</a> ";
+            }
+            ?>
+            <hr>
+        </li>
     </ul>
 <?php endforeach; ?>
+
 
     </div>
     </div>
@@ -107,9 +121,6 @@ $controles = $controleRhModel->listarControleRhs();
         };
     }
 </script>
-<?php
-    $filtroCadastroRh = filtroCadastroRh();
-?>
 </body>
 </html>
 

@@ -10,7 +10,7 @@ class ContaModel {
         $sql = "INSERT INTO contas (fornecedores, salarios_benef, aluguel, contas_publicas, impostos, emprestimos, manutencao, seguros, marketing, despesas_adm, logistica, pesquisa, garantia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$fornecedores, $salarios_benef, $aluguel, $contas_publicas, $impostos, $emprestimos, $manutencao, $seguros, $marketing, $despesas_adm, $logistica, $pesquisa, $garantia]);
-        header("Location: index.php");
+        header("Location: ../../Public/Contas/index.php");
         exit;
     }
 
@@ -25,7 +25,7 @@ class ContaModel {
         $sql = "UPDATE contas SET fornecedores = ?, salarios_benef = ?, aluguel = ?, contas_publicas = ?, impostos = ?, emprestimos = ?, manutencao = ?, seguros = ?, marketing = ?, despesas_adm = ?, logistica = ?, pesquisa = ?, garantia = ? WHERE id_conta = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$fornecedores, $salarios_benef, $aluguel, $contas_publicas, $impostos, $emprestimos, $manutencao, $seguros, $marketing, $despesas_adm, $logistica, $pesquisa, $garantia, $id_conta]);
-        header("Location: index.php");
+        header("Location: ../../Public/Contas/index.php");
         exit;
     }
     

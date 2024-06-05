@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Video Tutorial</h1>
         <video controls>
-            <source src="Resources/Assets/Uploads/Tutorial .mov">
+            <source src="Resources/Assets/Uploads/Tutorial.mov">
             Your browser does not support the video tag.
         </video>
     </div>

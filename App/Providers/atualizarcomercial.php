@@ -134,7 +134,7 @@ $estado_transacao = $appointment['estado_transacao'];
 
     <label for="estado_transacao">Estado da Transação:</label>
     <select name="estado_transacao" required>
-        <option value="">Selecione um estado da transação</option>
+        <option value="" disabled selected hidden>Selecione um estado da transação</option>
         <option value="1"<?php if ($estado_transacao == '1') echo ' selected'; ?>>Aprovado</option>
         <option value="2"<?php if ($estado_transacao == '2') echo ' selected'; ?>>Cancelado</option>
         <option value="3"<?php if ($estado_transacao == '3') echo ' selected'; ?>>Em Andamento</option>

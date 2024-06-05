@@ -5,7 +5,7 @@ require_once '../../App/Controller/ContasController.php';
 require_once '../../login-configs/filtros.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
-
+$filtroRh = FiltroRh();
 $contasController = new contasController($pdo);
 $contas = $contasController->listarcontas();
 
@@ -59,8 +59,14 @@ if (isset($_POST['excluir_id_conta'])) {
             - <strong>Marketing:</strong> R$<?php echo $conta['marketing']; ?> - <strong>Despesas Administrativas:</strong> R$<?php echo $conta['despesas_adm']; ?> 
             - <strong>Logística:</strong> R$<?php echo $conta['logistica']; ?> 
             - <strong>Pesquisa:</strong> R$<?php echo $conta['pesquisa']; ?> - <strong>Garantia:</strong> R$<?php echo $conta['garantia']; ?>
-            - <?php echo "<a class='a1' href='../../App/Providers/atualizarcontas.php?id={$conta['id_conta']}'>editar</a>" ?>
-            ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $conta['id_conta']; ?>)">excluir</a><hr></li>
+            - 
+            <?php
+            if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                echo "<a class='a1' href='../../App/Providers/atualizarcontas.php?id={$conta['id_conta']}'>editar</a> ";
+                echo "ou <a class='a2' href='#' onclick='confirmDelete({$conta['id_conta']})'>excluir</a><hr></li>";
+            }
+            ?>
+
         <?php endforeach; ?>
     </ul>
 
@@ -104,6 +110,8 @@ if (isset($_POST['excluir_id_conta'])) {
             };
         }
     </script>
-    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR DESPESAS</a></button></div>
+
+    <?php $FiltroCadastroContas = FiltroCadastroContas(); ?>
+
 </body>
 </html>

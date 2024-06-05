@@ -11,7 +11,7 @@ class FrotaModel {
         $sql = "INSERT INTO frota_veiculo (marca_modelo, ano_fabricacao, placa, numero_chassi, tipo_veiculo, tipo_combustivel, quilometragem, data_prox_rev, historico_manutencao, seguro, documentacao, localizacao_atual, responsavel, status, observacoes, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$marca_modelo, $ano_fabricacao, $placa, $numero_chassi, $tipo_veiculo, $tipo_combustivel, $quilometragem, $data_prox_rev, $historico_manutencao, $seguro, $documentacao, $localizacao_atual, $responsavel, $status, $observacoes, $imagem]);
-        header("Location: index.php");
+        header("Location: ../../Public/Frota/index.php");
         exit;
     }
 
@@ -27,7 +27,7 @@ class FrotaModel {
         $sql = "UPDATE frota_veiculo SET marca_modelo = ?, ano_fabricacao = ?, placa = ?, numero_chassi = ?, tipo_veiculo = ?, tipo_combustivel = ?, quilometragem = ?, data_prox_rev = ?, historico_manutencao = ?, seguro = ?, documentacao = ?, localizacao_atual = ?, responsavel = ?, status = ?, observacoes = ?, imagem = ? WHERE id_frota = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$marca_modelo, $ano_fabricacao, $placa, $numero_chassi, $tipo_veiculo, $tipo_combustivel, $quilometragem, $data_prox_rev, $historico_manutencao, $seguro, $documentacao, $localizacao_atual, $responsavel, $status, $observacoes, $imagem, $id_frota]);
-        header("Location: index.php");
+        header("Location: ../../Public/Frota/index.php");
         exit;
     }
     

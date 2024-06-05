@@ -53,7 +53,7 @@
                 <a href="">
                     <img class="img" src="../Resources/Assets/documento-de-texto.png">
                 </a>
-                <a href="">
+                <a href="../tutorial.php">
                     <img class="vid" src="../Resources/Assets/video-player.png">
                 </a>
             </div>

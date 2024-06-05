@@ -5,7 +5,7 @@ require_once '../../App/Controller/FiscalController.php';
 require_once '../../login-configs/filtros.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
-
+$filtroRh = FiltroRh();
 $fiscalController = new FiscalController($pdo);
 $fiscals = $fiscalController->listarFiscals();
 
@@ -61,8 +61,14 @@ if (isset($_POST['excluir_id_fiscal'])) {
                         - <strong>Responsável:</strong> <?php echo $fiscal['responsavel']; ?>
                         - <strong>Status:</strong> <?php echo $fiscal['status'] . " |"; ?>
                         
-                        <?php echo "<a class='a1' href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>editar</a> " ?>
-                        ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $fiscal['id_fiscal']; ?>)">excluir</a>
+                        <?php
+                        if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                            echo "<a class='a1' href='../../App/Providers/atualizarfiscal.php?id={$fiscal['id_fiscal']}'>editar</a> ";
+                            echo " ou ";
+                            echo "<a class='a2' href='#' onclick='confirmDelete({$fiscal['id_fiscal']})'>excluir</a>";
+                        }
+                        ?>
+
                         <hr>
                     </li>
                 <?php endforeach; ?>
@@ -114,7 +120,8 @@ if (isset($_POST['excluir_id_fiscal'])) {
         }
     </script>
 
-    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR</a></button></div>
+    <?php $FiltroCadastroFiscal = FiltroCadastroFiscal(); ?>
+    
 </body>
 
 </html>

@@ -46,26 +46,32 @@ require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.ph
     <h1>Gerar relatórios</h1>
     <ul class="container">
     <hr>
+    <li class="listinhas">
+        <a href="comercial.php">Gerar relatório do comercial</a>
+    </li>
+    <hr>
+    <li class="listinhas">
+        <a href="despesas.php">Gerar relatório das despesas</a>
+    </li>
+    <hr>
+    <li class="listinhas">
+        <a href="fiscal.php">Gerar relatório do controle fiscal</a>
+    </li>
+    <hr>
+    <li class="listinhas">
+        <a href="frota.php">Gerar relatório de frota de veículos</a>
+    </li>
+    <hr>
+    <li class="listinhas">
+        <a href="relatorio.php">Gerar relatório geral</a>
+    </li>
+    <hr>
+    <li class="listinhas">
+        <a href="rh.php">Gerar relatório do controle de pessoas - RH</a>
+    </li>
+    <hr>
+</ul>
 
-        <li class="listinhas">
-            <a href="rh.php">Gerar relatório do controle de pessoas - RH</a>
-        </li><hr>
-        <li class="listinhas">            
-            <a href="fiscal.php">Gerar relatório do controle fiscal</a>
-        </li><hr>
-        <li class="listinhas">
-            <a href="frota.php">Gerar relatório de frota de veículos</a>
-        </li><hr>
-        <li class="listinhas">
-            <a href="despesas.php">Gerar relatório das despesas</a>
-        </li><hr>
-        <li class="listinhas">
-            <a href="comercial.php">Gerar relatório do comercial</a>
-        </li><hr>
-        <li class="listinhas">
-            <a href="relatorio.php">Gerar relatório geral</a>
-        </li><hr>
-    </ul>
 </section>
 </div>
 </div>

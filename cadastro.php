@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
     isset($_POST['cnpj']) &&
     isset($_POST['porte']) &&
     isset($_POST['capital_social']) &&
-    isset($_POST['lagradouro']) &&
+    isset($_POST['logradouro']) &&
     isset($_POST['cep']) &&
     isset($_POST['bairro_restrito']) &&
     isset($_POST['municipio']) &&
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         $_POST['cnpj'],
         $_POST['porte'],
         $_POST['capital_social'],
-        $_POST['lagradouro'],
+        $_POST['logradouro'],
         $_POST['cep'],
         $_POST['bairro_restrito'],
         $_POST['municipio'],
@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&
         <input type="text" name="porte">
         <label>Capital Social</label>
         <input type="text" name="capital_social">
-        <label>Lagradouro</label>
-        <input type="text" name="lagradouro">
+        <label>logradouro</label>
+        <input type="text" name="logradouro">
         <label>CEP</label>
         <input type="number" name="cep">
         <label>Bairro Restrito</label>

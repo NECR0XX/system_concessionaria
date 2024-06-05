@@ -56,10 +56,10 @@ include_once 'Public/Rh/parametros/uf.php';
                 <p class="subinfo">Ao lado, disponibilizamos um tutorial de como utilizar nosso sistema. Acesse o documento e/ou assista o vídeo a seguir</p>
             </div>
             <div class="lado-d flex">
-                <a href="">
-                    <img class="img" src="Resources/Assets/documento-de-texto.png">
+            <a href="tutorial.php">
+                <img class="img" src="Resources/Assets/documento-de-texto.png">
                 </a>
-                <a href="">
+                <a href="tutorial.php">
                     <img class="vid" src="Resources/Assets/video-player.png">
                 </a>
             </div>

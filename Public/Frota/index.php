@@ -5,7 +5,7 @@ require_once '../../App/Controller/FrotaController.php';
 require_once '../../login-configs/filtros.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
-
+$filtroRh = FiltroRh();
 $frotaController = new FrotaController($pdo);
 $frotas = $frotaController->listarFrotas();
 
@@ -21,6 +21,7 @@ if (isset($_POST['excluir_id_frota'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/stylepg.css">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/modal-imagem.css">
     <link rel="stylesheet" href="../../Resources/Css/ambientes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +52,7 @@ if (isset($_POST['excluir_id_frota'])) {
 
 
     <h1>CONTROLE DE FROTA DE VEÍCULO</h1>
-    <ul class="list">
+    <ul class="list3">
         <?php foreach ($frotas as $frota): ?>
             <li><strong>ID:</strong> <?php echo $frota['id_frota']; ?> - <strong>Marca/Modelo:</strong>
                 <?php echo $frota['marca_modelo']; ?>
@@ -68,16 +69,27 @@ if (isset($_POST['excluir_id_frota'])) {
                 <?php echo $frota['localizacao_atual']; ?>
                 - <strong>Responsável:</strong> <?php echo $frota['responsavel']; ?>
                 - <strong>Status:</strong> <?php echo $frota['status']; ?> - <strong>Observações:</strong>
-                <?php echo $frota['observacoes'] . " |"; ?>
-                <?php echo "<a class='a1'href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>editar</a>" ?>
-                ou <a class="a2" href="#" onclick="confirmDelete(<?php echo $frota['id_frota']; ?>)">excluir</a>
+                <?php echo $frota['observacoes'] . " |"; ?> - 
+                <img class="imagemPequena" alt="Imagem do Produto" style="width:50px; cursor:pointer;" src="<?php echo $frota['imagem']; ?>">
+                
+                <?php
+                if ($_SESSION['usuarioNiveisAcessoId'] != 5) {
+                    echo "<a class='a1' href='../../App/Providers/atualizarfrota.php?id={$frota['id_frota']}'>editar</a>";
+                    echo " ou ";
+                    echo "<a class='a2' href='#' onclick='confirmDelete({$frota['id_frota']})'>excluir</a>";
+                }
+                ?>
                 <hr>
             </li>
 
 
         <?php endforeach; ?>
     </ul>
-
+    <!-- Modal -->
+    <div id="meuModal" class="modal">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imagemExpandida">
+    </div>
 
 
 
@@ -123,7 +135,9 @@ if (isset($_POST['excluir_id_frota'])) {
         }
     </script>
     
-    <div class="butespaco"><button class="but"><a href="crud.php">CADASTRAR VEÍCULO</a></button></div>
+    <?php $FiltroCadastroFrota = FiltroCadastroFrota(); ?>
+    
+    <script src="../../Resources/js/script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 <?php 
-
     require_once '../login-configs/config.php';
     require_once '../login-configs/filtros.php';
     require_once '../login-configs/verificacao.php';

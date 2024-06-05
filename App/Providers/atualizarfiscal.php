@@ -87,7 +87,7 @@ $observacoes = $appointment['observacoes'];
 
     <label for="tipo">Tipo:</label>
     <select name="tipo" required>
-        <option value="">Selecione uma opção</option>
+        <option value="" disabled selected hidden>Selecione uma opção</option>
         <option value="Compra"<?php if ($tipo == 'Compra') echo ' selected'; ?>>Compra</option>
         <option value="Venda"<?php if ($tipo == 'Venda') echo ' selected'; ?>>Venda</option>
         <option value="Despesa"<?php if ($tipo == 'Despesa') echo ' selected'; ?>>Despesa</option>
@@ -105,7 +105,7 @@ $observacoes = $appointment['observacoes'];
 
     <label for="metodo_pagamento">Método de Pagamento:</label>
     <select name="metodo_pagamento" required>
-        <option value="">Selecione um método de pagamento</option>
+        <option value="" disabled selected hidden>Selecione um método de pagamento</option>
         <option value="Dinheiro"<?php if ($metodo_pagamento == 'Dinheiro') echo ' selected'; ?>>Dinheiro</option>
         <option value="Pix"<?php if ($metodo_pagamento == 'Pix') echo ' selected'; ?>>Pix</option>
         <option value="Boleto Bancário"<?php if ($metodo_pagamento == 'Boleto Bancário') echo ' selected'; ?>>Boleto Bancário</option>
@@ -127,7 +127,7 @@ $observacoes = $appointment['observacoes'];
 
     <label for="status">Status:</label>
     <select name="status" required>
-        <option value=""><?php echo $status; ?></option>
+        <option value="" disabled selected hidden><?php echo $status; ?></option>
         <option value="1">Concluído</option>
         <option value="2">Pendente</option>
         <option value="3">Cancelada</option>

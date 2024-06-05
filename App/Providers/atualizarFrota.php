@@ -135,7 +135,7 @@ $observacoes = $appointment['observacoes'];
 
     <label for="status">Status:</label>
     <select name="status" required>
-        <option value="">Status...</option>
+        <option value="" disabled selected hidden>Status...</option>
         <option value="Disponível"<?php if ($status == 'Disponível') echo ' selected'; ?>>Disponível</option>
         <option value="Ocupado"<?php if ($status == 'Ocupado') echo ' selected'; ?>>Ocupado</option>
         <option value="Em Manutenção"<?php if ($status == 'Em Manutenção') echo ' selected'; ?>>Em Manutenção</option>

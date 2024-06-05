@@ -5,6 +5,7 @@ require_once '../../Config/config.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacaoEmpresa.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/login-configs/verificacao.php';
 require_once 'C:/xampp/htdocs/system_concessionaria/Public/Rh/app/controller/controleRh.php';
+$FiltroComercial = FiltroComercial();
 $controleRhModel = new controleRhModel($pdo);
 $controles = $controleRhModel->listarControleRhs();
 ?>
@@ -53,10 +54,12 @@ $controles = $controleRhModel->listarControleRhs();
     <ul class="list">
         
         <li><?php echo $controlerh['nome'] . " - >" ; ?>
-        <?php echo $controlerh['cargo'] . " |"; ?>
-        <?php echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">'?>editar</a>
-        <?php echo " ou ";?>
-        <a class="a2" href="#" onclick="confirmDelete(<?php echo $controlerh['id']; ?>)">excluir</a>
+        <?php echo $controlerh['email'] . " - >"; ?>
+        <?php echo $controlerh['cargo'] . " |" ; ?>
+        <?php if ($_SESSION['usuarioNiveisAcessoId'] != 5) { 
+        echo '<a class="a1" href="editar.php?id=' . $controlerh['id'] . '">editar</a>';
+        echo ' ou ';
+        echo '<a class="a2" href="#" onclick="confirmDelete(' . $controlerh['id'] . ')">excluir</a>';}?>
     <hr>
     
     </li>
@@ -104,7 +107,9 @@ $controles = $controleRhModel->listarControleRhs();
         };
     }
 </script>
-<div class="butespaco"><button class="but"> <a href="register.php">CADASTRAR NO RH</a></button></div>
+<?php
+    $filtroCadastroRh = filtroCadastroRh();
+?>
 </body>
 </html>
 

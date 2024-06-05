@@ -36,6 +36,7 @@ class controleRhModel {
     WHERE usuarios.id = ?";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute([$nome, $email, $senha, $tipo, $nome_pai, $nome_mae, $naturalidade, $uf, $data_nascimento, $deficiente_fisico, $raca_cor, $sexo, $estado_civil, $grau_instrucao, $endereco, $numero, $complemento, $cep, $bairro, $cidade, $telefone, $celular, $numero_ctps, $serie, $uf_rh, $data_expedicao_ctps, $pis, $data_cadastro_pis, $rg_rh, $data_expedicao_rg, $cpf_rh, $titulo_eleitor, $zona, $secao, $dependentes, $vale_transporte, $horario_trabalho, $entrada, $intervalo, $saida, $cargo, $data_admissao, $data_exame_medico, $experiencia, $id]);
+    header("Location: index.php");
 }
 
 public function listarRhPorID($id) {

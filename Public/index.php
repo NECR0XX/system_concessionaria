@@ -21,7 +21,7 @@
             <div class="logo"><p class="logo-p">SCAR</p></div>
             <div class="bts">
                 <div class="cad-button">
-                    <a href="../login-configs/logout-empresa.php" class="link-cadastro">Sair</a>
+                    <a href="../login-configs/logout-empresa.php" class="link-cadastro">Sair da empresa</a>
                 </div>
             
                 <div class="cad-button">
@@ -30,6 +30,9 @@
                         if(!isset($_SESSION['usuarioEmail']) or $_SESSION['usuarioEmail'] == '') {
                             echo '<a href="login.php" class="link-cadastro">Entre</a>';
                         }
+                        else
+                            echo '<a href="../login-configs/logout.php" class="link-cadastro">Deslogar</a>';
+                        
                     ?>
                 </div>
             </div>
@@ -50,7 +53,7 @@
                 <a href="">
                     <img class="img" src="../Resources/Assets/documento-de-texto.png">
                 </a>
-                <a href="">
+                <a href="../tutorial.php">
                     <img class="vid" src="../Resources/Assets/video-player.png">
                 </a>
             </div>

@@ -1,6 +1,6 @@
 <?php
 require_once '../../Config/config.php';
-require_once '../Controller/EmpresaController.php';
+require_once 'C:/xampp/htdocs/system_concessionaria/App/Controller/EmpresaController.php';
 
 $empresaController = new EmpresaController($pdo);
 

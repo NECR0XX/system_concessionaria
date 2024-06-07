@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Maio-2024 às 20:30
+-- Tempo de geração: 07-Jun-2024 às 12:34
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -127,7 +127,7 @@ CREATE TABLE `empresa` (
   `cnpj` varchar(255) NOT NULL,
   `porte` varchar(255) NOT NULL,
   `capital_social` varchar(255) NOT NULL,
-  `lagradouro` varchar(255) NOT NULL,
+  `logradouro` varchar(255) NOT NULL,
   `cep` varchar(255) NOT NULL,
   `bairro_restrito` varchar(255) NOT NULL,
   `municipio` varchar(255) NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE `empresa` (
 -- Extraindo dados da tabela `empresa`
 --
 
-INSERT INTO `empresa` (`empresa_id`, `numero_inscricao`, `data_abertura`, `razao_social`, `nome_fantasia`, `cnpj`, `porte`, `capital_social`, `lagradouro`, `cep`, `bairro_restrito`, `municipio`, `numero`, `complemento`, `telefone`, `uf`, `empresa_email`, `senha`) VALUES
+INSERT INTO `empresa` (`empresa_id`, `numero_inscricao`, `data_abertura`, `razao_social`, `nome_fantasia`, `cnpj`, `porte`, `capital_social`, `logradouro`, `cep`, `bairro_restrito`, `municipio`, `numero`, `complemento`, `telefone`, `uf`, `empresa_email`, `senha`) VALUES
 (7, '123123', '1222-03-12', 'asdasd', 'asdsad', '2312312', 'asdasd', 'wdasdasd', 'asdsad', '12331213', 'assgdf', 'sddfgwq', '213', 'fsad', '123435567', 'RJ', 'empresa@gmail.com', '1234');
 
 -- --------------------------------------------------------
@@ -226,8 +226,7 @@ CREATE TABLE `fiscal` (
 --
 
 INSERT INTO `fiscal` (`id_fiscal`, `data`, `valor`, `tipo`, `cliente_fornecedor`, `nota_fiscal`, `imposto`, `metodo_pagamento`, `codigo_fiscal`, `contas_contabeis`, `localizacao`, `responsavel`, `status`, `observacoes`) VALUES
-(12, '2024-05-31', 999999, 'Venda', 'khlklkjlk', 89879789, 2147483647, 'Cartão de Debito', 978979, 89798778, 'adsds', 'asdas', 'Pendente', 'sadasdds'),
-(13, '2024-05-24', 213123, 'Compra', 'asdad', 23213, 23213, 'Pix', 213123, 3223, 'adsds', 'asdas', 'Cancelada', 'sadasdds');
+(12, '2024-05-31', 999999, 'Venda', 'khlklkjlk', 89879789, 2147483647, 'Cartão de Debito', 978979, 89798778, 'adsds', 'asdas', 'Pendente', 'sadasdds');
 
 -- --------------------------------------------------------
 
@@ -299,7 +298,8 @@ CREATE TABLE `rh` (
 --
 
 INSERT INTO `rh` (`usuario_id`, `numero_ctps`, `serie`, `uf_rh`, `data_expedicao_ctps`, `pis`, `data_cadastro_pis`, `rg_rh`, `data_expedicao_rg`, `cpf_rh`, `titulo_eleitor`, `zona`, `secao`, `dependentes`, `vale_transporte`, `horario_trabalho`, `entrada`, `intervalo`, `saida`, `cargo`, `data_admissao`, `data_exame_medico`, `experiencia`) VALUES
-(50, '1', '1', 'AP', '0001-01-01', '1', '0001-01-01', '1', '0001-01-01', '1', '1', '1', '1', '0001-01-01', 'nao', '1', '01:01', '01:01', '01:01', '1', '0001-01-01', '0001-01-01', '1');
+(50, '1', '1', 'AP', '0001-01-01', '1', '0001-01-01', '1', '0001-01-01', '1', '1', '1', '1', '0001-01-01', 'nao', '1', '01:01', '01:01', '01:01', '1', '0001-01-01', '0001-01-01', '1'),
+(52, '132413524', '2135244', 'PR', '2341-12-04', '1352', '0152-03-04', '31235', '0015-03-12', '53142', '1532', '3142', '531', '0124-03-05', 'sim', '31521', '13:55', '23:52', '03:23', '2354', '0023-05-31', '5323-03-25', '3524');
 
 -- --------------------------------------------------------
 
@@ -406,7 +406,7 @@ ALTER TABLE `contas`
 -- AUTO_INCREMENT de tabela `dados_usuario`
 --
 ALTER TABLE `dados_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de tabela `empresa`
@@ -418,7 +418,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de tabela `estoque`
@@ -442,13 +442,13 @@ ALTER TABLE `frota_veiculo`
 -- AUTO_INCREMENT de tabela `rh`
 --
 ALTER TABLE `rh`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
